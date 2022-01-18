@@ -5,9 +5,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<%@ include file="/inc/asset.jsp" %>
+<%@ include file="/WEB-INF/views/inc/asset.jsp" %>
 <style>
-
 </style>
 </head>
 <body>
@@ -15,7 +14,7 @@
 	<main class="main">
 		<%@include file="/WEB-INF/views/inc/header.jsp" %>
 		<section class="content">
-			시작 페이지
+			<div class="frame"></div>
 		</section>
 		<%@include file="/WEB-INF/views/inc/footer.jsp" %>
 	</main>
