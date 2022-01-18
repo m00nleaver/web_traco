@@ -14,20 +14,24 @@
 <!-- inc/header.jsp -->
 <header class="header">
 
+
 	<h1 class="title" >
-		<img class="logo" src="/traco/asset/images/logo/logo.png" >
+		<img class="logo" src="/traco/asset/images/logo/logo.png" alt="로고">
 
 	</h1>
 	
 	<ul class="menu">
 	
 		<span class="glyphicon glyphicon-menu-hamburger" onclick="location.href='/traco/main.do';"></span>
+
+	
 		<li onclick="location.href='/traco/jeju.do';">제주도투어</li>
 		<li onclick="location.href='/traco/land.do';">내륙투어</li>
 		<li onclick="location.href='/traco/route.do';">경로찾기</li>
 		<li onclick="location.href='/traco/flight.do';">항공</li>
 		<li onclick="location.href='/traco/rentcar.do';">렌트카</li>
 		<li onclick="location.href='/traco/community.do';">커뮤니티</li>
+
 		<div class="search"><input type="text" value="검색"></div>
 		
 		<!-- 아이콘 -->
@@ -38,6 +42,7 @@
 		<span class="far fa-list-alt"></span>
 		</div>
 		
+
 	</ul>
 
 </header>
@@ -45,8 +50,3 @@
 <script>
 	
 </script>
-
-
-
-
-
