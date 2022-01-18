@@ -15,7 +15,7 @@
 	<main class="main">
 		<%@include file="/WEB-INF/views/inc/header.jsp" %>
 		<section class="content">
-			<div class="frame"></div>
+			미니투어
 		</section>
 		<%@include file="/WEB-INF/views/inc/footer.jsp" %>
 	</main>

@@ -15,7 +15,7 @@
 	<main class="main">
 		<%@include file="/WEB-INF/views/inc/header.jsp" %>
 		<section class="content">
-			<div class="frame"></div>
+			렌트카
 		</section>
 		<%@include file="/WEB-INF/views/inc/footer.jsp" %>
 	</main>
