@@ -15,7 +15,7 @@
 	<main class="main">
 		<%@include file="/WEB-INF/views/inc/header.jsp" %>
 		<section class="content">
-			<div class="frame"></div>
+			커뮤니티
 		</section>
 		<%@include file="/WEB-INF/views/inc/footer.jsp" %>
 	</main>
