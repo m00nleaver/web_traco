@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 <%@ include file="/WEB-INF/views/inc/asset.jsp" %>
 <style>
+
 </style>
 </head>
 <body>
@@ -14,7 +15,7 @@
 	<main class="main">
 		<%@include file="/WEB-INF/views/inc/header.jsp" %>
 		<section class="content">
-			<div class="frame"></div>
+			루트만들기
 		</section>
 		<%@include file="/WEB-INF/views/inc/footer.jsp" %>
 	</main>
