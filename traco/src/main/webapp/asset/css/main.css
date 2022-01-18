@@ -21,7 +21,7 @@ html {
 
 .main {
 	background-color: #FFF;
-	width: 800px;
+	width: 1200px;
 	min-height: 500px;
 	border-left: 1px solid #999;
 	border-right: 1px solid #999;
@@ -33,6 +33,7 @@ html {
 	height: 100px;
 	border-bottom: 1px solid #999;
 	padding: 20px;
+	background-color:gold;
 }
 
 .content {
@@ -65,12 +66,34 @@ html {
 }
 
 .header .menu {
-	float: right;
+	float: center;
 	list-style: none;
 	font-variant: small-caps;
+	margin-left:200px;
+	position:relative;
 }
 
 .header .menu li {
+	float: left;
+	margin: 0 10px;
+	cursor: pointer;
+}
+
+.header .menu div {
+	float: left;
+	margin: 0 10px;
+	cursor: pointer;
+}
+
+.header .menu input {
+	width:200px;
+	margin-bottom:100px;
+	margin-right:10px;
+	
+}
+
+.header .menu span {
+	font-size:30px;
 	float: left;
 	margin: 0 10px;
 	cursor: pointer;
