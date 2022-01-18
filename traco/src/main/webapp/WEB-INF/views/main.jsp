@@ -7,7 +7,6 @@
 <title>Insert title here</title>
 <%@ include file="/WEB-INF/views/inc/asset.jsp" %>
 <style>
-
 </style>
 </head>
 <body>

@@ -1,17 +1,35 @@
 /* main.css */
 
+
+/*@font-face {
+    font-family: 'CookieRun-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/CookieRun-Regular.woff') format('woff');
+
+    font-weight: normal;
+    font-style: normal;
+}*/
+/*@import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap');
+*/
+
+
 @font-face {
-    font-family: 'YUniverse-B';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_yuniverse@1.0/YUniverse-B.woff2') format('woff2');
+    font-family: 'SBAggroM';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroM.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
 
 body, p, div, span, a, table, th, td, input, textarea, option, ul, ol, li, dl, dt, dd, h1, h2, h3, h4, small, button {
-	/* font-family: 'YUniverse-B'; */
-	font-family: 'Gowun Dodum', sans-serif;
-    font-weight: bold;
-    color:#293241;
+
+	/*font-family: 'CookieRun-Regular';*/
+	/*font-family: 'Gowun Dodum', sans-serif;*/
+	font-family: 'SBAggroM', sans-serif;
+	/*font-weight: bold;*/
+	font-size:1.2em;
+}
+.search{
+	font-size:0.8em;
+
 }
 
 html, body {
@@ -34,9 +52,12 @@ html {
 
 .header {
 	height: 100px;
-	border-bottom: 1px solid #999;
+	/*border-bottom: 1px solid #999;*/
 	padding: 20px;
-	
+
+	/*background-color:gold;*/
+	position: relative;
+
 }
 
 .content {
@@ -55,12 +76,13 @@ html {
 	padding: 20px;
 }
 
+
+/*footer*/
 .footer {
 	height: 80px;
 	border-top: 1px solid #999;
 	padding: 20px;
 }
-
 .footerbox{
 	width:1000px;
 	height:140px;
@@ -83,6 +105,8 @@ html {
 .footerlogo{width:100px;}
 
 
+/*header 수정*/
+
 .headerimg{
 	width:150px;
 	float:left;
@@ -95,12 +119,21 @@ html {
 	font-variant: small-caps;
 }
 
+.header .title .logo{
+		width: 210px;
+		height: 100px;
+		position:absolute;
+		cursor: pointer;
+	}
+
 .header .menu {
 	float: center;
 	list-style: none;
 	font-variant: small-caps;
-	margin-left:200px;
-	margin-top:20px;
+
+	margin-left:190px;
+	margin-top: 35px;
+
 	
 }
 
@@ -115,6 +148,7 @@ html {
 	float: left;
 	margin: 0 10px;
 	cursor: pointer;
+	color:#7b809a;
 }
 
 .header .menu input {
@@ -123,16 +157,43 @@ html {
 	margin-right:10px;
 	
 }
+.header .menu .glyphicon-menu-hamburger{
+	margin:0 5px;
+	font-size: 20px;
+	color: black;
+}
+
+.header .menu .submenu{
+	margin-left:60px;
+}
 
 .header .menu span {
-	font-size:30px;
+	font-size:19px;
 	float: left;
 	margin: 0 10px;
 	cursor: pointer;
+	color: #7b809a;
 }
+
+
+
+
+.header .menu span:hover {
+	color: #EE6C4D;
+}
+
 
 .header .menu li:hover {
 	color: #EE6C4D;
+
+}
+
+
+/* 목록보기 테이블 */
+.table.list {
+	width: 700px;
+	margin: 0px auto;
+
 }
 
 .header .menu span:hover {

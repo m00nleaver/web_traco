@@ -9,25 +9,40 @@
 		
 	}
 </style>
-
+<!-- Font Awesome Icons -->
+  <script src="https://kit.fontawesome.com/7f52bbfce1.js" crossorigin="anonymous"></script>
 <!-- inc/header.jsp -->
 <header class="header">
 
-	<!-- <h1 class="title" onclick="location.href='/traco/main.do';"></h1> -->
-	<img src="/traco/asset/images/unknown.png" alt="로고" class="headerimg" onclick="location.href='/traco/main.do';">
+
+	<h1 class="title" >
+		<img class="logo" src="/traco/asset/images/logo/logo.png" alt="로고">
+
+	</h1>
 	
 	<ul class="menu">
-		<li onclick="location.href='/traco/main.do';">전체메뉴</li>
+	
+		<span class="glyphicon glyphicon-menu-hamburger" onclick="location.href='/traco/main.do';"></span>
+
+	
 		<li onclick="location.href='/traco/jeju.do';">제주도투어</li>
 		<li onclick="location.href='/traco/land.do';">내륙투어</li>
 		<li onclick="location.href='/traco/route.do';">경로찾기</li>
 		<li onclick="location.href='/traco/flight.do';">항공</li>
 		<li onclick="location.href='/traco/rentcar.do';">렌트카</li>
 		<li onclick="location.href='/traco/community.do';">커뮤니티</li>
-		<div><input type="text" value="검색"></div>
-		<span class="glyphicon glyphicon-user" onclick="location.href='/traco/member.do';"></span>
-		<span class="glyphicon glyphicon-heart"></span>
-		<span class="glyphicon glyphicon-calendar"></span>
+
+		<div class="search"><input type="text" value="검색"></div>
+		
+		<!-- 아이콘 -->
+		<!-- https://fontawesome.com/v6.0 -->
+		<div class ="submenu">
+		<span class="fa fa-user me-sm-1" aria-hidden="true" onclick="location.href='/traco/member.do';"></span>
+		<span class="fas fa-shopping-cart"></span>
+		<span class="far fa-list-alt"></span>
+		</div>
+		
+
 	</ul>
 
 </header>
@@ -35,8 +50,3 @@
 <script>
 	
 </script>
-
-
-
-
-
