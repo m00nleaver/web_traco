@@ -37,14 +37,18 @@
 					<td>${dto.boardm_seq}</td>
 					<td>${dto.communityc_name}</td> 
 					<td>
-						<a href="/traco/community/communityview.do?boardm_seq=${dto.boardm_seq}">${dto.postm_title}</a>
+						<a href="/traco/community/communityview.do?boardm_seq=${dto.boardm_seq}&column=${map.column}&word=${map.word}">${dto.postm_title}</a>
+						
+						<c:if test="${dto.commentcount > 0}">
+						<span class="badge">${dto.commentcount}</span>
+						</c:if>
 						
 						<c:if test="${dto.isnew <= 1}">
 						<span class="label label-danger">new</span>
 						</c:if>
 					</td> 
 					<td>${dto.boardm_up}</td>
-					<td>${dto.member_name}(${dto.member_id})</td>
+					<td>${dto.member_id}</td>
 					<td>${dto.boardm_date}</td>
 					<td>${dto.boardm_view}</td>
 			
@@ -75,12 +79,21 @@
 						<td>
 							<input type="submit" value="검색하기" class="btn btn-default">
 						</td>
+						<c:if test="${not empty member_id}">
+						<td>
+							<input type="button" value="내글보기" class="btn btn-default" onclick="location.href='/traco/community/communitylist.do?column=member_id&word=${member_id}';">
+						</td>
+						</c:if>
 					</tr>
 				</table>
 				</form>
 			</div>	
 			<div class="btns">
 			
+			<input type="button" value="목록보기"
+					class="btn btn-default"
+					onclick="location.href='/traco/community/communitylist.do';">
+					
 				<c:if test="${not empty member_id}">
 				<input type="button" value="글쓰기"
 					class="btn btn-primary"
@@ -88,16 +101,17 @@
 				</c:if>
 				
 			</div>
-			
-			
-		
-			
+
 		</section>
 		<%@include file="/WEB-INF/views/inc/footer.jsp" %>
 	</main>
 	
 	<script>
-	
+		<c:if test="${map.searchmode == 'y'}">
+		//검색 상태를 유지
+		$('select[name=column]').val('${map.column}');
+		$('input[name=word]').val('${map.word}');
+		</c:if>
 	
 	</script>
 </body>

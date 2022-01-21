@@ -46,7 +46,7 @@ public class CommunityView extends HttpServlet {
 		
 		
 		String boardm_seq = req.getParameter("boardm_seq");
-//		System.out.println(boardm_seq);
+		System.out.println(boardm_seq);
 		
 		CommunityDAO dao = new CommunityDAO();
 
@@ -76,11 +76,20 @@ public class CommunityView extends HttpServlet {
 			dto.setBoardm_content(dto.getBoardm_content().replace(word, "<span style='background-color:yellow;color:tomato;'>" + word + "</span>"));
 		}
 		
+		ArrayList<CommentDTO> clist = dao.listComment(boardm_seq);
+		
+		for (CommentDTO cdto : clist) {
+			//댓글 개행문자 처리
+			cdto.setCommentm_content(cdto.getCommentm_content().replace("\r\n", "<br>"));
+		}
+		
 		req.setAttribute("dto", dto);
 		
 		req.setAttribute("column", column);
 		req.setAttribute("word", word);
 
+		req.setAttribute("clist", clist);
+		
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/community/communityview.jsp");
 
 		dispatcher.forward(req, resp);

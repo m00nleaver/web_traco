@@ -85,6 +85,8 @@ public class CommunityDAO {
 
 				dto.setIsnew(rs.getDouble("isnew"));
 				
+				dto.setCommentcount(rs.getInt("commentcount"));	
+				
 				list.add(dto);
 			}
 
@@ -218,5 +220,66 @@ public class CommunityDAO {
 
 		return 0;
 	}
+
+	//AddCommentOk 서블릿이 CommentDTO를 줄테니 insert해주세요~
+		public int addComment(CommentDTO cdto) {
+			
+			try {
+
+				String sql = "insert into tblCommentM (commentm_seq, commentm_name, commentm_content, commentm_date, commentm_up, postm_seq, memberm_seq) values (seqCommentM.nextVal, ?, ?, default, default, ?, ?)";
+				
+				pstat = conn.prepareStatement(sql);
+				pstat.setString(1, cdto.getMember_id());
+				pstat.setString(2, cdto.getCommentm_content());
+				pstat.setString(3, cdto.getPostm_seq());
+				pstat.setString(4, cdto.getMemberm_seq());
+				return pstat.executeUpdate();
+
+			} catch (Exception e) {
+				System.out.println("BoardDAO.addComment()");
+				e.printStackTrace();
+			}
+			
+			return 0;
+		}
+
+		
+		public ArrayList<CommentDTO> listComment(String boardm_seq) {
+			try {
+
+				String sql = "select * from vtblCommentM where postm_seq = ? order by commentm_seq desc";
+				
+				pstat = conn.prepareStatement(sql);
+				pstat.setString(1, boardm_seq);
+				
+				rs = pstat.executeQuery();
+				
+				ArrayList<CommentDTO> clist = new ArrayList<CommentDTO>();
+				
+				while (rs.next()) {
+					//레코드 1줄 > DTO 1개
+					CommentDTO dto = new CommentDTO();
+					
+					dto.setCommentm_seq(rs.getString("commentm_seq"));
+					dto.setCommentm_name(rs.getString("commentm_name"));
+					dto.setCommentm_content(rs.getString("commentm_content"));
+					dto.setCommentm_date(rs.getString("commentm_date"));
+					dto.setCommentm_up(rs.getString("commentm_up"));
+					dto.setPostm_seq(rs.getString("postm_seq"));
+					dto.setMemberm_seq(rs.getString("memberm_seq"));
+					dto.setMember_id(rs.getString("member_id"));
+					
+					clist.add(dto);
+				}
+				
+				return clist;
+
+			} catch (Exception e) {
+				System.out.println("BoardDAO.listComment()");
+				e.printStackTrace();
+			}
+			
+			return null;
+		}
 
 }

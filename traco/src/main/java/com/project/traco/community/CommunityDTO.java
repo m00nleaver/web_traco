@@ -16,6 +16,15 @@ public class CommunityDTO {
 	private String communityc_name; //카테고리명
 	
 	private double isnew; //새글 유무
+	
+	private int commentcount; //댓글 갯수
+	
+	public int getCommentcount() {
+		return commentcount;
+	}
+	public void setCommentcount(int commentcount) {
+		this.commentcount = commentcount;
+	}
 	public String getBoardm_seq() {
 		return boardm_seq;
 	}

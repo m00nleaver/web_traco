@@ -73,6 +73,14 @@ public class CommunityList extends HttpServlet {
 				//안녕하세요. <span style="">홍길동</span>입니다.
 				dto.setPostm_title(dto.getPostm_title().replace(word, "<span style='background-color:yellow;color:tomato;'>" + word + "</span>"));
 			}
+			
+			//제목에서 검색 중 > 검색어 강조!!
+			if (searchmode.equals("y") && column.equals("member_id")) {
+				
+				//안녕하세요. 홍길동입니다.
+				//안녕하세요. <span style="">홍길동</span>입니다.
+				dto.setMember_id(dto.getMember_id().replace(word, "<span style='background-color:yellow;color:tomato;'>" + word + "</span>"));
+			}
 
 		}
 

@@ -43,7 +43,7 @@
 			
 				<input type="button" value="돌아가기"
 					class="btn btn-default"
-					onclick="location.href='/traco/community/communitylist.do';">
+					onclick="location.href='/traco/community/communitylist.do?column=${column}&word=${word}';">
 				
 				<c:if test="${not empty member_id && dto.member_id == member_id}">
 				<input type="button" value="수정하기"
@@ -56,6 +56,32 @@
 				</c:if>						
 			</div>
 			
+			<form method="POST" action="/traco/community/commentaddok.do">
+			<table class="commentadd">
+				<tr>
+					<td><textarea name="commentm_content" class="form-control" required></textarea></td>
+					<td><input type="submit" value="댓글쓰기" class="btn btn-primary"></td>
+				</tr>
+			</table>
+			<input type="hidden" name="boardm_seq" value="${dto.boardm_seq}">
+			</form>
+			
+			<table class="table table-bordered comment">
+				<c:forEach items="${clist}" var="cdto">
+				<tr>
+					<td>
+						${cdto.commentm_content}
+						<small>${cdto.member_id} ${cdto.commentm_date} ${cdto.commentm_up}</small></td>
+					<td>
+						<c:if test="${cdto.commentm_name == member_id}">
+						<input type="button" value="삭제하기" 
+							class="btn btn-default"
+						>
+						</c:if>
+					</td>
+				</tr>
+				</c:forEach>
+			</table>
 			
 		</section>
 		<%@include file="/WEB-INF/views/inc/footer.jsp" %>
