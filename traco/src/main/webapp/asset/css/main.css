@@ -1,0 +1,208 @@
+/* main.css */
+
+
+/*@font-face {
+    font-family: 'CookieRun-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/CookieRun-Regular.woff') format('woff');
+
+    font-weight: normal;
+    font-style: normal;
+}*/
+/*@import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap');
+*/
+
+
+@font-face {
+    font-family: 'SBAggroM';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroM.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body, p, div, span, a, table, th, td, input, textarea, option, ul, ol, li, dl, dt, dd, h1, h2, h3, h4, small, button {
+
+	/*font-family: 'CookieRun-Regular';*/
+	/*font-family: 'Gowun Dodum', sans-serif;*/
+	font-family: 'SBAggroM', sans-serif;
+	/*font-weight: bold;*/
+	font-size:1.2em;
+}
+.search{
+	font-size:0.8em;
+
+}
+
+html, body {
+	background-color: #EEE;
+}
+
+html {
+		overflow-y: scroll;
+}
+
+.main {
+	background-color: #FFF;
+	width: 1200px;
+	min-height: 500px;
+	border-left: 1px solid #999;
+	border-right: 1px solid #999;
+	margin: 0px auto;
+	box-shadow: 0px 0px 5px #777;
+}
+
+.header {
+	height: 100px;
+	/*border-bottom: 1px solid #999;*/
+	padding: 20px;
+
+	/*background-color:gold;*/
+	position: relative;
+
+}
+
+.content {
+	/*  
+		
+		width : 고정(불변)
+		min-width : 가변(최소 크기 고정, 최소가 아닐땐 100%)
+		max-width : 가변(최대 크기 고정, 최대가 아닐땐 100%)
+		
+		height : 고정(불변)
+		min-height : 가변(최소 크기 고정, 최소가 아닐땐 내용물의 크기)
+		max-height : 가변(최대 크기 고정, 최대가 아닐땐 내용물의 크기)
+	
+	*/
+	min-height: 500px;
+	padding: 20px;
+	padding-top : 100px;
+}
+
+
+/*footer*/
+.footer {
+	height: 80px;
+	border-top: 1px solid #999;
+	padding: 20px;
+}
+.footerbox{
+	width:1000px;
+	height:140px;
+}
+
+.footerbox .ftimgbox{
+	width:200px;
+	float:left;
+	margin-right:-100px;
+}
+
+
+
+.footerbox .companyinfo{
+	width:800px;
+	height:120px;
+	font-size:11px;
+}
+
+.footerlogo{width:100px;}
+
+
+/*header 수정*/
+
+.headerimg{
+	width:150px;
+	float:left;
+	cursor:pointer;
+}
+
+.header .title {
+	margin: 0;
+	padding: 0;
+	font-variant: small-caps;
+}
+
+.header .title .logo{
+		width: 210px;
+		height: 100px;
+		position:absolute;
+		cursor: pointer;
+	}
+
+.header .menu {
+	float: center;
+	list-style: none;
+	font-variant: small-caps;
+
+	margin-left:190px;
+	margin-top: 35px;
+
+	
+}
+
+.header .menu li {
+	float: left;
+	margin: 0 10px;
+	cursor: pointer;
+	font-size:14px;
+}
+
+.header .menu div {
+	float: left;
+	margin: 0 10px;
+	cursor: pointer;
+	color:#7b809a;
+}
+
+.header .menu input {
+	width:200px;
+	
+	margin-right:10px;
+	
+}
+.header .menu .glyphicon-menu-hamburger{
+	margin:0 5px;
+	font-size: 20px;
+	color: black;
+}
+
+.header .menu .submenu{
+	margin-left:60px;
+}
+
+.header .menu span {
+	font-size:19px;
+	float: left;
+	margin: 0 10px;
+	cursor: pointer;
+	color: #7b809a;
+}
+
+
+
+
+.header .menu span:hover {
+	color: #EE6C4D;
+}
+
+
+.header .menu li:hover {
+	color: #EE6C4D;
+
+}
+
+
+/* 목록보기 테이블 */
+.table.list {
+	width: 1000px;
+	margin: 0px auto;
+
+}
+
+.header .menu span:hover {
+	color: #EE6C4D;
+}
+
+
+/* 메인화면 */
+.container {}
+
+
