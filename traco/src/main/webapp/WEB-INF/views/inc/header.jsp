@@ -15,7 +15,7 @@
 <header class="header">
 
 
-	<h1 class="title" >
+	<h1 class="title" onclick="location.href='/traco/main.do';" >
 		<img class="logo" src="/traco/asset/images/logo/logo.png" alt="로고">
 
 	</h1>
@@ -32,8 +32,14 @@
 		<li onclick="location.href='/traco/rentcar.do';">렌트카</li>
 		<li onclick="location.href='/traco/community.do';">커뮤니티</li>
 
-		<div class="search"><input type="text" value="검색"></div>
-		
+		<!--  <div class="search"><input type="text" value="검색"></div>-->
+		<div class="box">
+			  <div class="container-1 search">
+			      <span class="icon"><i class="fa fa-search"></i></span>
+			      <input type="search" id="search" placeholder="Search..." />
+			  </div>
+			</div>
+					
 		<!-- 아이콘 -->
 		<!-- https://fontawesome.com/v6.0 -->
 		<div class ="submenu">
