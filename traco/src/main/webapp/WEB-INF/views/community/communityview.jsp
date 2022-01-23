@@ -56,6 +56,13 @@
 				</c:if>						
 			</div>
 			
+			<div class="btns">
+			
+				<input type="button" value="${dto.boardm_up}"
+					class="btn btn-default"
+					>			
+			</div>
+			
 			<form method="POST" action="/traco/community/commentaddok.do">
 			<table class="commentadd">
 				<tr>
@@ -74,9 +81,7 @@
 						<small>${cdto.member_id} ${cdto.commentm_date} ${cdto.commentm_up}</small></td>
 					<td>
 						<c:if test="${cdto.commentm_name == member_id}">
-						<input type="button" value="삭제하기" 
-							class="btn btn-default"
-						>
+						<input type="button" value="삭제하기"	class="btn btn-default"	onclick="location.href='/traco/community/commentdelok.do?commentm_seq=${cdto.commentm_seq}&boardm_seq=${dto.boardm_seq}';">
 						</c:if>
 					</td>
 				</tr>

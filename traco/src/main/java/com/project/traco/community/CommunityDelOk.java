@@ -27,6 +27,9 @@ public class CommunityDelOk extends HttpServlet {
 
 	
 		CommunityDAO dao = new CommunityDAO();
+		
+		//현재 글에 달린 댓글 삭제하기
+		dao.CommentdelAll(boardm_seq);
 
 		int result = dao.Communitydel(boardm_seq); // 1,0
 //		System.out.println(result);
