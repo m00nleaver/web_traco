@@ -37,7 +37,7 @@
 					<td>${dto.boardm_seq}</td>
 					<td>${dto.communityc_name}</td> 
 					<td>
-						<a href="/traco/community/communityview.do?boardm_seq=${dto.boardm_seq}&column=${map.column}&word=${map.word}">${dto.postm_title}</a>
+						<a href="/traco/community/communityview.do?boardm_seq=${dto.boardm_seq}&column=${map.column}&word=${map.word}&page=${nowPage}">${dto.postm_title}</a>
 						
 						<c:if test="${dto.commentcount > 0}">
 						<span class="badge">${dto.commentcount}</span>
@@ -61,6 +61,8 @@
 				</tr>
 				</c:if>
 			</table>
+			
+			<div class="pagebar">${pagebar}</div>
 			
 			<div class="search">
 				<form method="GET" action="/traco/community/communitylist.do">

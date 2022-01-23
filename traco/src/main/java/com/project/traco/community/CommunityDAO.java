@@ -61,9 +61,11 @@ public class CommunityDAO {
 			String where = "";
 
 			if (map.get("searchmode").equals("y")) {
-				where = String.format("where %s like '%%%s%%'", map.get("column"), map.get("word").replace("'", "''"));
+				where = String.format("and %s like '%%%s%%'"
+							, map.get("column")
+							, map.get("word").replace("'", "''"));
 			}
-			String sql = String.format("select * from vtblBoardM %s order by boardm_seq desc", where);
+			String sql = String.format("select * from (select rownum as rnum, a.* from (select * from vtblBoardM order by boardm_seq desc) a) where rnum between %s and %s %s order by boardm_seq desc", map.get("begin"), map.get("end"), where);
 
 			rs = stat.executeQuery(sql);
 
@@ -84,9 +86,9 @@ public class CommunityDAO {
 				dto.setCommunityc_name(rs.getString("communityc_name"));
 
 				dto.setIsnew(rs.getDouble("isnew"));
-				
-				dto.setCommentcount(rs.getInt("commentcount"));	
-				
+
+				dto.setCommentcount(rs.getInt("commentcount"));
+
 				list.add(dto);
 			}
 
@@ -184,6 +186,24 @@ public class CommunityDAO {
 
 	}
 
+	// View 서블릿이 글번호를 줄테니 조회수 +1 해주세요~
+	public void addUpCount(String boardm_seq) {
+
+		try {
+
+			String sql = "update tblBoardm set boardm_up = boardm_up + 1 where boardm_seq = ?";
+			pstat = conn.prepareStatement(sql);
+			pstat.setString(1, boardm_seq);
+
+			pstat.executeUpdate();
+
+		} catch (Exception e) {
+			System.out.println("BoardDAO.addReadCount()");
+			e.printStackTrace();
+		}
+
+	}
+
 	public int Communityedit(CommunityDTO dto) {
 		try {
 
@@ -221,65 +241,127 @@ public class CommunityDAO {
 		return 0;
 	}
 
-	//AddCommentOk 서블릿이 CommentDTO를 줄테니 insert해주세요~
-		public int addComment(CommentDTO cdto) {
-			
-			try {
+	// AddCommentOk 서블릿이 CommentDTO를 줄테니 insert해주세요~
+	public int addComment(CommentDTO cdto) {
 
-				String sql = "insert into tblCommentM (commentm_seq, commentm_name, commentm_content, commentm_date, commentm_up, postm_seq, memberm_seq) values (seqCommentM.nextVal, ?, ?, default, default, ?, ?)";
-				
-				pstat = conn.prepareStatement(sql);
-				pstat.setString(1, cdto.getMember_id());
-				pstat.setString(2, cdto.getCommentm_content());
-				pstat.setString(3, cdto.getPostm_seq());
-				pstat.setString(4, cdto.getMemberm_seq());
-				return pstat.executeUpdate();
+		try {
 
-			} catch (Exception e) {
-				System.out.println("BoardDAO.addComment()");
-				e.printStackTrace();
-			}
-			
-			return 0;
+			String sql = "insert into tblCommentM (commentm_seq, commentm_name, commentm_content, commentm_date, commentm_up, postm_seq, memberm_seq) values (seqCommentM.nextVal, ?, ?, default, default, ?, ?)";
+
+			pstat = conn.prepareStatement(sql);
+			pstat.setString(1, cdto.getMember_id());
+			pstat.setString(2, cdto.getCommentm_content());
+			pstat.setString(3, cdto.getPostm_seq());
+			pstat.setString(4, cdto.getMemberm_seq());
+			return pstat.executeUpdate();
+
+		} catch (Exception e) {
+			System.out.println("BoardDAO.addComment()");
+			e.printStackTrace();
 		}
 
-		
-		public ArrayList<CommentDTO> listComment(String boardm_seq) {
-			try {
+		return 0;
+	}
 
-				String sql = "select * from vtblCommentM where postm_seq = ? order by commentm_seq desc";
-				
-				pstat = conn.prepareStatement(sql);
-				pstat.setString(1, boardm_seq);
-				
-				rs = pstat.executeQuery();
-				
-				ArrayList<CommentDTO> clist = new ArrayList<CommentDTO>();
-				
-				while (rs.next()) {
-					//레코드 1줄 > DTO 1개
-					CommentDTO dto = new CommentDTO();
-					
-					dto.setCommentm_seq(rs.getString("commentm_seq"));
-					dto.setCommentm_name(rs.getString("commentm_name"));
-					dto.setCommentm_content(rs.getString("commentm_content"));
-					dto.setCommentm_date(rs.getString("commentm_date"));
-					dto.setCommentm_up(rs.getString("commentm_up"));
-					dto.setPostm_seq(rs.getString("postm_seq"));
-					dto.setMemberm_seq(rs.getString("memberm_seq"));
-					dto.setMember_id(rs.getString("member_id"));
-					
-					clist.add(dto);
-				}
-				
-				return clist;
+	public ArrayList<CommentDTO> listComment(String boardm_seq) {
+		try {
 
-			} catch (Exception e) {
-				System.out.println("BoardDAO.listComment()");
-				e.printStackTrace();
+			String sql = "select * from vtblCommentM where postm_seq = ? order by commentm_seq desc";
+
+			pstat = conn.prepareStatement(sql);
+			pstat.setString(1, boardm_seq);
+
+			rs = pstat.executeQuery();
+
+			ArrayList<CommentDTO> clist = new ArrayList<CommentDTO>();
+
+			while (rs.next()) {
+				// 레코드 1줄 > DTO 1개
+				CommentDTO dto = new CommentDTO();
+
+				dto.setCommentm_seq(rs.getString("commentm_seq"));
+				dto.setCommentm_name(rs.getString("commentm_name"));
+				dto.setCommentm_content(rs.getString("commentm_content"));
+				dto.setCommentm_date(rs.getString("commentm_date"));
+				dto.setCommentm_up(rs.getString("commentm_up"));
+				dto.setPostm_seq(rs.getString("postm_seq"));
+				dto.setMemberm_seq(rs.getString("memberm_seq"));
+				dto.setMember_id(rs.getString("member_id"));
+
+				clist.add(dto);
+			}
+
+			return clist;
+
+		} catch (Exception e) {
+			System.out.println("BoardDAO.listComment()");
+			e.printStackTrace();
+		}
+
+		return null;
+	}
+
+	// CommentDelOk 서블릿이 댓글 번호를 줄테니 삭제해주세요~
+	public int Commentdel(String commentm_seq) {
+		try {
+
+			String sql = "delete from tblCommentM where commentm_seq = ?";
+
+			pstat = conn.prepareStatement(sql);
+			pstat.setString(1, commentm_seq);
+
+			return pstat.executeUpdate();
+
+		} catch (Exception e) {
+			System.out.println("BoardDAO.Commentdel()");
+			e.printStackTrace();
+		}
+		return 0;
+	}
+
+	// DelOk 서블릿이 부모 글번호를 줄테니 달린 댓글을 모두 삭제해주세요~
+	public void CommentdelAll(String boardm_seq) {
+
+		try {
+
+			String sql = "delete from tblCommentM where postm_seq = ?";
+
+			pstat = conn.prepareStatement(sql);
+			pstat.setString(1, boardm_seq);
+
+			pstat.executeUpdate();
+
+		} catch (Exception e) {
+			System.out.println("BoardDAO.CommentdelAll()");
+			e.printStackTrace();
+		}
+
+	}
+
+	public int getTotalCount(HashMap<String, String> map) {
+		try {
+
+			String where = "";
+			
+			if (map.get("searchmode").equals("y")) {
+				where = String.format("where %s like '%%%s%%'"
+								, map.get("column")
+								, map.get("word").replace("'", "''"));
 			}
 			
-			return null;
+			String sql = "select count(*) as cnt from vtblBoardM" + where;
+			
+			rs = stat.executeQuery(sql);
+			
+			if (rs.next()) {
+				return rs.getInt("cnt");
+			}
+			
+		} catch (Exception e) {
+			System.out.println("BoardDAO.getTotalCount()");
+			e.printStackTrace();
 		}
+		return 0;
+	}
 
 }
