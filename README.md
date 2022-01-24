@@ -41,6 +41,7 @@
 ## 화면 설계 / 스토리보드
 화면을 설계하는 단계에서 중요하게 생각했던 건 화면 전반의 통일성이였습니다. <br>
 각 페이지마다 통일성을 주어 가독성을 높이고 추가적인 기능 습득 없이 페이지 접근과 화면 간의 전환이 가능하도록 구성하였습니다.
+
 <img src=""https://user-images.githubusercontent.com/95206325/150713040-2f6b998c-7962-492d-891f-759b2fc4e6b5.png"" width="400" height="600">
 ![미니투어 예약 페이지](https://user-images.githubusercontent.com/95206325/150713048-9b2c146d-b33b-4ee3-a921-8f4f240e709a.png)
 
