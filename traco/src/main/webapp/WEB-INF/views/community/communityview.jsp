@@ -57,10 +57,7 @@
 			</div>
 			
 			<div class="btns">
-			
-				<input type="button" value="${dto.boardm_up}"
-					class="btn btn-default"
-					>			
+				<input type="button" value="${dto.boardm_up}" class="btn btn-default">			
 			</div>
 			
 			<form method="POST" action="/traco/community/commentaddok.do">

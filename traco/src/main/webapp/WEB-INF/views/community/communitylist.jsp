@@ -81,21 +81,23 @@
 						<td>
 							<input type="submit" value="검색하기" class="btn btn-default">
 						</td>
+						<td>
+							<input type="button" value="목록보기"	class="btn btn-default" onclick="location.href='/traco/community/communitylist.do';">
+						</td>
 						<c:if test="${not empty member_id}">
 						<td>
 							<input type="button" value="내글보기" class="btn btn-default" onclick="location.href='/traco/community/communitylist.do?column=member_id&word=${member_id}';">
-						</td>
+						</td>	
 						</c:if>
+						
 					</tr>
 				</table>
 				</form>
 			</div>	
 			<div class="btns">
-			
-			<input type="button" value="목록보기"
-					class="btn btn-default"
-					onclick="location.href='/traco/community/communitylist.do';">
-					
+<!-- 				<input type="button" value="목록보기" -->
+<!-- 					class="btn btn-default" -->
+<!-- 					onclick="location.href='/traco/community/communitylist.do';"> -->
 				<c:if test="${not empty member_id}">
 				<input type="button" value="글쓰기"
 					class="btn btn-primary"

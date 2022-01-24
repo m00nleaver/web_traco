@@ -32,7 +32,6 @@
 				<div class="panel-body">
 								
 					<c:if test="${not empty member_id}">
-
 					<input type="button" value="로그아웃"
 						class="btn btn-default"
 						onclick="location.href='/traco/member/logoutok.do';">
@@ -45,6 +44,9 @@
 						
 					<hr>
 					
+								
+				
+			
 					<form method="POST" action="/traco/member/loginok.do">
 						<input type="hidden" name="member_id" value="xtmy6gw9">
 						<input type="hidden" name="member_pw" value="3ezHJ">
