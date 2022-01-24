@@ -39,6 +39,7 @@
 ![image](https://user-images.githubusercontent.com/95206325/150712531-1906d69c-2df6-4acb-91e8-15338d8660f0.png)
 
 ## 화면 설계 / 스토리보드
+* 화면설계
 화면을 설계하는 단계에서 중요하게 생각했던 건 화면 전반의 통일성이였습니다. <br>
 각 페이지마다 통일성을 주어 가독성을 높이고 추가적인 기능 습득 없이 페이지 접근과 화면 간의 전환이 가능하도록 구성하였습니다.
 
@@ -47,6 +48,10 @@
 <img src="https://user-images.githubusercontent.com/95206325/150713078-b738df4b-b1df-4fa4-93ff-2cf4957cf5c4.png" width="500" height="600">
 <img src="https://user-images.githubusercontent.com/95206325/150713092-885ab12c-116d-42a7-a245-8953f620d031.png" width="500" height="600">
 
+* 스토리보드
+요구분석 단계와 마찬가지로 최대한 자세히 모든 기능에 대한 스토리보드를 작성하고자 노력하였습니다.
 
+![image](https://user-images.githubusercontent.com/95206325/150713607-22cf910b-24e3-453c-921d-b03276b0e04c.png)
+![image](https://user-images.githubusercontent.com/95206325/150713632-4e08121c-89e5-4751-9de6-126aa137dec9.png)
 
 
