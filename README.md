@@ -16,3 +16,10 @@
 * 노랑풍선 / 지역별, 테마별 패키지(https://www.ybtour.co.kr/product/localList.yb?menu=DMT&dspSid=ADAS000)
 * 유랑동행카페 / 커뮤니티(https://cafe.naver.com/firenze)
 
+유사한 주제의 사이트와 원하는 성격의 메뉴가 있는 사이트를 벤치마킹하였습니다. <br>
+벤치마킹한 사이트는 분석을 통해 사이트의 방향성을 잡았습니다.
+
+* 분석 내용의 일부
+![image](https://user-images.githubusercontent.com/95206325/150711943-5c2bdb47-3336-4a7d-a187-0777d56df473.png)
+![image](https://user-images.githubusercontent.com/95206325/150711970-1c7b60c7-0e09-49d4-b0b5-8bf6eea855cd.png)
+![image](https://user-images.githubusercontent.com/95206325/150712015-8126db02-5872-41e6-bdcb-bb491b36d7cc.png)
