@@ -9,13 +9,13 @@
 
 ## 벤치마킹
 * 참고 사이트
-> 여수시 / 나의 여행코스 만들기(https://www.yeosu.go.kr/tour/ybscript.io/itinerary_v2/index#)
-> 마이리얼트립 / 여행상품 중개 판매 플랫폼(https://www.myrealtrip.com/)
-> 유럽여행 계획 및 투어 판매 사이트(https://www.stubbyplanner.com/)
-> 대한민국 구석구석 / 국내 여행지 코스 공유(https://korean.visitkorea.or.kr/main/cs_main.do)
-> 야놀자 / 교통수단 연계 판매 기능(https://www.yanolja.com/train)
-> 노랑풍선 / 지역별, 테마별 패키지(https://www.ybtour.co.kr/product/localList.yb?menu=DMT&dspSid=ADAS000)
-> 유랑동행카페 / 커뮤니티(https://cafe.naver.com/firenze)
+> 여수시 / 나의 여행코스 만들기(https://www.yeosu.go.kr/tour/ybscript.io/itinerary_v2/index#) <br>
+> 마이리얼트립 / 여행상품 중개 판매 플랫폼(https://www.myrealtrip.com/) <br>
+> 유럽여행 계획 및 투어 판매 사이트(https://www.stubbyplanner.com/) <br>
+> 대한민국 구석구석 / 국내 여행지 코스 공유(https://korean.visitkorea.or.kr/main/cs_main.do) <br>
+> 야놀자 / 교통수단 연계 판매 기능(https://www.yanolja.com/train) <br>
+> 노랑풍선 / 지역별, 테마별 패키지(https://www.ybtour.co.kr/product/localList.yb?menu=DMT&dspSid=ADAS000) <br>
+> 유랑동행카페 / 커뮤니티(https://cafe.naver.com/firenze) <br>
 
 유사한 주제의 사이트와 원하는 성격의 메뉴가 있는 사이트를 벤치마킹하였습니다. <br>
 벤치마킹한 사이트는 분석을 통해 사이트의 방향성을 잡았습니다.
