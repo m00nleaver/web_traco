@@ -28,4 +28,17 @@
 ![image](https://user-images.githubusercontent.com/95206325/150712068-1fb79c98-d8a8-40a2-a0cd-19d840de069c.png)
 
 
+## 요구분석서
+업무 분담과 협업이 필요한 팀프로젝트 특성상 자신의 업무와 타인의 업무까지 정확한 숙지가 필요했습니다.
+때문에 사전에 혼란을 방지하고자 최대한 자세히 작성하려 노력하였습니다.
+
+<br>
+* 요구 분석서 내용의 일부
+<br>
+![image](https://user-images.githubusercontent.com/95206325/150712531-1906d69c-2df6-4acb-91e8-15338d8660f0.png)
+![image](https://user-images.githubusercontent.com/95206325/150712629-b14a51f0-c106-4c7e-83a4-908b2c3ebc45.png)
+
+
+
+
 
