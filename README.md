@@ -51,7 +51,8 @@
 * 스토리보드
 요구분석 단계와 마찬가지로 최대한 자세히 모든 기능에 대한 스토리보드를 작성하고자 노력하였습니다.
 
-![image](https://user-images.githubusercontent.com/95206325/150713607-22cf910b-24e3-453c-921d-b03276b0e04c.png)
-![image](https://user-images.githubusercontent.com/95206325/150713632-4e08121c-89e5-4751-9de6-126aa137dec9.png)
+<img src="https://user-images.githubusercontent.com/95206325/150713607-22cf910b-24e3-453c-921d-b03276b0e04c.png" width="600" height="400">
+<img src="https://user-images.githubusercontent.com/95206325/150713632-4e08121c-89e5-4751-9de6-126aa137dec9.png" width="600" height="400">
+
 
 
