@@ -43,7 +43,8 @@
 				<div class="panel-body">
 										
 						<div>아이디</div>
-						<input type="text" name="member_id" class="form-control" placeholder="아이디" required>								
+						<input type="text" id="member_id" name="member_id" class="form-control" placeholder="아이디" required autofocus>
+						
 												
 						<div>이메일</div>
 						<input type="text" name="member_email" class="form-control" placeholder="이메일" required>
@@ -58,7 +59,7 @@
 	</main>
 	
 	<script>
-	
+
 	</script>
 </body>
 </html>

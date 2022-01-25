@@ -1,0 +1,56 @@
+.communityaddbtns {
+	width: 700px;
+	margin: 0 auto;
+	text-align: right;
+}
+.communityviewbtns{
+	width: 700px;
+	margin: 0 auto;
+	text-align: right;
+}
+.communityeditbtns{
+	width: 700px;
+	margin: 0 auto;
+	text-align: right;
+}
+
+/* 댓글 */
+.commentadd{
+	width: 700px;
+	margin: 0 auto;
+}
+
+.commentadd textarea {
+	resize: none;
+	width: 600px;
+	height: 100px;
+	margin: 0 auto;
+}
+
+.table.comment {
+	width: 600px;
+	margin: 20px auto;
+	margin-bottom: 100px;
+}
+
+.table.comment td:nth-child(1) {
+	width: 500px;
+	min-height : 70px;
+	position: relative;
+	left: 5px;
+	top: 0;
+	padding-bottom: 25px;
+}
+
+.table.comment td:nth-child(1) small {
+	color: #888;
+	position: absolute;
+	bottom: 5px;
+}
+
+.upbtn{
+	position: relative;
+	margin: 0px auto;
+	top: -34px;
+	width:0px;
+}

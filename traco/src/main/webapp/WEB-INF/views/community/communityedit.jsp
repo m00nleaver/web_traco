@@ -28,7 +28,7 @@
 				</tr>
 			</table>
 			
-			<div class="btns">
+			<div class="communityeditbtns">
 				<input type="button" value="돌아가기"
 					class="btn btn-default"
 					onclick="location.href='/traco/community/communityview.do?boardm_seq=${dto.boardm_seq}';">

@@ -19,7 +19,7 @@
 			<form method="POST" action="/traco/community/communityaddok.do">
 				<table class="table table-bordered add">
 				
-					<select class="form-control" name ="communityc_seq" >
+					<select class="form-control" name ="communityc_seq" style="width:700px; text-align: center; margin: 0px auto;" >
 						<c:forEach items="${Kategorie}" var="dto">
 							<option value="${dto.communityc_seq}">${dto.communityc_name}</option>
 						</c:forEach>
@@ -37,7 +37,7 @@
 					</tr>
 				</table>
 
-				<div class="btns">
+				<div class="communityaddbtns">
 					<input type="button" value="돌아가기" class="btn btn-default"
 						onclick="location.href='/traco/community/communitylist.do';">
 					<input type="submit" value="글쓰기" class="btn btn-primary">

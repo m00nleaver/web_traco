@@ -39,7 +39,7 @@
 				</tr>
 			</table>
 			
-			<div class="btns">
+			<div class="communityviewbtns">
 			
 				<input type="button" value="돌아가기"
 					class="btn btn-default"
@@ -56,8 +56,10 @@
 				</c:if>						
 			</div>
 			
-			<div class="btns">
-				<input type="button" value="${dto.boardm_up}" class="btn btn-default">			
+			<div class="upbtn">
+				<button id="boardm_up" class="btn label-danger">
+					<span id="result" class="glyphicon glyphicon-heart">${dto.boardm_up}</span>
+				</button>
 			</div>
 			
 			<form method="POST" action="/traco/community/commentaddok.do">
@@ -73,14 +75,13 @@
 			<table class="table table-bordered comment">
 				<c:forEach items="${clist}" var="cdto">
 				<tr>
+					<td>${cdto.commentm_content}
+						<small style="left: 2px;">${cdto.member_id}</small><small style="right: 15px;">${cdto.commentm_date}</small></td>
+					<c:if test="${cdto.commentm_name == member_id}">
 					<td>
-						${cdto.commentm_content}
-						<small>${cdto.member_id} ${cdto.commentm_date} ${cdto.commentm_up}</small></td>
-					<td>
-						<c:if test="${cdto.commentm_name == member_id}">
 						<input type="button" value="삭제하기"	class="btn btn-default"	onclick="location.href='/traco/community/commentdelok.do?commentm_seq=${cdto.commentm_seq}&boardm_seq=${dto.boardm_seq}';">
-						</c:if>
 					</td>
+					</c:if>
 				</tr>
 				</c:forEach>
 			</table>
@@ -90,7 +91,26 @@
 	</main>
 	
 	<script>
-	
+	var sum = ${dto.boardm_up};	
+		
+	$('#boardm_up').click(()=>{
+		
+		$.ajax({
+			type: 'GET',
+			url: '/traco/community/communityviewdata.do',
+			data: 'boardm_seq=' + ${dto.boardm_seq},
+			dataType: 'text',
+			success: function(result) {
+				if (result == '1') {	
+					sum += 1;					
+					$('#result').text(sum);
+				} 
+			}
+			
+		});
+		
+	});
+
 	
 	</script>
 </body>

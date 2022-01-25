@@ -14,7 +14,9 @@
 .marign{
 	margin-top: 100px;
 }
-
+.col-md-3 {
+    width: 24%;
+}
 </style>
 </head>
 <body>
@@ -24,43 +26,53 @@
 		<%@include file="/WEB-INF/views/inc/header.jsp"%>
 		<section class="marign">
 			<div class="container">
-
+			
 				<div id="myCarousel" class="carousel slide" data-ride="carousel"">
-
+					
 					<ol class="carousel-indicators">
-						<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-						<li data-target="#myCarousel" data-slide-to="1"></li>
-						<li data-target="#myCarousel" data-slide-to="2"></li>
-						<li data-target="#myCarousel" data-slide-to="3"></li>
-						<li data-target="#myCarousel" data-slide-to="4"></li>
+					<c:forEach items="${banner}" var="dto">
+					
+						<c:if test="${dto.banneri_seq == 1}">
+						<li data-target="#myCarousel" data-slide-to="{dto.banneri_seq}" class="active"></li>
+						</c:if>
+						
+						<c:if test="${dto.banneri_seq > 1}">
+						<li data-target="#myCarousel" data-slide-to="{dto.banneri_seq}"></li>
+						</c:if>
+						
+					</c:forEach>
+					
+<!-- 					<li data-target="#myCarousel" data-slide-to="0" class="active"></li> -->
+<!-- 						<li data-target="#myCarousel" data-slide-to="1"></li> -->
+<!-- 						<li data-target="#myCarousel" data-slide-to="2"></li> -->
+<!-- 						<li data-target="#myCarousel" data-slide-to="3"></li> -->
+
+
 					</ol>
 
 					<div class="carousel-inner">
-
+					<c:forEach items="${banner}" var="dto">
+					<c:if test="${dto.banneri_seq == 1}">
 						<div class="item active">
-							<img src="/traco/asset/images/cat01.jpg" alt="Los Angeles"
+							<img src="/traco/asset/images/banner/${dto.banneri_imageurl}" alt=""
 								style="width: 100%; height: 200px;">
 						</div>
-
+					</c:if>
+					<c:if test="${dto.banneri_seq > 1}">
 						<div class="item">
-							<img src="/traco/asset/images/cat02.jpg" alt="Chicago"
+							<img src="/traco/asset/images/banner/${dto.banneri_imageurl}" alt=""
 								style="width: 100%; height: 200px;">
 						</div>
-
-						<div class="item">
-							<img src="/traco/asset/images/cat03.jpg" alt="New York"
-								style="width: 100%; height: 200px;">
-						</div>
-
-						<div class="item">
-							<img src="/traco/asset/images/cat04.jpg" alt="New York"
-								style="width: 100%; height: 200px;">
-						</div>
-
-						<div class="item">
-							<img src="/traco/asset/images/cat05.jpg" alt="New York"
-								style="width: 100%; height: 200px;">
-						</div>
+					</c:if>
+					</c:forEach>
+<!-- 						<div class="item active"> -->
+<!-- 							<img src="/traco/asset/images/cat01.jpg" alt="Los Angeles" -->
+<!-- 								style="width: 100%; height: 200px;"> -->
+<!-- 						</div> -->
+<!-- 						<div class="item"> -->
+<!-- 							<img src="/traco/asset/images/cat02.jpg" alt="Chicago" -->
+<!-- 								style="width: 100%; height: 200px;"> -->
+<!-- 						</div> -->
 
 					</div>
 
@@ -81,6 +93,8 @@
 		<section class="marign">
 			<div class="container">
 				<h1>패키지</h1>
+
+				<c:forEach items="${toppackage}" var="dto">
 				<div class="row">
 					<div class="col-sm-6 col-md-3">
 						<div class="thumbnail" onclick="location.href='/traco/member/login.do';">
@@ -88,59 +102,42 @@
 								src="https://cdn.pixabay.com/photo/2016/01/19/17/57/car-1149997_960_720.jpg"
 								alt="...">
 							<div class="caption">
-								<p>티켓/패스 ・ 서울</p>
-								<h4>롯데월드 자유이용권</h4>
-								<p>17,000원 / 1인</p>
+								<p>${dto.area_name }</p>
+								<h4>${dto.pkgpm_name}</h4>
+								<p>${dto.pkgpm_adultprice}원 / 성인</p><p>${dto.pstatus}</p>
 							</div>
 						</div>
 					</div>
+				</c:forEach>							
+				</div>
+			</div>
+		</section>
+		
+		<section class="marign">
+			<div class="container">
+				<h1>미니투어</h1>
+
+				<c:forEach items="${topmini}" var="dto">
+				<div class="row">
 					<div class="col-sm-6 col-md-3">
-						<div class="thumbnail">
+						<div class="thumbnail" onclick="location.href='/traco/member/login.do';">
 							<img
 								src="https://cdn.pixabay.com/photo/2016/01/19/17/57/car-1149997_960_720.jpg"
 								alt="...">
 							<div class="caption">
-								<h3>Thumbnail label</h3>
-								<p>.......</p>
-								<p>
-									<a href="#" class="btn btn-primary" role="button">Button</a>
-								</p>
+								<p>${dto.minictg_name} | ${dto.area_name}</p>
+								<h4>${dto.minipm_name}</h4>
+								<p>${dto.minipm_price1}원 / 성인</p><p>${dto.pstatus}</p>
 							</div>
 						</div>
 					</div>
-					<div class="col-sm-6 col-md-3">
-						<div class="thumbnail">
-							<img
-								src="https://cdn.pixabay.com/photo/2016/01/19/17/57/car-1149997_960_720.jpg"
-								alt="...">
-							<div class="caption">
-								<h3>Thumbnail label</h3>
-								<p>...</p>
-								<p>
-									<a href="#" class="btn btn-primary" role="button">Button</a>
-								</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-sm-6 col-md-3">
-						<div class="thumbnail ">
-							<img
-								src="https://cdn.pixabay.com/photo/2016/01/19/17/57/car-1149997_960_720.jpg"
-								alt="...">
-							<div class="caption">
-								<h3>Thumbnail label</h3>
-								<p>...</p>
-								<p>
-									<a href="#" class="btn btn-primary" role="button">Button</a>
-								</p>
-							</div>
-						</div>
-					</div>
+				</c:forEach>							
 				</div>
 			</div>
 		</section>
 
-		<div>"${member_seq}"</div>
+		<div>"${member_seq}" </div>
+	
 		<%@include file="/WEB-INF/views/inc/footer.jsp"%>
 	</main>
 	<script>
