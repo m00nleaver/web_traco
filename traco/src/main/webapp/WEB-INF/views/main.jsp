@@ -16,6 +16,7 @@
 		<section class="content">
 			<div class="frame"></div>
 		</section>
+		<div>"${member_seq}"</div>
 		<%@include file="/WEB-INF/views/inc/footer.jsp" %>
 	</main>
 	<script>

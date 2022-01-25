@@ -74,6 +74,7 @@ html {
 	*/
 	min-height: 500px;
 	padding: 20px;
+	padding-top : 100px;
 }
 
 
@@ -191,7 +192,7 @@ html {
 
 /* 목록보기 테이블 */
 .table.list {
-	width: 700px;
+	width: 1000px;
 	margin: 0px auto;
 
 }
