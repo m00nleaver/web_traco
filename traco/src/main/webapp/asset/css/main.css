@@ -231,8 +231,12 @@ html {
 
 
 /* 항공 */
+
 .ftable{
-	margin:auto;
+	
+	margin-left:auto;
+	margin-right:auto;
+	margin-top: 30px;
 	font-size: 1em;
 	text-align: center;
 	}
@@ -275,4 +279,28 @@ html {
 	color: #555555;
 	font-size: 0.8em;
 	}
-
+	button:focus{
+	background:white;
+	border: none;
+	outline: none;
+	clear: both;
+	
+	}
+	
+	.btn:hover{
+	background: rgb(239,239,239);
+	color: red;
+	}
+	
+	.show{
+	display: block;
+	}
+	.blankbox{
+	width: 242.54px;
+	visibility: hidden;
+	 height: 27px;
+	}
+	.blanklabel{
+	width: 55.34px;
+	height:25px;
+	}
