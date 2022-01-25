@@ -27,7 +27,7 @@ width: 200px;
 		<section class="content">
 			
 			
-			
+			<!-- ㄴㅇㄹ -->
 			
 			<div class="rezpreview">
 			결과
