@@ -1,12 +1,6 @@
-
-package com.project.traco.flightticket;
+package com.project.traco.packagetour;
 
 import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.HashMap;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -15,14 +9,22 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/flight.do")
-public class Flight extends HttpServlet {
-
+@WebServlet("/packagetour/jeju.do")
+public class Jeju extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
+//		할일 
+//		1. DB 작업 : select > DAO에게 위임
 		
-		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/flight/flight.jsp");
+		
+		JejuDAO dao = new JejuDAO();
+		ArrayList<JejuDTO> list = dao.list()
+		
+		
+		
+		
+		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/packagetour/jeju.jsp");
 
 		dispatcher.forward(req, resp);
 	}

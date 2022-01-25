@@ -1,3 +1,4 @@
+
 package com.project.traco.flightticket;
 
 import java.io.IOException;
@@ -103,4 +104,5 @@ public class Flightlist extends HttpServlet {
 
 		dispatcher.forward(req, resp);
 	}
+
 }

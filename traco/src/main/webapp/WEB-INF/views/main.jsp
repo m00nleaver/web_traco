@@ -20,6 +20,7 @@
 <body>
 
 	<main class="main">
+
 		<%@include file="/WEB-INF/views/inc/header.jsp"%>
 		<section class="marign">
 			<div class="container">
