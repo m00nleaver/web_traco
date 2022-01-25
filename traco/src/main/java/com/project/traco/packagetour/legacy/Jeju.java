@@ -1,4 +1,4 @@
-package com.project.traco;
+package com.project.traco.packagetour;
 
 import java.io.IOException;
 
@@ -9,14 +9,22 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/main.do")
-public class Main extends HttpServlet {
+@WebServlet("/packagetour/jeju.do")
+public class Jeju extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
+//		할일 
+//		1. DB 작업 : select > DAO에게 위임
 		
 		
-		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/main.jsp");
+		JejuDAO dao = new JejuDAO();
+		ArrayList<JejuDTO> list = dao.list()
+		
+		
+		
+		
+		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/packagetour/jeju.jsp");
 
 		dispatcher.forward(req, resp);
 	}
