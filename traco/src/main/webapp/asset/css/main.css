@@ -24,10 +24,11 @@ body, p, div, span, a, table, th, td, input, textarea, option, ul, ol, li, dl, d
 	/*font-family: 'Gowun Dodum', sans-serif;*/
 	font-family: 'SBAggroM', sans-serif;
 	/*font-weight: bold;*/
-
 }
 .search{
 	font-size:0.8em;
+
+
 }
 
 html, body {
@@ -157,7 +158,7 @@ html {
 }
 .header .menu .glyphicon-menu-hamburger{
 	margin:0 5px;
-	font-size: 20px;
+	font-size: 14px;
 	color: black;
 }
 
@@ -184,6 +185,36 @@ html {
 .header .menu li:hover {
 	color: #EE6C4D;
 
+}
+
+
+/*search*/
+.container-1 input#search:hover, .container-1 input#search:focus, .container-1 input#search:active{
+    outline:none;
+    background:white;
+  }
+  
+  
+.container-1 input#search{
+  font-family: 'SBAggroM';
+  width: 200px;
+  height: 17px;
+  background: #ffffff;
+  border: none;
+  font-size: 10pt;
+  float: left;
+  color: #262626;
+  padding-left: 45px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+
+  
+    -webkit-transition: background .55s ease;
+  -moz-transition: background .55s ease;
+  -ms-transition: background .55s ease;
+  -o-transition: background .55s ease;
+  transition: background .55s ease;
 }
 
 
@@ -230,6 +261,9 @@ html {
 
 .table.add th { width: 150px; text-align: center; vertical-align: middle; }
 .table.add td { width: 550px; }
+
+
+/* 항공 */
 
 .table.add textarea { resize: none; height: 300px; }
 
@@ -308,3 +342,76 @@ html {
 .content.admin{margin-top:200px;}
 
 
+
+.ftable{
+	
+	margin-left:auto;
+	margin-right:auto;
+	margin-top: 30px;
+	font-size: 1em;
+	text-align: center;
+	}
+	.ftable th{
+	text-align: center;
+	}
+	
+	.flight-body{
+	text-align:center;
+	}
+	.flight_search{
+	list-style: none;
+	margin-left: auto;
+	margin-right: auto;
+	display:inline;
+	}
+	.flight_search li{
+	
+	cursor:pointer;
+	padding: 10px;
+	display:inline;
+	color: #98C1D9;
+	}
+	.flight_search li:active{
+	
+	color: #293241;
+	}
+	
+	/*g*/
+	.input-group{
+	margin: 10px 10px;
+	}
+	.btn-secondary{
+	margin: 10px 10px;
+	
+	}
+	
+	select{
+	margin: 0px 10px;
+	color: #555555;
+	font-size: 0.8em;
+	}
+	button:focus{
+	background:white;
+	border: none;
+	outline: none;
+	clear: both;
+	
+	}
+	
+	.btn:hover{
+	background: rgb(239,239,239);
+	color: red;
+	}
+	
+	.show{
+	display: block;
+	}
+	.blankbox{
+	width: 242.54px;
+	visibility: hidden;
+	 height: 27px;
+	}
+	.blanklabel{
+	width: 55.34px;
+	height:25px;
+	}
