@@ -28,7 +28,6 @@ body, p, div, span, a, table, th, td, input, textarea, option, ul, ol, li, dl, d
 }
 .search{
 	font-size:0.8em;
-
 }
 
 html, body {
@@ -194,7 +193,7 @@ html {
 
 
 /* 메인화면 */
-.container {}
+
 
 /* 목록보기 테이블 */
 .table.list {
@@ -216,10 +215,11 @@ html {
 
 /* 버튼 컨테이너 */
 .btns {
-	width: 700px;
+	width: 500px;
 	margin: 20px auto;	
 	text-align: right;
 }
+
 
 
 /* 글쓰기 테이블 */
@@ -283,8 +283,21 @@ html {
 
 /* 페이지바 */
 .pagebar {
-	text-align: center;
-	margin-top: 20px; 
+	width: 700px;
+	position: relative;
+	text-align: right;
+	top: -24px;
 
+}
+
+.btns-right{
+	width: 1050px;
+	margin: 10px auto;	
+	text-align: right;
+}
+.search .table_search{
+	position: relative;
+	margin: 0px auto;
+	top: -24px;
 }
 

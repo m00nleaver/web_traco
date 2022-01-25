@@ -52,7 +52,6 @@
 					<td>${dto.boardm_date}</td>
 					<td>${dto.boardm_view}</td>
 			
-				
 				</tr>
 				</c:forEach>
 				<c:if test="${list.size() == 0}">
@@ -61,12 +60,20 @@
 				</tr>
 				</c:if>
 			</table>
+			<div class="btns-right">
+				<c:if test="${not empty member_id}">
+					<input type="button" value="내글보기" class="btn btn-success" onclick="location.href='/traco/community/communitylist.do?column=member_id&word=${member_id}';">
+				</c:if>
+				<c:if test="${not empty member_id}">
+				<input type="button" value="글쓰기"	class="btn btn-primary"	onclick="location.href='/traco/community/communityadd.do';">
+				</c:if>
+			</div>
 			
 			<div class="pagebar">${pagebar}</div>
 			
 			<div class="search">
 				<form method="GET" action="/traco/community/communitylist.do">
-				<table style="width:500px;margin:20px auto;">
+				<table class="table_search">
 					<tr>
 						<td>
 							<select name="column" class="form-control">
@@ -76,7 +83,7 @@
 							</select>
 						</td>
 						<td>
-							<input type="text" name="word" class="form-control" required>
+							<input type="text" name="word" class="form-control" required >
 						</td>
 						<td>
 							<input type="submit" value="검색하기" class="btn btn-default">
@@ -84,27 +91,12 @@
 						<td>
 							<input type="button" value="목록보기"	class="btn btn-default" onclick="location.href='/traco/community/communitylist.do';">
 						</td>
-						<c:if test="${not empty member_id}">
-						<td>
-							<input type="button" value="내글보기" class="btn btn-default" onclick="location.href='/traco/community/communitylist.do?column=member_id&word=${member_id}';">
-						</td>	
-						</c:if>
-						
+							
 					</tr>
 				</table>
 				</form>
 			</div>	
-			<div class="btns">
-<!-- 				<input type="button" value="목록보기" -->
-<!-- 					class="btn btn-default" -->
-<!-- 					onclick="location.href='/traco/community/communitylist.do';"> -->
-				<c:if test="${not empty member_id}">
-				<input type="button" value="글쓰기"
-					class="btn btn-primary"
-					onclick="location.href='/traco/community/communityadd.do';">
-				</c:if>
-				
-			</div>
+			
 
 		</section>
 		<%@include file="/WEB-INF/views/inc/footer.jsp" %>

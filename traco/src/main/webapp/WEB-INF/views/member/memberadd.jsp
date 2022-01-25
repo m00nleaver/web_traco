@@ -61,7 +61,7 @@
 						</select>
 												
 						<div>이메일</div>
-						<input type="text" name="member_email" class="form-control" placeholder="이메일" required>
+						<input type="email" name="member_email" class="form-control" placeholder="이메일" required>
 						
 						<input type="submit" value="회원가입하기" class="btn btn-primary">
 					
