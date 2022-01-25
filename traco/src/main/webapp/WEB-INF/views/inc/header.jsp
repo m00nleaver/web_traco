@@ -39,10 +39,10 @@
 		<div class ="submenu">
 		<span class="fa fa-user me-sm-1" aria-hidden="true" onclick="location.href='/traco/member/member.do';"></span>
 		<span class="fas fa-shopping-cart"></span>
-		<span class="far fa-list-alt"></span>
+		<span class="far fa-list-alt" onclick="location.href='/traco/admin/adminmain.do';"></span>
 		</div>
 		
-
+		
 	</ul>
 
 </header>

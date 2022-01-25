@@ -202,7 +202,10 @@ html {
 }
 
 
-/* 메인화면 */
-.container {}
+/* 관리자 메인 화면*/
+.table.adminmenu{width:1000px;margin:0 auto;}
+.table.adminmenu tr th {text-align:center;}
 
+.contentname td{font-size:12px; text-align:center;}
+.content.admin{margin-top:200px;}
 
