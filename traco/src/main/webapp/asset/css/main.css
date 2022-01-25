@@ -4,7 +4,6 @@
 /*@font-face {
     font-family: 'CookieRun-Regular';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/CookieRun-Regular.woff') format('woff');
-
     font-weight: normal;
     font-style: normal;
 }*/
@@ -25,12 +24,10 @@ body, p, div, span, a, table, th, td, input, textarea, option, ul, ol, li, dl, d
 	/*font-family: 'Gowun Dodum', sans-serif;*/
 	font-family: 'SBAggroM', sans-serif;
 	/*font-weight: bold;*/
-	font-size:1.2em;
 }
 .search{
 	font-size:0.8em;
-	
-	
+
 
 }
 
@@ -190,6 +187,7 @@ html {
 
 }
 
+
 /*search*/
 .container-1 input#search:hover, .container-1 input#search:focus, .container-1 input#search:active{
     outline:none;
@@ -218,19 +216,132 @@ html {
   -o-transition: background .55s ease;
   transition: background .55s ease;
 }
-/* 목록보기 테이블 */
-.table.list {
-	width: 700px;
-	margin: 0px auto;
 
-}
 
 .header .menu span:hover {
 	color: #EE6C4D;
 }
 
 
+/* 메인화면 */
+
+
+/* 목록보기 테이블 */
+.table.list {
+	width: 1050px;
+	margin: 0px auto;
+}
+
+.table.list th, .table.list td { text-align: center; }
+
+.table.list th:nth-child(1) { width: 50px; }
+.table.list th:nth-child(2) { width: 150px; }
+.table.list th:nth-child(3) { widows:450px; }
+.table.list th:nth-child(4) { width: 50px; }
+.table.list th:nth-child(5) { width: 150px; }
+.table.list th:nth-child(6) { width: 150px; }
+.table.list th:nth-child(7) { width: 50px; }
+.table.list td:nth-child(3) { text-align: left; }
+
+
+/* 버튼 컨테이너 */
+.btns {
+	width: 500px;
+	margin: 20px auto;	
+	text-align: right;
+}
+
+
+
+/* 글쓰기 테이블 */
+.table.add {
+	width: 700px;
+	margin: 0 auto;
+}
+
+.table.add th { width: 150px; text-align: center; vertical-align: middle; }
+.table.add td { width: 550px; }
+
+
 /* 항공 */
+
+.table.add textarea { resize: none; height: 300px; }
+
+.form-control:focus {
+	border-color: #CCC;
+	outline: 0;
+	-webkit-box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%);
+	box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%);
+}
+
+/* 댓글 */
+.commentadd {
+	width: 600px;
+	margin: 0 auto;
+	margin-top: 35px;
+	margin-bottom: 20px;
+}
+
+.commentadd textarea {
+	resize: none;
+	width: 500px;
+	height: 100px;
+}
+
+.table.comment {
+	width: 600px;
+	margin: 20px auto;
+	margin-bottom: 100px;
+}
+
+.table.comment td:nth-child(1) {
+	width: 500px;
+	position: relative;
+	left: 0;
+	top: 0;
+	padding-bottom: 25px;
+}
+
+.table.comment td:nth-child(1) small {
+	color: #888;
+	position: absolute;
+	right: 10px;
+	bottom: 5px;
+}
+
+.table.comment td:nth-child(2) {
+	text-align: center;
+}
+
+
+/* 페이지바 */
+.pagebar {
+	width: 700px;
+	position: relative;
+	text-align: right;
+	top: -24px;
+
+}
+
+.btns-right{
+	width: 1050px;
+	margin: 10px auto;	
+	text-align: right;
+}
+.search .table_search{
+	position: relative;
+	margin: 0px auto;
+	top: -24px;
+}
+
+/* 관리자 메인 화면*/
+.table.adminmenu tr th {text-align:center;}
+
+.contentname td{font-size:12px; text-align:center;}
+.table.adminmenu{width:1000px;margin:0 auto;}
+.content.admin{margin-top:200px;}
+
+
 
 .ftable{
 	

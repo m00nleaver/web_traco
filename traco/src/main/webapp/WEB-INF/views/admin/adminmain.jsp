@@ -7,17 +7,17 @@
 <title>Insert title here</title>
 <%@ include file="/WEB-INF/views/inc/asset.jsp" %>
 <style>
-
+	.main{height:500px;}
 </style>
 </head>
 <body>
 
 	<main class="main">
-		<%@include file="/WEB-INF/views/inc/header.jsp" %>
-		<section class="content">
-			커뮤니티
+		<%@include file="/WEB-INF/views/admin/admininc/adminheader.jsp" %>
+		<section class="content admin">
+			
 		</section>
-		<%@include file="/WEB-INF/views/inc/footer.jsp" %>
+		
 	</main>
 	<script>
 	

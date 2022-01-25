@@ -1,4 +1,4 @@
-package com.project.traco.member;
+package com.project.traco.admin;
 
 import java.io.IOException;
 
@@ -8,24 +8,29 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
-@WebServlet("/member/member.do")
-public class Member extends HttpServlet {
+@WebServlet("/admin/pdelok.do")
+public class PdelOk extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		
+		String seq = req.getParameter("seq");
+		
+		AdminPDAO pdao = new AdminPDAO();
+		
+		
+		
 	
-		HttpSession session = req.getSession();
+		pdao.ipdel(seq);
 		
-		if (session.getAttribute("member_id") != null) {
-			
-			MemberDAO dao = new MemberDAO();
-	
-			
-		}
+		int result = pdao.delPackage(seq);
+		System.out.println(result);
+		
+		req.setAttribute("result", result);
 		
 		
-		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/member/member.jsp");
+		
+		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/admin/pdelok.jsp");
 
 		dispatcher.forward(req, resp);
 	}

@@ -1,4 +1,4 @@
-package com.project.traco.community;
+package com.project.traco.admin;
 
 import java.io.IOException;
 
@@ -9,12 +9,16 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/community.do")
-public class Community extends HttpServlet {
+@WebServlet("/admin/mdel.do")
+public class Mdel extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
-		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/community/community.jsp");
+		
+		String seq = req.getParameter("seq");
+		
+		req.setAttribute("seq", seq);
+		
+		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/admin/mdel.jsp");
 
 		dispatcher.forward(req, resp);
 	}
