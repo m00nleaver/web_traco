@@ -233,7 +233,6 @@ html {
 
 .table.add textarea { resize: none; height: 300px; }
 
-
 .form-control:focus {
 	border-color: #CCC;
 	outline: 0;
@@ -300,4 +299,12 @@ html {
 	margin: 0px auto;
 	top: -24px;
 }
+
+/* 관리자 메인 화면*/
+.table.adminmenu tr th {text-align:center;}
+
+.contentname td{font-size:12px; text-align:center;}
+.table.adminmenu{width:1000px;margin:0 auto;}
+.content.admin{margin-top:200px;}
+
 
