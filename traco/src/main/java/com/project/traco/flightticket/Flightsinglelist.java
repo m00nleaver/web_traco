@@ -12,8 +12,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/flightlist.do")
-public class Flightlist extends HttpServlet {
+@WebServlet("/flightsinglelist.do")
+public class Flightsinglelist extends HttpServlet {
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -49,7 +49,6 @@ public class Flightlist extends HttpServlet {
 		map.put("inputAddress1", inputAddress1);
 		map.put("inputAddress2", inputAddress2);
 		map.put("inputdateOne", inputdateOne);
-		map.put("inputdateTwo", inputdateTwo);
 		map.put("adult", adult);
 		map.put("child", child);
 		map.put("toddler", toddler);
@@ -59,14 +58,11 @@ public class Flightlist extends HttpServlet {
 		FlightDAO dao = new FlightDAO();
 		/* FlightDAO dao2 = new FlightDAO(); */
 		ArrayList<FlightDTO> list = dao.list(map);
-		ArrayList<FlightDTO> list2 = dao.list2(map);
 		//ArrayList<FlightDTO> listSecond = dao.listSecond(map);
 		
 		//1.5
 		
-		
-		
-		
+
 		try {
 			for(FlightDTO dto : list) {
 				dto.setAirplanp_takeoffdate( dto.getAirplanp_takeoffdate().substring(0,10));
@@ -77,19 +73,9 @@ public class Flightlist extends HttpServlet {
 					dto.setAirplanl_name(dto.getAirplanl_name().substring(0, dto.getAirplanl_name().length()-2));
 				}
 				}
-			for(FlightDTO dto : list2) {
-				dto.setAirplanp_takeoffdate( dto.getAirplanp_takeoffdate().substring(0,10));
-				dto.setAirplanp_takeofftime(dto.getAirplanp_takeofftime().substring(11,16));
-				dto.setSairport_name(dto.getSairport_name().substring(0,2));
-				dto.setEairport_name(dto.getEairport_name().substring(0,2));
-				if(dto.getAirplanl_name().indexOf("항공")>-1) {
-					dto.setAirplanl_name(dto.getAirplanl_name().substring(0, dto.getAirplanl_name().length()-2));
-				}
-				}
-				
+			
 				//2.
 				req.setAttribute("list", list);
-				req.setAttribute("list2", list2);
 				req.setAttribute("map", map);
 				
 		} catch (Exception e) {
@@ -99,7 +85,7 @@ public class Flightlist extends HttpServlet {
 		
 		
 		RequestDispatcher dispatcher 
-		= req.getRequestDispatcher("/WEB-INF/views/flight/flightlist.jsp");
+		= req.getRequestDispatcher("/WEB-INF/views/flight/flightsinglelist.jsp");
 
 		dispatcher.forward(req, resp);
 	}

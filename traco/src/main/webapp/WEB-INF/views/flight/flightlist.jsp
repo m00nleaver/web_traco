@@ -83,14 +83,12 @@ form {
 								<%} %>
 							</select> <label class="form-label visually-hidden" for="child">Child</label>
 							<select name="child">
-								<option selected="selected">1</option>
-								<% for(int i =2; i<=10; i++){ %>
+								<% for(int i =0; i<=10; i++){ %>
 								<option><%=i %></option>
 								<%} %>
 							</select> <label class="form-label visually-hidden" for="kid">Toddler</label>
-							<select name="adult">
-								<option selected="selected">1</option>
-								<% for(int i =2; i<=10; i++){ %>
+							<select name="toddler">
+								<% for(int i =0; i<=10; i++){ %>
 								<option><%=i %></option>
 								<%} %>
 							</select>
@@ -112,7 +110,7 @@ form {
 			<div class="search">
 			<div id="tab-2" class="tab-content">
 			<form method="GET" class="row g-4 mt-5 form"
-					action="/traco/flightlist.do" onsubmit="check();">
+					action="/traco/flightsinglelist.do" onsubmit="check();">
 					<div class="col-sm-6 col-md-6 col-xl-5">
 						<div class="input-group">
 							<!-- 주소 -->
@@ -188,10 +186,11 @@ form {
 
 			<!-- 조회박스 끝 -->
 
-			
+				<form method = "get" action ="/traco/flightrez.do">
 				<table class="ftable table-bordered list">
 					<!-- 컬럼 -->
 					<tr>
+						<th>선택</th>
 						<th>번호</th>
 						<th>이륙일</th>
 						<th>이륙시간</th>
@@ -208,6 +207,7 @@ form {
 					<!-- 결과 -->
 					<c:forEach items="${list}" var="dto">
 						<tr>
+							<td><input type="radio"  name="single_seq" value="${dto.airplanp_seq}"></td>
 							<td>${dto.airplanp_seq}</td>
 							<td>${dto.airplanp_takeoffdate}</td>
 							<td>${dto.airplanp_takeofftime}</td>
@@ -229,11 +229,14 @@ form {
 					</c:if>
 				</table>
 				
+				
 
-
+				
+				
 				<table class="ftable table-bordered list">
 					<!-- 컬럼 -->
 					<tr>
+						<th>선택</th>
 						<th>번호</th>
 						<th>이륙일</th>
 						<th>이륙시간</th>
@@ -250,6 +253,7 @@ form {
 					<!-- 결과 -->
 					<c:forEach items="${list2}" var="dto">
 						<tr>
+							<td><input type="radio" name = "double_seq"  value="${dto.airplanp_seq}"></td>
 							<td>${dto.airplanp_seq}</td>
 							<td>${dto.airplanp_takeoffdate}</td>
 							<td>${dto.airplanp_takeofftime}</td>
@@ -271,6 +275,8 @@ form {
 					</c:if>
 				</table>
 				
+				<input type ="submit" value="예약하기">
+				</form>
 				</section>
 				<%@include file="/WEB-INF/views/inc/footer.jsp"%>
 	</main>
@@ -279,8 +285,9 @@ form {
 	$('input[name=inputAddress2]').val('${map.inputAddress2}');
 	$('input[name=inputdateOne]').val('${map.inputdateOne}');
 	$('input[name=inputdateTwo]').val('${map.inputdateTwo}');
-	$('input[name=inputdateTwo]').val('${map.inputdateTwo}');
-	$('input[name=inputdateTwo]').val('${map.inputdateTwo}');
+	$('input[name=adult]').val('${map.adult}');
+	$('input[name=child]').val('${map.child}');
+	$('input[name=toddler]').val('${map.toddler}');
 	
 	</script>
 </body>
