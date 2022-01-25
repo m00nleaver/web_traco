@@ -42,8 +42,6 @@ public class CommunityAdd extends HttpServlet {
 		CommunityDAO dao = new CommunityDAO();
 		ArrayList<CommunityDTO> Kategorie = dao.Kategorie();
 		
-		
-	
 	
 		req.setAttribute("Kategorie", Kategorie);
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/community/communityadd.jsp");
