@@ -15,8 +15,10 @@
 <header class="header">
 
 
+
 	<h1 class="title" >
 		<img class="logo" src="/traco/asset/images/logo/logo.png" alt="로고" onclick="location.href='/traco/main.do';">
+
 
 	</h1>
 	
@@ -25,15 +27,23 @@
 		<span class="glyphicon glyphicon-menu-hamburger" onclick="location.href='/traco/main.do';"></span>
 
 	
-		<li onclick="location.href='/traco/jeju.do';">제주도투어</li>
-		<li onclick="location.href='/traco/land.do';">내륙투어</li>
+		<li onclick="location.href='/traco/packagetour/jeju/main.do';">제주도 패키지</li>
+		<li onclick="location.href='/traco/minitour/jeju/main.do';">제주도 미니</li>
+		<li onclick="location.href='/traco/packagetour/land/main.do';">내륙 패키지</li>
+		<li onclick="location.href='/traco/minitour/land/main.do';">내륙 미니</li>
 		<li onclick="location.href='/traco/route.do';">경로찾기</li>
 		<li onclick="location.href='/traco/flight.do';">항공</li>
 		<li onclick="location.href='/traco/rentcar.do';">렌트카</li>
 		<li onclick="location.href='/traco/community/communitylist.do';">커뮤니티</li>
 
-		<div class="search"><input type="text" value="검색"></div>
-		
+		<!--  <div class="search"><input type="text" value="검색"></div>-->
+		<div class="box">
+			  <div class="container-1 search">
+			      <span class="icon"><i class="fa fa-search"></i></span>
+			      <input type="search" id="search" placeholder="Search..." />
+			  </div>
+			</div>
+					
 		<!-- 아이콘 -->
 		<!-- https://fontawesome.com/v6.0 -->
 		<div class ="submenu">

@@ -8,18 +8,18 @@
 <style>
 
 	.panel {
-		width: 200px;
+		width: 400px;
 		margin: 0 auto; 
-		margin-top: 150px;
+		margin-top: 100px;
 		text-align: center;
 	}
 	
 	.panel input {
-		margin-bottom: 5px;
+		margin-bottom: 10px;
 	}
 	
 	.panel input[type=submit] {
-		margin-top: 10px;
+		width: 370px;
 	}
 	
 </style>
@@ -41,6 +41,22 @@
 					</form>
 					
 				</div>
+				<div style="float:right;" >
+						<input type="button" value="회원가입"
+						class="btn btn-default"
+						onclick="location.href='/traco/member/memberadd.do';">
+					</div>
+					
+					<div style="float:left;" >
+						<input type="button" value="아이디찾기"
+						class="btn btn-default"
+						onclick="location.href='/traco/member/memberfind_id.do';">
+					</div>
+					<div style="float:left;" >
+						<input type="button" value="비밀번호찾기"
+						class="btn btn-default"
+						onclick="location.href='/traco/member/memberfind_pw.do';" >
+					</div>
 			</div>
 			
 		</section>
