@@ -45,7 +45,7 @@
 					<td>${pdto.price}원</td>
 					<td>${pdto.status}</td>
 					<td id="test">
-						<input type="button" value="결제확인" class="btn btn-default">
+						<input type="button" value="결제확인" class="btn btn-default" >
 						
 					</td>
 				</tr>
@@ -57,11 +57,14 @@
 	</main>
 	<script>
 	
-		$('.btn').click(function(){
+		/* $('.btn').click(function(){
 			document.querySelector("#test").innerHTML 
 	        = "<span>결제확인</span>";
-		});
+		}); */
 	
+		$(".btn").click(function() { alert("승인완료"); $(".btn").prop("disabled", true); });
+
+		
 		
 		
 	
