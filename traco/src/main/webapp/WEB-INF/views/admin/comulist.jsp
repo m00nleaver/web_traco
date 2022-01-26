@@ -22,8 +22,8 @@
 			
 		<section class="content admin">
 		<div class="box"><input type="button" class="btn btn-info" onclick="location.href='/traco/admin/adminmain.do';" value="메인메뉴"></div>
-		
-			<table class="table table-bordered plist">
+		<h1>게시판리스트</h1>
+			<table class="table table-hover plist">
 				<tr style="background-color:#CCC;">
 					<th style="width:50px;">NO</th>
 					<th style="width:200px;">카테고리</th>

@@ -58,7 +58,7 @@ public class ReditOk extends HttpServlet {
 		pdto.setAreaseq(areaseq);
 		pdto.setCstatus(status);
 		pdto.setCarseq(seq);
-		
+		System.out.println(manufseq);
 		int rresult = pdao.rupdate(pdto);
 		
 		int result = rresult +tresult;

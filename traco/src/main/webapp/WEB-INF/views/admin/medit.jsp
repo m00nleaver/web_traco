@@ -84,8 +84,8 @@
 						<tr>
 							<td style="height:100px;">상품 여부</td>
 							<td colspan="3">
-								<span style="margin-right:100px;"><input type="radio" name="status" value="판매진행">판매 진행</span>
-								<span style="margin-right:100px;"><input type="radio" name="status" value="판매종료">판매 종료</span>
+								<span style="margin-right:100px;"><input type="radio" name="status" value="판매진행" <c:if test="${pdto.mstatus eq '판매진행'}"> checked</c:if>>판매 진행</span>
+								<span style="margin-right:100px;"><input type="radio" name="status" value="판매종료" <c:if test="${pdto.mstatus eq '판매진행'}"> checked</c:if>>판매 종료</span>
 								<span><input type="radio" name="status" value="매진">매진</span>
 							</td>
 							
@@ -113,7 +113,7 @@
 						<tr>
 							<td style="height:100px;">썸네일 이미지</td>
 							<td colspan="3">
-								<input type="file"name="thumbs" style="margin-left:200px;" value="${idto.thumbname}" required>기존파일:${idto.thumbname}
+								<input type="file"name="thumbs" style="margin-left:200px;" required>기존파일:${idtoname.thumbname}
 							</td>
 							
 						</tr>
@@ -130,7 +130,7 @@
 						<!--상세이미지  -->
 						<tr>
 							<td style="height:100px;">상세 이미지</td>
-							<td colspan="3"><input type="file" name="infoimage" style="margin-left:200px;" value="${idto.imgname}" required>기존파일:${idto.imgname}</td>
+							<td colspan="3"><input type="file" name="infoimage" style="margin-left:200px;" value="${idto.imgname}" required>기존파일:${idtoiname.imgname}</td>
 							
 						</tr>
 					

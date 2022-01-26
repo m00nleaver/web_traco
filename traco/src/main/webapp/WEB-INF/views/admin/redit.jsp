@@ -95,7 +95,7 @@ td .status {
 	<main class="main">
 		<%@include file="/WEB-INF/views/admin/admininc/adminheader.jsp"%>
 		<section class="content">
-			<h1>렌트카 등록</h1>
+			<h1>렌트카 수정</h1>
 			<div id="tomain">
 				<input type="button" value="메인메뉴" class="btn btn-info"
 					onclick="location.href='/traco/admin/adminmain.do';">
@@ -145,7 +145,7 @@ td .status {
 						</td>
 						<td style="background-color: #CCC;">썸네일이미지</td>
 						<td colspan="3"><input type="file" name="thumb" id="thumb"
-							style="width: 270px;" value="${pdto.thumbname}">기존썸네일:${pdto.thumbname}</td>
+							style="width: 270px;" value="${pdto.thumbname}" required>기존썸네일:${pdto.thumbname}</td>
 
 
 					</tr>

@@ -12,7 +12,10 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/admin/addbannerok.do")
 public class AddbannerOk extends HttpServlet {
 	@Override
-	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		
+		req.setCharacterEncoding("UTF-8");
+		
 		
 		String name = req.getParameter("name");
 		String file = req.getParameter("file");

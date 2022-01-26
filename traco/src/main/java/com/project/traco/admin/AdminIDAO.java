@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
+//import com.project.jdbc.locarDB;
 import com.test.jdbc.DBUtil;
 
 public class AdminIDAO {
@@ -17,8 +18,8 @@ public class AdminIDAO {
 	
 	public AdminIDAO() {
 		try {
-
 			conn = DBUtil.open();
+			//conn = locarDB.open();
 			stat = conn.createStatement();
 
 		} catch (Exception e) {

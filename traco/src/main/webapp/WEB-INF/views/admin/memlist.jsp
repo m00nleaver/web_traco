@@ -37,21 +37,28 @@ td>span:hover {
 	text-align: center;
 	margin-top: 20px;
 }
+
+h1{
+	margin-left:100px;
+	margin-top:100px;
+	margin-bottom:-100px;
+}
 </style>
 </head>
 <body>
 
 	<main class="main">
 		<%@include file="/WEB-INF/views/admin/admininc/adminheader.jsp"%>
-
+		<h1>회원목록</h1>
 		<section class="content admin">
+		
 			<div class="box">
 				<input type="button" class="btn btn-info"
 					onclick="location.href='/traco/admin/adminmain.do';" value="메인메뉴">
 			</div>
 
 
-			<table class="table table-bordered plist">
+			<table class="table table-hover plist">
 				<tr style="background-color: #CCC;">
 					<th style="width: 45px;">NO</th>
 					<th style="width: 105px;">이름</th>
