@@ -16,7 +16,7 @@
 	<main class="main">
 		<%@include file="/WEB-INF/views/inc/header.jsp" %>
 		<section class="content">
-					
+			<h2 style="text-align: center;">Community</h2>
 			<c:if test="${map.searchmode == 'y'}">
 			<div style="text-align:center;margin:10px;color:#777;">'${map.word}'(으)로 검색한 ${list.size()}개의 게시물이 있습니다.</div>
 			</c:if>

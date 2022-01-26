@@ -273,44 +273,6 @@ html {
 	box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%);
 }
 
-/* 댓글 */
-.commentadd {
-	width: 600px;
-	margin: 0 auto;
-	margin-top: 35px;
-	margin-bottom: 20px;
-}
-
-.commentadd textarea {
-	resize: none;
-	width: 500px;
-	height: 100px;
-}
-
-.table.comment {
-	width: 600px;
-	margin: 20px auto;
-	margin-bottom: 100px;
-}
-
-.table.comment td:nth-child(1) {
-	width: 500px;
-	position: relative;
-	left: 0;
-	top: 0;
-	padding-bottom: 25px;
-}
-
-.table.comment td:nth-child(1) small {
-	color: #888;
-	position: absolute;
-	right: 10px;
-	bottom: 5px;
-}
-
-.table.comment td:nth-child(2) {
-	text-align: center;
-}
 
 
 /* 페이지바 */
@@ -412,4 +374,12 @@ html {
 	.blanklabel{
 	width: 55.34px;
 	height:25px;
+	}
+	
+	.rezpreview{
+	height: 100px;
+	width: 80%;
+	margin-right: auto;
+	margin-left: auto;
+	border : 1px solid gray;
 	}

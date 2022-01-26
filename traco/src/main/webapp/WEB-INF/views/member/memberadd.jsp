@@ -44,7 +44,9 @@
 				
 						<div>아이디</div>
 						<input type="text" id="member_id" name="member_id" class="form-control" placeholder="아이디" required autofocus>
-					
+						<input type="button" id="idaddbtn" class="btn btn-default" value="중복검사">					
+						<span id="result"></span>
+						
 						<div>비밀번호</div>
 						<input type="password" name="member_pw" class="form-control" placeholder="비밀번호" required>
 											
@@ -63,7 +65,7 @@
 						<div>이메일</div>
 						<input type="email" name="member_email" class="form-control" placeholder="이메일" required>
 						
-						<input type="submit" value="회원가입하기" class="btn btn-primary">
+						<input type="submit" id="addsubmit" value="회원가입하기" class="btn btn-primary">
 					
 				</div>
 			</div>
@@ -73,7 +75,49 @@
 	</main>
 	
 	<script>
-	
+		$('#idaddbtn').click(()=>{
+		
+		//1. 아이디 전송
+		//2. 서버(중복 검사) > 1 or 0 반환
+		//3. 결과에 따라 조치(메시지 출력)
+		
+		//데이터 주고(단일 데이터: 아이디) + 받고(단일 데이터: 숫자)
+		$.ajax({
+			type: 'GET',
+			url: '/traco/member/memberadddata.do',
+			data: 'member_id=' + $('#member_id').val(), //id=hong
+			dataType: 'text',
+			success: function(result) {
+				if (result == '1') {
+					$('#result').css('color', 'tomato');
+					$('#result').text('이미 사용중인 아이디입니다.');
+					
+				} else {
+					$('#result').css('color', 'cornflowerblue');
+					$('#result').text('사용가능한 아이디입니다.');
+				}
+				
+				if (result == '1'){
+					$(document).ready(function(){
+						  $("form").submit(function(){
+						    alert("이미 사용중인 아이디입니다.");
+						    return false;
+						  });
+						});
+				} else{
+					$(document).ready(function(){
+						  $("form").submit(function(){
+						    alert("회원가입하셨습니다.");
+						    return true;
+						  });
+						});
+				}
+			
+			}
+			
+		});
+		
+	});
 	</script>
 </body>
 </html>

@@ -81,7 +81,7 @@ public class CommunityList extends HttpServlet {
 		// 1.
 		CommunityDAO dao = new CommunityDAO();
 		ArrayList<CommunityDTO> list = dao.list(map);
-
+		
 		// 1.5
 		Calendar now = Calendar.getInstance();
 		String strNow = String.format("%tF", now); // "2022-01-13"
@@ -108,11 +108,9 @@ public class CommunityList extends HttpServlet {
 						"<span style='background-color:yellow;color:tomato;'>" + word + "</span>"));
 			}
 
-			// 제목에서 검색 중 > 검색어 강조!!
+			// 글쓴이 검색 중 > 검색어 강조!!
 			if (searchmode.equals("y") && column.equals("member_id")) {
 
-				// 안녕하세요. 홍길동입니다.
-				// 안녕하세요. <span style="">홍길동</span>입니다.
 				dto.setMember_id(dto.getMember_id().replace(word,
 						"<span style='background-color:yellow;color:tomato;'>" + word + "</span>"));
 			}
@@ -122,7 +120,8 @@ public class CommunityList extends HttpServlet {
 		// 조회수 증가 제어용 티켓
 		HttpSession session = req.getSession();
 		session.setAttribute("boardm_view", "n");
-
+		
+		
 		// 페이지바
 
 		// 총 게시물 수? > 164
