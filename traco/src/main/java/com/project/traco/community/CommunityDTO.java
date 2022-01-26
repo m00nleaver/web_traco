@@ -19,6 +19,21 @@ public class CommunityDTO {
 	
 	private int commentcount; //댓글 갯수
 	
+	private String Upstatus_seq;		//게시글추천번호
+	private String upstatus;		//추천상태 Y N
+	
+	public String getUpstatus_seq() {
+		return Upstatus_seq;
+	}
+	public void setUpstatus_seq(String upstatus_seq) {
+		Upstatus_seq = upstatus_seq;
+	}
+	public String getUpstatus() {
+		return upstatus;
+	}
+	public void setUpstatus(String upstatus) {
+		this.upstatus = upstatus;
+	}
 	public int getCommentcount() {
 		return commentcount;
 	}

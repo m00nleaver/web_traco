@@ -189,7 +189,7 @@ public class CommunityDAO {
 
 	}
 
-	// View 서블릿이 글번호를 줄테니 조회수 +1 해주세요~
+	// View 서블릿이 글번호를 줄테니 좋아요+1 해주세요~
 	public int addUpCount(String boardm_seq) {
 
 		try {
@@ -201,12 +201,30 @@ public class CommunityDAO {
 			return pstat.executeUpdate();
 
 		} catch (Exception e) {
-			System.out.println("BoardDAO.addReadCount()");
+			System.out.println("BoardDAO.addUpCount()");
+			e.printStackTrace();
+		}
+		return 0;
+	}
+	
+	public int delUpCount(String boardm_seq) {
+
+		try {
+
+			String sql = "update tblBoardm set boardm_up = boardm_up - 1 where boardm_seq = ?";
+			pstat = conn.prepareStatement(sql);
+			pstat.setString(1, boardm_seq);
+
+			return pstat.executeUpdate();
+
+		} catch (Exception e) {
+			System.out.println("BoardDAO.delUpCount()");
 			e.printStackTrace();
 		}
 		return 0;
 	}
 
+	//게시물 수정
 	public int Communityedit(CommunityDTO dto) {
 		try {
 
@@ -260,6 +278,27 @@ public class CommunityDAO {
 
 		} catch (Exception e) {
 			System.out.println("BoardDAO.addComment()");
+			e.printStackTrace();
+		}
+
+		return 0;
+	}
+	
+	//댓글 수정
+	public int editComment(CommentDTO cdto) {
+		try {
+
+			String sql = "update tblCommentM set commentm_content = ? where commentm_name = ? and postm_seq = ? and commentm_seq = ?";
+			pstat = conn.prepareStatement(sql);
+			
+			pstat.setString(1, cdto.getCommentm_content());
+			pstat.setString(2, cdto.getMember_id());
+			pstat.setString(3, cdto.getPostm_seq());
+			pstat.setString(4, cdto.getCommentm_seq());
+			return pstat.executeUpdate();
+
+		} catch (Exception e) {
+			System.out.println("BoardDAO.editComment()");
 			e.printStackTrace();
 		}
 
@@ -358,5 +397,75 @@ public class CommunityDAO {
 		}
 		return 0;
 	}
+
+	//추천테이블찾기
+	public int upstatussearch(String boardm_seq, String member_id) {
+		try {
+		
+			String sql = "select count(*) as cnt from tblUpstatus where boardm_seq= ? and memberm_name= ?";
+
+			pstat = conn.prepareStatement(sql);
+
+			pstat.setString(1, boardm_seq);
+			pstat.setString(2, member_id);
+
+			rs = pstat.executeQuery();
+			
+			if (rs.next()) {
+				return rs.getInt("cnt");
+			}
+
+		} catch (Exception e) {
+			System.out.println("CommunityDAO.upstatussearch()");
+			e.printStackTrace();
+		}
+		return 0;
+	}
+	
+	//추천상태확인
+	public int upstatusadd(String boardm_seq, String member_id) {
+		try {
+
+			String sql = "insert into tblUpstatus (Upstatus_seq, boardm_seq, memberm_name, upstatus) values (seqUpstatus.nextval, ?, ?, default)";
+
+			pstat = conn.prepareStatement(sql);
+
+			pstat.setString(1, boardm_seq);
+			pstat.setString(2, member_id);
+
+			return pstat.executeUpdate();
+
+		} catch (Exception e) {
+			System.out.println("CommunityDAO.upstatusadd()");
+			e.printStackTrace();
+		}
+
+		return 0;
+	}
+
+	public int upstatusdel(String boardm_seq, String member_id) {
+		try {
+
+			String sql = "delete from tblUpstatus where boardm_seq = ? and memberm_name = ?";
+
+			pstat = conn.prepareStatement(sql);
+			pstat.setString(1, boardm_seq);
+			pstat.setString(2, member_id);
+			
+			return pstat.executeUpdate();
+
+		} catch (Exception e) {
+			System.out.println("BoardDAO.Communitydel");
+			e.printStackTrace();
+		}
+
+		return 0;
+	}
+
+
+
+	
+
+
 
 }

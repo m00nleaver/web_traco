@@ -15,7 +15,7 @@
 	<main class="main">
 		<%@include file="/WEB-INF/views/inc/header.jsp" %>
 		<section class="content">
-			
+			<h2 style="text-align: center;">Community</h2>
 			<form method="POST" action="/traco/community/communityeditok.do">
 			<table class="table table-bordered add">
 				<tr>

@@ -5,7 +5,7 @@
 }
 .communityviewbtns{
 	width: 700px;
-	margin: 0 auto;
+	margin: 2px auto;
 	text-align: right;
 }
 .communityeditbtns{
@@ -17,7 +17,7 @@
 /* 댓글 */
 .commentadd{
 	width: 700px;
-	margin: 0 auto;
+	margin: 30px auto;
 }
 
 .commentadd textarea {
@@ -49,8 +49,12 @@
 }
 
 .upbtn{
-	position: relative;
+	width: 700px;
 	margin: 0px auto;
-	top: -34px;
-	width:0px;
+}
+
+.upbtn button{
+	width: 700px;
+	margin: 0px auto;
+
 }

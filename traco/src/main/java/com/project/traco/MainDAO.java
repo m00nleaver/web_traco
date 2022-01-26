@@ -81,7 +81,7 @@ public class MainDAO extends HttpServlet {
 	public ArrayList<MainDTO> toppackage(String package_status) {
 		try {
 
-			String sql = "select pkgpm_name, area_name, pstatus, pkgpm_adultprice from vtblPackagePM where rec = ?";
+			String sql = "select pkgpm_name, area_name, pstatus, pkgpm_adultprice,thumbnaili_name from vtblPackagePM where rec = ?";
 
 			pstat = conn.prepareStatement(sql);
 			
@@ -99,7 +99,7 @@ public class MainDAO extends HttpServlet {
 				dto.setArea_name(rs.getString("area_name"));
 				dto.setPstatus(rs.getString("pstatus"));
 				dto.setPkgpm_adultprice(rs.getString("pkgpm_adultprice"));
-	
+				dto.setThumbnaili_name(rs.getString("thumbnaili_name"));
 				
 				packagelist.add(dto);
 			}

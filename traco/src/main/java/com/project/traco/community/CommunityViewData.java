@@ -33,17 +33,41 @@ import javax.servlet.http.HttpServletResponse;
 public class CommunityViewData extends HttpServlet {
 
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
+		
+		HttpSession session = req.getSession();
+		
 		String boardm_seq = req.getParameter("boardm_seq");
-		System.out.println(boardm_seq);
+		String member_id = session.getAttribute("member_id").toString();
+		
 		CommunityDAO dao = new CommunityDAO();
 		
-		int result = dao.addUpCount(boardm_seq);
+		int searchresult = dao.upstatussearch(boardm_seq,member_id);
 		
-		PrintWriter writer = resp.getWriter();
-		writer.print(result);
-		writer.close();
+		int upresult = 0;
+		int downresult = 0;	
 		
+		if(searchresult == 0) {
+			
+			int addresult = dao.upstatusadd(boardm_seq,member_id);
+			
+			if(addresult == 1) {
+				upresult = dao.addUpCount(boardm_seq);
+				String temp = String.format("{ \"upresult\": %d, \"downresult\": %d }", upresult,downresult);
+				PrintWriter writer = resp.getWriter();
+				writer.print(temp);
+				writer.close();
+			}
+		}else if(searchresult == 1) {
+			
+			int delresult = dao.upstatusdel(boardm_seq,member_id);
+			
+			if(delresult == 1) {
+				downresult = dao.delUpCount(boardm_seq);
+				String temp = String.format("{ \"upresult\": %d, \"downresult\": %d }", upresult,downresult);
+				PrintWriter writer = resp.getWriter();
+				writer.print(temp);
+				writer.close();
+			}
+		}
 	}
-
 }

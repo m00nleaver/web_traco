@@ -81,7 +81,7 @@ public class CommunityList extends HttpServlet {
 		// 1.
 		CommunityDAO dao = new CommunityDAO();
 		ArrayList<CommunityDTO> list = dao.list(map);
-
+		
 		// 1.5
 		Calendar now = Calendar.getInstance();
 		String strNow = String.format("%tF", now); // "2022-01-13"

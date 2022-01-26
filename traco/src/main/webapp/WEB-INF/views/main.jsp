@@ -120,7 +120,7 @@
 				<c:forEach items="${topmini}" var="dto">
 				<div class="row">
 					<div class="col-sm-6 col-md-3">
-						<div class="thumbnail" onclick="location.href='/traco/member/login.do';">
+						<div class="thumbnail" onclick="location.href='/traco/packagetour/packagetour'${dto.thumbnaili_name};">
 							<img
 								src="https://cdn.pixabay.com/photo/2016/01/19/17/57/car-1149997_960_720.jpg"
 								alt="...">
