@@ -413,3 +413,11 @@ html {
 	width: 55.34px;
 	height:25px;
 	}
+	
+	.rezpreview{
+	height: 100px;
+	width: 80%;
+	margin-right: auto;
+	margin-left: auto;
+	border : 1px solid gray;
+	}

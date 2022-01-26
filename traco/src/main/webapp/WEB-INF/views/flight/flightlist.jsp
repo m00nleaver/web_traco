@@ -85,14 +85,12 @@ form {
 								<%} %>
 							</select> <label class="form-label visually-hidden" for="child">Child</label>
 							<select name="child">
-								<option selected="selected">1</option>
-								<% for(int i =2; i<=10; i++){ %>
+								<% for(int i =0; i<=10; i++){ %>
 								<option><%=i %></option>
 								<%} %>
 							</select> <label class="form-label visually-hidden" for="kid">Toddler</label>
-							<select name="adult">
-								<option selected="selected">1</option>
-								<% for(int i =2; i<=10; i++){ %>
+							<select name="toddler">
+								<% for(int i =0; i<=10; i++){ %>
 								<option><%=i %></option>
 								<%} %>
 							</select>
@@ -103,6 +101,83 @@ form {
 					<div class="col-12 col-xl-10 col-lg-12 d-grid mt-6">
 						<button onclick="show()" class="btn btn-secondary" type="submit"
 							id="searchbtn">검색</button>
+
+
+					</div>
+				</form>
+			</div>
+			</div>
+			
+			
+			<div class="search">
+			<div id="tab-2" class="tab-content">
+			<form method="GET" class="row g-4 mt-5 form"
+					action="/traco/flightsinglelist.do" onsubmit="check();">
+					<div class="col-sm-6 col-md-6 col-xl-5">
+						<div class="input-group">
+							<!-- 주소 -->
+							<label class="form-label" for="inputAddress1">출발지</label> <input
+								class="form-control " name="inputAddress1" type="text"
+								placeholder="From where" />
+
+
+
+						</div>
+					</div>
+					<!-- 주소 -->
+					<div class="col-sm-6 col-md-6 col-xl-5">
+						<div class="input-group">
+							<label class="form-label" for="inputAddress2">도착지</label> <input
+								class="form-control" name="inputAddress2" type="text"
+								placeholder="To where" />
+						</div>
+					</div>
+
+					<!-- 날짜 출발 -->
+					<div class="col-sm-6 col-md-6 col-xl-5">
+						<div class="input-group">
+							<label class="form-label" for="inputdateOne">출발일</label> <input
+								class="form-control" name="inputdateOne" type="date" />
+						</div>
+					</div>
+					<!-- 날짜 도착 -->
+					<div class="col-sm-6 col-md-6 col-xl-5">
+						<div class="input-group">
+							<label class="form-label blanklabel" for="inputdateTwo"></label> 
+							<div class="blankbox"></div>
+						</div>
+					</div>
+					<!-- 인원 -->
+					<div class="col-sm-6 col-md-6 col-xl-5">
+						<div class="input-group">
+							<label class="form-label visually-hidden" for="adult">Adult</label>
+							<select name="adult">
+								<option>0</option>
+								<option selected="selected">1</option>
+								<% for(int i =2; i<=10; i++){ %>
+								<option><%=i %></option>
+								<%} %>
+							</select> <label class="form-label visually-hidden" for="child">Child</label>
+							<select name="child">
+								
+								<% for(int i =0; i<=10; i++){ %>
+								<option><%=i %></option>
+								<%} %>
+							</select> <label class="form-label visually-hidden" for="kid">Toddler</label>
+							<select name="toddler">
+								
+								<% for(int i =0; i<=10; i++){ %>
+								<option><%=i %></option>
+								<%} %>
+							</select>
+						</div>
+
+					</div>
+
+					<div class="col-12 col-xl-10 col-lg-12 d-grid mt-6">
+						<button onclick="show()" class="btn btn-secondary" type="submit"
+							id="searchbtn">검색</button>
+
 
 
 					</div>
@@ -182,6 +257,7 @@ form {
 
 					</div>
 				</form>
+
 					</div>
 	
 </div>
@@ -190,10 +266,11 @@ form {
 
 			<!-- 조회박스 끝 -->
 
-			
+				<form method = "get" action ="/traco/flightrez.do">
 				<table class="ftable table-bordered list">
 					<!-- 컬럼 -->
 					<tr>
+						<th>선택</th>
 						<th>번호</th>
 						<th>이륙일</th>
 						<th>이륙시간</th>
@@ -210,6 +287,7 @@ form {
 					<!-- 결과 -->
 					<c:forEach items="${list}" var="dto">
 						<tr>
+							<td><input type="radio"  name="single_seq" value="${dto.airplanp_seq}"></td>
 							<td>${dto.airplanp_seq}</td>
 							<td>${dto.airplanp_takeoffdate}</td>
 							<td>${dto.airplanp_takeofftime}</td>
@@ -231,11 +309,14 @@ form {
 					</c:if>
 				</table>
 				
+				
 
-
+				
+				
 				<table class="ftable table-bordered list">
 					<!-- 컬럼 -->
 					<tr>
+						<th>선택</th>
 						<th>번호</th>
 						<th>이륙일</th>
 						<th>이륙시간</th>
@@ -252,6 +333,7 @@ form {
 					<!-- 결과 -->
 					<c:forEach items="${list2}" var="dto">
 						<tr>
+							<td><input type="radio" name = "double_seq"  value="${dto.airplanp_seq}"></td>
 							<td>${dto.airplanp_seq}</td>
 							<td>${dto.airplanp_takeoffdate}</td>
 							<td>${dto.airplanp_takeofftime}</td>
@@ -273,6 +355,8 @@ form {
 					</c:if>
 				</table>
 				
+				<input type ="submit" value="예약하기">
+				</form>
 				</section>
 				<%@include file="/WEB-INF/views/inc/footer.jsp"%>
 	</main>
@@ -281,8 +365,9 @@ form {
 	$('input[name=inputAddress2]').val('${map.inputAddress2}');
 	$('input[name=inputdateOne]').val('${map.inputdateOne}');
 	$('input[name=inputdateTwo]').val('${map.inputdateTwo}');
-	$('input[name=inputdateTwo]').val('${map.inputdateTwo}');
-	$('input[name=inputdateTwo]').val('${map.inputdateTwo}');
+	$('input[name=adult]').val('${map.adult}');
+	$('input[name=child]').val('${map.child}');
+	$('input[name=toddler]').val('${map.toddler}');
 	
 	</script>
 </body>
