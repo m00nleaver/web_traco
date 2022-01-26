@@ -13,6 +13,7 @@
 	tr th {text-align:center;}
 	.table > tbody > tr > td {text-align:center; vertical-align:middle;}
 	td > span:hover{color:cornflowerblue; cursor:pointer;}
+	h1{margin-left:90px;}
 </style>
 </head>
 <body>
@@ -22,7 +23,7 @@
 			
 		<section class="content admin">
 		<div class="box"><input type="button" class="btn btn-info" onclick="location.href='/traco/admin/adminmain.do';" value="메인메뉴"></div>
-		
+		<h1>항공권 리스트</h1>
 			<table class="table table-bordered plist">
 				<tr style="background-color:#CCC;">
 					<th style="width:45px;">NO</th>

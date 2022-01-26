@@ -43,7 +43,7 @@
 		</tr>
 		<tr class="contentname">
 			<td class="info"></td>
-			<td class="info"><a href="/traco/admin/plist.do">패키지수정</a></td>
+			<td class="info"><a href="/traco/admin/plist.do">패키지조회/수정</a></td>
 			<td class="info"><a href="/traco/admin/rlist.do">렌트카조회/수정</a></td>
 			<td class="info"><a href="/traco/admin/flist.do">항공권조회/수정</a></td>
 			<td class="info"><a href="/traco/admin/blist.do">배너조회/수정</a></td>
@@ -55,13 +55,13 @@
 			<td class="info"><a href="/traco/admin/addmini.do">미니투어등록</a></td>
 			<td class="info"></td>
 			<td class="info"><a href="/traco/admin/fconfirm.do">항공권예약승인</a></td>
-			<td class="info"><a href="">해시태그관리</a></td>
+			<td class="info"><a href="/traco/admin/hlist.do">해시태그관리</a></td>
 			<td class="info"></td>
 			<td class="info"></td>
 		</tr>
 		<tr class="contentname">
 			<td class="info"></td>
-			<td class="info"><a href="/traco/admin/mlist.do">미니투어수정</a></td>
+			<td class="info"><a href="/traco/admin/mlist.do">미니투어조회/수정</a></td>
 			<td class="info"></td>
 			<td class="info"></td>
 			<td class="info"></td>

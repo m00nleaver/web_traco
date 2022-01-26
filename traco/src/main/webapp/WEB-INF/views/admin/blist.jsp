@@ -14,6 +14,11 @@
 	.table > tbody > tr > td {text-align:center; vertical-align:middle;}
 	td > span:hover{color:cornflowerblue; cursor:pointer;}
 	.banner{width:220px;}
+		h1 {
+	width: 1000px;
+	margin-left:300px;
+	font-size: 30px;
+}
 </style>
 </head>
 <body>
@@ -23,6 +28,7 @@
 			
 		<section class="content admin">
 		<div class="box"><input type="button" class="btn btn-info" onclick="location.href='/traco/admin/adminmain.do';" value="메인메뉴"></div>
+		<h1>배너 리스트</h1>
 			<form method="POST" onSubmit="return form_submit()" action="/traco/admin/blistok.do">
 			<table class="table table-bordered plist">
 				<tr style="background-color:#CCC;">

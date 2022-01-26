@@ -82,8 +82,8 @@
 						<tr>
 							<td style="height:100px;">상품 여부</td>
 							<td colspan="3">
-								<span style="margin-right:100px;"><input type="radio" name="status" value="판매진행">판매 진행</span>
-								<span style="margin-right:100px;"><input type="radio" name="status" value="판매종료">판매 종료</span>
+								<span style="margin-right:100px;"><input type="radio" name="status" value="판매진행" <c:if test="${pdto.pstatus eq '판매진행'}"> checked</c:if>>판매 진행</span>
+								<span style="margin-right:100px;"><input type="radio" name="status" value="판매종료" <c:if test="${pdto.pstatus eq '판매종료'}"> checked</c:if>>판매 종료</span>
 								<span><input type="radio" name="status" value="매진">매진</span>
 							</td>
 							
@@ -100,7 +100,7 @@
 						<tr>
 							<td style="height:100px;">썸네일 이미지</td>
 							<td colspan="3">
-								<input type="file" name="thumbs" style="margin-left:200px;" value="${idto.thumbnaili_name}" required>기존파일:${idto.thumbname}
+								<input type="file" name="thumbs" style="margin-left:200px;" value="${idto.thumbname}" required>기존파일:${idto.thumbname}
 							</td>
 							
 						</tr>
@@ -108,9 +108,9 @@
 						<tr>
 							<td style="height:100px;">가격</td>
 							<td colspan="3">
-								성인<input type="text" name="adult" class="price">
-								아동<input type="text" name="kid" class="price">
-								유아<input type="text" name="toddle" class="price">							
+								성인<input type="text" name="adult" class="price" value="${pdto.padultprice }">
+								아동<input type="text" name="kid" class="price" value="${pdto.pkidprice }">
+								유아<input type="text" name="toddle" class="price" value="${pdto.ptoddleprice }">							
 							</td>
 							
 						</tr>

@@ -7,6 +7,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+//import com.project.jdbc.locarDB;
 import com.test.jdbc.DBUtil;
 
 public class AdminPDAO {
@@ -18,7 +19,7 @@ public class AdminPDAO {
 
 	public AdminPDAO() {
 		try {
-
+			//conn = locarDB.open();
 			conn = DBUtil.open();
 			stat = conn.createStatement();
 
@@ -1245,6 +1246,43 @@ public class AdminPDAO {
 			return pstat.executeUpdate();
 		} catch (Exception e) {
 			System.out.println("댓글삭제");
+			e.printStackTrace();
+		}
+		return 0;
+	}
+	
+	//해쉬태그 등록
+	public int hadd(AdminPDTO pdto) {
+		try {
+			String sql ="insert into tblhashtag values (seqhash.nextval,?)";
+			
+			pstat = conn.prepareStatement(sql);
+			
+			pstat.setString(1, pdto.getHashtag());
+			
+			return pstat.executeUpdate();
+			
+		} catch (Exception e) {
+			System.out.println("해쉬태그등록");
+			e.printStackTrace();
+		}
+		return 0;
+		
+	}
+
+	public int hdel(AdminPDTO pdto) {
+		try {
+			String sql = "delete from tblhashtag where hashtag_seq=?";
+			
+			pstat = conn.prepareStatement(sql);
+			
+			pstat.setString(1, pdto.getHseq());
+			
+			return pstat.executeUpdate();
+			
+			
+		} catch (Exception e) {
+			System.out.println("해쉬태그삭제실패");
 			e.printStackTrace();
 		}
 		return 0;

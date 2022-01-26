@@ -107,7 +107,7 @@ td .status{
 	<main class="main">
 		<%@include file="/WEB-INF/views/admin/admininc/adminheader.jsp"%>
 		<section class="content">
-			<h1>항공권 등록</h1>
+			<h1>항공권 수정</h1>
 			<div id="tomain">
 				<input type="button" value="메인메뉴" class="btn btn-info"
 					onclick="location.href='/traco/admin/adminmain.do';">

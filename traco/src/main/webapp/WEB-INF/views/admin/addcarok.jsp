@@ -21,7 +21,7 @@
 		<c:if test="${result==2}">
 		//성공
 		alert('등록성공');
-		location.href = '/traco/admin/adminmain.do';
+		location.href = '/traco/admin/rlist.do';
 		</c:if>
 
 		<c:if test="${result!=2}">
