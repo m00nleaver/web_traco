@@ -16,6 +16,7 @@ import javax.servlet.http.HttpSession;
 public class Main extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
 		
 		String banner_status = "사용중";
 		String package_status = "y";
@@ -26,6 +27,8 @@ public class Main extends HttpServlet {
 		ArrayList<MainDTO> toppackage = dao.toppackage(package_status);
 		
 		ArrayList<MainDTO> topmini = dao.topmini(mini_status);
+
+
 		
 		
 		req.setAttribute("toppackage", toppackage);
@@ -34,6 +37,6 @@ public class Main extends HttpServlet {
 			
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/main.jsp");
 
-		dispatcher.forward(req, resp);     
+		dispatcher.forward(req, resp);
 	}
 }

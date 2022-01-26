@@ -33,10 +33,9 @@ td>span:hover {
 	cursor: pointer;
 }
 
-.pagebar {
+.pagebar12 {
 	text-align: center;
 	margin-top: 20px;
-	
 }
 </style>
 </head>
@@ -79,7 +78,7 @@ td>span:hover {
 				</c:forEach>
 			</table>
 
-			<div class="pagebar">${pagebar}</div>
+			<div class="pagebar12">${pagebar}</div>
 
 		</section>
 
