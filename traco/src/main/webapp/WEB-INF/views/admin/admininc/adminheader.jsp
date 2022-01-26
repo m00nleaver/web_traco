@@ -28,8 +28,7 @@
 			<th>여행 상품 관리</th>
 			<th>렌트카 관리</th>
 			<th>항공권 관리</th>
-			<th>정보 관리</th>
-			<th>팝업창 관리</th>
+			<th>정보 관리</th>		
 			<th>커뮤니티 관리</th>
 			<th>회원 관리</th>
 		</tr>
@@ -38,9 +37,8 @@
 			<td class="info"><a href="/traco/admin/addpackage.do">패키지등록</a></td>
 			<td class="info"><a href="/traco/admin/addcar.do">렌트카등록</a></td>
 			<td class="info"><a href="/traco/admin/addflight.do">항공권등록</a></td>
-			<td class="info"><a href="">배너등록</a></td>
-			<td class="info"><a href="">팝업창등록</a></td>
-			<td class="info"><a href="">커뮤니티관리</a></td>
+			<td class="info"><a href="/traco/admin/addbanner.do">배너등록</a></td>
+			<td class="info"><a href="/traco/admin/comulist.do">커뮤니티관리</a></td>
 			<td class="info"><a href="/traco/admin/memlist.do">회원관리</a></td>
 		</tr>
 		<tr class="contentname">
@@ -48,8 +46,7 @@
 			<td class="info"><a href="/traco/admin/plist.do">패키지수정</a></td>
 			<td class="info"><a href="/traco/admin/rlist.do">렌트카조회/수정</a></td>
 			<td class="info"><a href="/traco/admin/flist.do">항공권조회/수정</a></td>
-			<td class="info"><a href="">배너조회/수정</a></td>
-			<td class="info"><a href="">팝업창조회/수정</a></td>
+			<td class="info"><a href="/traco/admin/blist.do">배너조회/수정</a></td>
 			<td class="info"></td>
 			<td class="info"></td>
 		</tr>
@@ -59,14 +56,12 @@
 			<td class="info"></td>
 			<td class="info"><a href="/traco/admin/fconfirm.do">항공권예약승인</a></td>
 			<td class="info"><a href="">해시태그관리</a></td>
-			<td class="info"><a href="">미니투어카테고리관리</a></td>
 			<td class="info"></td>
 			<td class="info"></td>
 		</tr>
 		<tr class="contentname">
 			<td class="info"></td>
 			<td class="info"><a href="/traco/admin/mlist.do">미니투어수정</a></td>
-			<td class="info"></td>
 			<td class="info"></td>
 			<td class="info"></td>
 			<td class="info"></td>

@@ -20,7 +20,7 @@
 	<c:if test="${result==1}">
 	//성공
 	alert('등록성공');
-	location.href = '/traco/admin/flist.do';
+	location.href = '/traco/admin/blist.do';
 	</c:if>
 	
 	<c:if test="${result!=1}">

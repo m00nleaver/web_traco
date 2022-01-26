@@ -19,8 +19,8 @@
 	<script>
 	<c:if test="${result==1}">
 	//성공
-	alert('등록성공');
-	location.href = '/traco/admin/flist.do';
+	alert('승인완료');
+	location.href = '/traco/admin/fconfirm.do';
 	</c:if>
 	
 	<c:if test="${result!=1}">
