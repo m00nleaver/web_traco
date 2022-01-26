@@ -35,15 +35,7 @@
 		<li onclick="location.href='/traco/flight.do';">항공</li>
 		<li onclick="location.href='/traco/rentcar.do';">렌트카</li>
 		<li onclick="location.href='/traco/community/communitylist.do';">커뮤니티</li>
-
-		<!--  <div class="search"><input type="text" value="검색"></div>-->
-		<div class="box">
-			  <div class="container-1 search">
-			      <span class="icon"><i class="fa fa-search"></i></span>
-			      <input type="search" id="search" placeholder="Search..." />
-			  </div>
-			</div>
-					
+						
 		<!-- 아이콘 -->
 		<!-- https://fontawesome.com/v6.0 -->
 		<div class ="submenu">
