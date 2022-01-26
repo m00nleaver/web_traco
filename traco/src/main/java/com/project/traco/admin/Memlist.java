@@ -60,10 +60,10 @@ public class Memlist extends HttpServlet {
 
 		if (n == 1) {
 			pagebar += String.format(
-					"<li class='disabled'><a href='#!' aria-label='Previous' style='height:49.74px;'><span aria-hidden='true'>&laquo;</span></a></li>");
+					"<li class='disabled'><a href='#!' aria-label='Previous' style='height:34.18px;'><span aria-hidden='true'>&laquo;</span></a></li>");
 		} else {
 			pagebar += String.format(
-					"<li><a href='/traco/admin/memlist.do?page=%d' aria-label='Previous' style='height:49.74px;'><span aria-hidden='true'>&laquo;</span></a></li>",
+					"<li><a href='/traco/admin/memlist.do?page=%d' aria-label='Previous' style='height:34.18px;'><span aria-hidden='true'>&laquo;</span></a></li>",
 					n - 1);
 		}
 
@@ -81,10 +81,10 @@ public class Memlist extends HttpServlet {
 
 		if (n > totalPage) {
 			pagebar += String.format(
-					"<li class='disabled'><a href='#!' aria-label='Next' style='height:49.74px;'><span aria-hidden='true'>&raquo;</span></a></li>");
+					"<li class='disabled'><a href='#!' aria-label='Next' style='height:34.18px;'><span aria-hidden='true'>&raquo;</span></a></li>");
 		} else {
 			pagebar += String.format(
-					"<li><a href='/traco/admin/memlist.do?page=%d' aria-label='Next' style='height:49.74px;'><span aria-hidden='true'>&raquo;</span></a></li>",
+					"<li><a href='/traco/admin/memlist.do?page=%d' aria-label='Next' style='height:34.18px;'><span aria-hidden='true'>&raquo;</span></a></li>",
 					n);
 		}
 

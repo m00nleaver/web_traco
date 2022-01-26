@@ -45,8 +45,10 @@
 					<td>${pdto.price}원</td>
 					<td>${pdto.status}</td>
 					<td id="test">
-						<input type="button" value="결제확인" class="btn btn-default">
-						
+					<form method="POST" onSubmit="return form_submit()" action="/traco/admin/fconfirmok.do?seq=${pdto.rezseq}">
+						<input type="submit" value="결제확인" class="btn btn-default" <c:if test="${pdto.confirm==0}"></c:if><c:if test="${pdto.confirm==1}">disabled="disabled"</c:if>>
+						<input type="hidden" value="${pdto.confirm}" name="confirm">
+					</form>	
 					</td>
 				</tr>
 				</c:forEach>
@@ -57,13 +59,16 @@
 	</main>
 	<script>
 	
-		$('.btn').click(function(){
-			document.querySelector("#test").innerHTML 
-	        = "<span>결제확인</span>";
-		});
-	
 		
 		
+		function form_submit()
+		{
+		/* confirm 함수는 확인창 결과값으로 TRUE 와 FALSE 값을 return 하게 된다*/
+		var check_submit=confirm('승인하시겠습니까?');
+
+		return check_submit;
+		}
+
 	
 	</script>
 </body>

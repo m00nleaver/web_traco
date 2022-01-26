@@ -898,6 +898,7 @@ public class AdminPDAO {
 				pdto.setName(rs.getString("name"));
 				pdto.setStatus(rs.getString("status"));
 				pdto.setPrice(rs.getString("price"));
+				pdto.setConfirm(rs.getString("confirm"));
 
 				list.add(pdto);
 			}
@@ -982,6 +983,271 @@ public class AdminPDAO {
 		
 		return 0;
 		
+	}
+
+	public int confirmEdit(String seq) {
+		try {
+			String sql = "update tblrez set confirm=1 where rez_seq=?";
+			
+			pstat = conn.prepareStatement(sql);
+			
+			pstat.setString(1, seq);
+			
+			return pstat.executeUpdate();
+			
+		} catch (Exception e) {
+			System.out.println("승인확인실패");
+			e.printStackTrace();
+		}
+		return 0;
+	}
+
+	public int addbanner(AdminPDTO pdto) {
+		try {
+			String sql = "insert into tblbannerimg (banneri_seq,banneri_name,bannerI_imageurl,banneri_linkurl,bannerctg_seq) values (seqbanner.nextval,?,?,?,?)";
+			
+			pstat = conn.prepareStatement(sql);
+			
+			pstat.setString(1, pdto.getBname());
+			pstat.setString(2, pdto.getBfile());
+			pstat.setString(3, pdto.getBurl());
+			pstat.setInt(4, Integer.parseInt(pdto.getBctg()));
+			
+			return pstat.executeUpdate();
+			
+			
+		} catch (Exception e) {
+			System.out.println("배너등록");
+			e.printStackTrace();
+		}
+		return 0;
+	}
+	
+	//배너리스트
+	public ArrayList<AdminPDTO> blist() {
+		try {
+			String sql="select * from tblbannerimg";
+			
+			rs = stat.executeQuery(sql);
+
+			ArrayList<AdminPDTO> list = new ArrayList<AdminPDTO>();
+
+			while (rs.next()) {
+				AdminPDTO pdto = new AdminPDTO();
+				pdto.setBseq(rs.getString("banneri_seq"));
+				pdto.setBname(rs.getString("bannerI_name"));
+				pdto.setBfile(rs.getString("banneri_imageurl"));
+				pdto.setBurl(rs.getString("banneri_linkurl"));
+				pdto.setStatus(rs.getString("status"));
+				System.out.println(rs.getString("status"));
+				list.add(pdto);
+			}
+
+			return list;
+			
+		} catch (Exception e) {
+			System.out.println("배너리스트");
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	
+
+	public AdminPDTO bget(String seq) {
+		try {
+			String sql = "select * from tblbannerimg where banneri_seq =?";
+			
+			pstat = conn.prepareStatement(sql);
+			
+			pstat.setString(1, seq);
+			
+			rs = pstat.executeQuery();
+			
+			if(rs.next()) {
+				AdminPDTO pdto = new AdminPDTO();
+				pdto.setBseq(rs.getString("banneri_seq"));
+				pdto.setBname(rs.getString("banneri_name"));
+				pdto.setBfile(rs.getString("banneri_imageurl"));
+				pdto.setBurl(rs.getString("banneri_linkurl"));
+				pdto.setBctg(rs.getString("bannerctg_seq"));
+				pdto.setStatus(rs.getString("status"));
+				
+				return pdto;
+			}
+			
+		} catch (Exception e) {
+			System.out.println("배너개별가져오기");
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	public int bedit(AdminPDTO pdto) {
+		try {
+			String sql = "update tblbannerimg set banneri_name=?,banneri_imageurl=?,banneri_linkurl=?,bannerctg_seq=? where banneri_seq=?";
+			
+			pstat = conn.prepareStatement(sql);
+			
+			pstat.setString(1, pdto.getBname());
+			pstat.setString(2, pdto.getBfile());
+			pstat.setString(3, pdto.getBurl());
+			pstat.setString(4, pdto.getBctg());
+			pstat.setString(5, pdto.getBseq());
+			
+			return pstat.executeUpdate();
+			
+		} catch (Exception e) {
+			System.out.println("배너 수정");
+			e.printStackTrace();
+		}
+		return 0;
+	}
+	
+	//배너 삭제
+	public int bdel(String seq) {
+		try {
+			String sql = "delete from tblbannerimg where banneri_seq=?";
+			
+			pstat = conn.prepareStatement(sql);
+			
+			pstat.setString(1, seq);
+			
+			return pstat.executeUpdate();
+			
+		} catch (Exception e) {
+			System.out.println("배너삭제");
+			e.printStackTrace();
+		}
+		return 0;
+	}
+	
+	//배너 상태변경
+	public int editStatus(AdminPDTO pdto) {
+		try {
+			String sql = "update tblbannerimg set status=? where banneri_seq=?";
+			
+			pstat = conn.prepareStatement(sql);
+			System.out.println(pdto.getStatus());
+			pstat.setString(1, pdto.getStatus());
+			pstat.setString(2, pdto.getBseq());
+			
+			return pstat.executeUpdate();
+			
+		} catch (Exception e) {
+			System.out.println("배너 상태 변경");
+			e.printStackTrace();
+		}
+		return 0;
+	}
+
+	public ArrayList<AdminPDTO> clist() {
+		try {
+			String sql = "select * from vwcomulist order by seq desc";
+			rs = stat.executeQuery(sql);
+
+			ArrayList<AdminPDTO> list = new ArrayList<AdminPDTO>();
+
+			while (rs.next()) {
+				AdminPDTO pdto = new AdminPDTO();
+
+				pdto.setSeq(rs.getString("seq"));
+				pdto.setTitle(rs.getString("title"));
+				pdto.setDate(rs.getString("day"));
+				pdto.setCnt(rs.getString("count"));
+				pdto.setCtg(rs.getString("cname"));
+				pdto.setName(rs.getString("name"));
+				pdto.setMemseq(rs.getString("memseq"));
+
+				list.add(pdto);
+			}
+
+			return list;
+			
+			
+		} catch (Exception e) {
+			System.out.println("게시판커뮤리스트");
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
+	//게시글삭제
+	public int boarddel(String seq) {
+		try {
+			String sql = "delete from tblboardm where boardm_seq=?";
+			
+			pstat = conn.prepareStatement(sql);
+			
+			pstat.setString(1, seq);
+			
+			return pstat.executeUpdate();
+		} catch (Exception e) {
+			System.out.println("게시글 삭제");
+			e.printStackTrace();
+		}
+		return 0;
+	}
+
+	public AdminPDTO commentget(String seq) {
+		try {
+			String sql = "select * from vwDelboard where bseq=?";
+			
+			pstat = conn.prepareStatement(sql);
+			pstat.setString(1, seq);
+
+			rs = pstat.executeQuery();
+
+			if (rs.next()) {
+				AdminPDTO pdto = new AdminPDTO();
+
+				pdto.setSeq(rs.getString("bseq"));
+				pdto.setTcseq(rs.getString("tcseq"));				
+				pdto.setTccseq(rs.getString("tccseq"));	
+				
+				return pdto;
+			}
+			
+		} catch (Exception e) {
+			System.out.println("댓글삭제번호가져오기");
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
+	//대댓글삭제
+	public int tccdel(String tcseq) {
+		try {
+			String sql = "delete from tblCCommentM where commentm_seq=?";
+			
+			pstat = conn.prepareStatement(sql);
+			
+			pstat.setString(1, tcseq);
+			
+			return pstat.executeUpdate();
+			
+		} catch (Exception e) {
+			System.out.println("대댓글삭제");
+			e.printStackTrace();
+		}
+		return 0;
+	}
+	
+	//댓글삭제하기
+	public int tcdel(String seq) {
+		try {
+			String sql = "delete from tblCommentM where postm_seq=?";
+			
+			pstat = conn.prepareStatement(sql);
+			
+			pstat.setString(1, seq);
+			
+			return pstat.executeUpdate();
+		} catch (Exception e) {
+			System.out.println("댓글삭제");
+			e.printStackTrace();
+		}
+		return 0;
 	}
 	
 	

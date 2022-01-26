@@ -99,8 +99,11 @@ public class AdminPDTO {
 	//airdate2
 	private String status;
 	private String price;
+	private String confirm;
 	
 	
+	
+
 	//회원정보
 	private String memseq;
 	private String memname;
@@ -108,9 +111,127 @@ public class AdminPDTO {
 	private String email;
 	private String gender;
 	
+	//배너등록
+	private String bseq;
+	private String bname;
+	private String bfile;
+	private String burl;
+	private String bctg;
 	
+	//커뮤니티게시판
+	private String seq;
+	private String ctg;
+	private String title;
+	private String date;
+	private String cnt;
 	
-		
+	//댓글
+	private String tcseq;
+	private String tccseq;
+	
+	public String getTcseq() {
+		return tcseq;
+	}
+
+	public void setTcseq(String tcseq) {
+		this.tcseq = tcseq;
+	}
+
+	public String getTccseq() {
+		return tccseq;
+	}
+
+	public void setTccseq(String tccseq) {
+		this.tccseq = tccseq;
+	}
+
+	public String getSeq() {
+		return seq;
+	}
+
+	public void setSeq(String seq) {
+		this.seq = seq;
+	}
+
+	public String getCtg() {
+		return ctg;
+	}
+
+	public void setCtg(String ctg) {
+		this.ctg = ctg;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public String getDate() {
+		return date;
+	}
+
+	public void setDate(String date) {
+		this.date = date;
+	}
+
+	public String getCnt() {
+		return cnt;
+	}
+
+	public void setCnt(String cnt) {
+		this.cnt = cnt;
+	}
+
+	public String getBseq() {
+		return bseq;
+	}
+
+	public void setBseq(String bseq) {
+		this.bseq = bseq;
+	}
+
+	public String getBname() {
+		return bname;
+	}
+
+	public void setBname(String bname) {
+		this.bname = bname;
+	}
+
+	public String getBfile() {
+		return bfile;
+	}
+
+	public void setBfile(String bfile) {
+		this.bfile = bfile;
+	}
+
+	public String getBurl() {
+		return burl;
+	}
+
+	public void setBurl(String burl) {
+		this.burl = burl;
+	}
+
+	public String getBctg() {
+		return bctg;
+	}
+
+	public void setBctg(String bctg) {
+		this.bctg = bctg;
+	}
+
+	public String getConfirm() {
+		return confirm;
+	}
+
+	public void setConfirm(String confirm) {
+		this.confirm = confirm;
+	}	
 	
 	public String getMemseq() {
 		return memseq;

@@ -64,10 +64,6 @@ public class Flightlist extends HttpServlet {
 		//ArrayList<FlightDTO> listSecond = dao.listSecond(map);
 		
 		//1.5
-		
-		
-		
-		
 		try {
 			for(FlightDTO dto : list) {
 				dto.setAirplanp_takeoffdate( dto.getAirplanp_takeoffdate().substring(0,10));
@@ -79,6 +75,7 @@ public class Flightlist extends HttpServlet {
 				}
 				}
 			for(FlightDTO dto : list2) {
+				
 				dto.setAirplanp_takeoffdate( dto.getAirplanp_takeoffdate().substring(0,10));
 				dto.setAirplanp_takeofftime(dto.getAirplanp_takeofftime().substring(11,16));
 				dto.setSairport_name(dto.getSairport_name().substring(0,2));
