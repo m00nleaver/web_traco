@@ -20,7 +20,11 @@ public class View extends HttpServlet {
 		
 		HttpSession session = req.getSession();
 
-		String memberSeq = session.getAttribute("member_seq").toString();
+		try {
+			String memberSeq = session.getAttribute("member_seq").toString();
+			req.setAttribute("memberSeq", memberSeq);
+			
+		}catch(Exception e){ System.out.println("로그인 안되었지만, 일단 보세요."); }
 		
 		String daterange = req.getParameter("daterange");
 		
@@ -44,7 +48,6 @@ public class View extends HttpServlet {
 		
 		
 		
-		req.setAttribute("memberSeq", memberSeq);
 		
 		req.setAttribute("itemdto", itemDto);
 		
