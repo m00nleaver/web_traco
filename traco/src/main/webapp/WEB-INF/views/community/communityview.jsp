@@ -80,7 +80,7 @@
 			<div style="width:700px; margin: 0px auto">
 						
 						<form method="POST" action="/traco/community/commenteditok.do">
-							<div id="${cdto.commentm_seq}_texthide2" style=display:none;">
+							<div id="${cdto.commentm_seq}_texthide2" style="display:none;">
 								<div><textarea name="commentm_content" class="form-control"	required></textarea></div>
 								<div>
 									<input type="submit" value="수정완료" class="btn btn-primary">
