@@ -27,10 +27,8 @@
 		<span class="glyphicon glyphicon-menu-hamburger" onclick="location.href='/traco/main.do';"></span>
 
 	
-		<li onclick="location.href='/traco/packagetour/jeju/main.do';">제주도 패키지</li>
-		<li onclick="location.href='/traco/minitour/jeju/main.do';">제주도 미니</li>
-		<li onclick="location.href='/traco/packagetour/land/main.do';">내륙 패키지</li>
-		<li onclick="location.href='/traco/minitour/land/main.do';">내륙 미니</li>
+		<li onclick="location.href='/traco/packagetour/jeju/jejumain.do';">패키지</li>
+		<li onclick="location.href='/traco/minitour/jeju/jejumini.do';">미니투어</li>
 		<li onclick="location.href='/traco/route.do';">경로찾기</li>
 		<li onclick="location.href='/traco/flight.do';">항공</li>
 		<li onclick="location.href='/traco/rentcar.do';">렌트카</li>
