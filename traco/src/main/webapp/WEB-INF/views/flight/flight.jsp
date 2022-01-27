@@ -76,7 +76,7 @@ form {
 					<!-- 인원 -->
 					<div class="col-sm-6 col-md-6 col-xl-5">
 						<div class="input-group">
-							<label class="form-label visually-hidden" for="adult">Adult</label>
+							<%-- <label class="form-label visually-hidden" for="adult">Adult</label>
 							<select name="adult">
 								<option selected="selected">1</option>
 								<% for(int i =2; i<=10; i++){ %>
@@ -92,7 +92,13 @@ form {
 								<% for(int i =0; i<=10; i++){ %>
 								<option><%=i %></option>
 								<%} %>
-							</select>
+							</select> --%>
+							<label for="quantity">인원</label>
+							<select id="quantity" name="quantity">
+						<c:forEach var="i" begin="1" end="30">
+							<option value="${i}">${i}명</option>
+						</c:forEach>
+						</select>
 						</div>
 
 					</div>
@@ -149,7 +155,7 @@ form {
 					<!-- 인원 -->
 					<div class="col-sm-6 col-md-6 col-xl-5">
 						<div class="input-group">
-							<label class="form-label visually-hidden" for="adult">Adult</label>
+							<%--< label class="form-label visually-hidden" for="adult">Adult</label>
 							<select name="adult">
 								<option>0</option>
 								<option selected="selected">1</option>
@@ -168,7 +174,14 @@ form {
 								<% for(int i =0; i<=10; i++){ %>
 								<option><%=i %></option>
 								<%} %>
-							</select>
+							</select> --%>
+							
+							<label for="quantity">인원</label>
+					<select id="quantity" name="quantity">
+						<c:forEach var="i" begin="1" end="30">
+							<option value="${i}">${i}명</option>
+						</c:forEach>
+						</select>
 						</div>
 
 					</div>

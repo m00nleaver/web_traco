@@ -400,7 +400,7 @@ html {
 	
 	.btn:hover{
 	background: rgb(239,239,239);
-	color: red;
+	
 	}
 	
 	.show{
@@ -418,8 +418,23 @@ html {
 	
 	.rezpreview{
 	height: 100px;
-	width: 80%;
+	width: 95%;
 	margin-right: auto;
 	margin-left: auto;
-	border : 1px solid gray;
+	border-top : 1px solid gray;
+	border-bottom : 1px solid gray;
+	margin-bottom: 20px;
 	}
+	
+	.rezform{
+	padding: 10px;
+	
+	}
+	
+	.searchbtn{
+	float: right;
+	margin: 20px;
+	margin-bottom: 20px;
+	}
+	
+	

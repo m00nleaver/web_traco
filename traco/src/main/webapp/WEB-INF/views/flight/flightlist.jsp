@@ -75,7 +75,7 @@ form {
 					<!-- 인원 -->
 					<div class="col-sm-6 col-md-6 col-xl-5">
 						<div class="input-group">
-							<label class="form-label visually-hidden" for="adult">Adult</label>
+							<%-- <label class="form-label visually-hidden" for="adult">Adult</label>
 							<select name="adult">
 								<option selected="selected">1</option>
 								<% for(int i =2; i<=10; i++){ %>
@@ -91,7 +91,13 @@ form {
 								<% for(int i =0; i<=10; i++){ %>
 								<option><%=i %></option>
 								<%} %>
-							</select>
+							</select> --%>
+								<label for="quantity">인원</label>
+					<select id="quantity" name="quantity">
+						<c:forEach var="i" begin="1" end="30">
+							<option value="${i}">${i}명</option>
+						</c:forEach>
+						</select>
 						</div>
 
 					</div>
@@ -148,28 +154,37 @@ form {
 					<!-- 인원 -->
 					<div class="col-sm-6 col-md-6 col-xl-5">
 						<div class="input-group">
-							<label class="form-label visually-hidden" for="adult">Adult</label>
+						<%-- 	<label class="form-label visually-hidden" for="adult">Adult</label>
 							<select name="adult">
 								<option>0</option>
 								<option selected="selected">1</option>
 								<% for(int i =2; i<=10; i++){ %>
 								<option><%=i %></option>
 								<%} %>
-							</select> <label class="form-label visually-hidden" for="child">Child</label>
+							</select> 
+							<label class="form-label visually-hidden" for="child">Child</label>
 							<select name="child">
 								
 								<% for(int i =0; i<=10; i++){ %>
 								<option><%=i %></option>
 								<%} %>
-							</select> <label class="form-label visually-hidden" for="kid">Toddler</label>
+							</select> 
+							<label class="form-label visually-hidden" for="kid">Toddler</label>
 							<select name="toddler">
 								
 								<% for(int i =0; i<=10; i++){ %>
 								<option><%=i %></option>
 								<%} %>
-							</select>
-						</div>
-
+							</select>--%>
+							
+							<label for="quantity">인원</label>
+					<select id="quantity" name="quantity">
+						<c:forEach var="i" begin="1" end="30">
+							<option value="${i}">${i}명</option>
+						</c:forEach>
+					</select>
+						</div> 
+						
 					</div>
 
 					<div class="col-12 col-xl-10 col-lg-12 d-grid mt-6">
@@ -274,20 +289,28 @@ form {
 						</tr>
 					</c:if>
 				</table>
+				<input type="hidden" name="memberSeq" value="${memberSeq}"/>
+				<input type="hidden" name="quantity" value="${quantity}"/>
 				
+				<%-- 
+				<input type="hidden" name="adultcnt" value="${map.adult}"/>
+				<input type="hidden" name="childcnt" value="${map.child}"/>
+				<input type="hidden" name="toddlercnt" value="${map.toddler}"/> --%>
 				<input type ="submit" value="예약하기">
 				</form>
 				</section>
 				<%@include file="/WEB-INF/views/inc/footer.jsp"%>
 	</main>
+	
 	<script>
 	$('input[name=inputAddress1]').val('${map.inputAddress1}');
 	$('input[name=inputAddress2]').val('${map.inputAddress2}');
 	$('input[name=inputdateOne]').val('${map.inputdateOne}');
 	$('input[name=inputdateTwo]').val('${map.inputdateTwo}');
-	$('input[name=adult]').val('${map.adult}');
+	$('select[name=quantity]').val('${map.quantity}');
+	/* $('input[name=adult]').val('${map.adult}');
 	$('input[name=child]').val('${map.child}');
-	$('input[name=toddler]').val('${map.toddler}');
+	$('input[name=toddler]').val('${map.toddler}'); */
 	
 	</script>
 </body>

@@ -1,4 +1,4 @@
-package com.project.traco.packagetour.jeju;
+package com.project.traco.flightticket;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -11,15 +11,17 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/packagetour/jeju/member.do")
-public class IsMember extends HttpServlet {
+import com.project.traco.packagetour.jeju.MembersDTO;
+
+@WebServlet("/flightMember.do")
+public class FlightMember extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-
+		
 		String memberSeq = req.getParameter("memberSeq");
 		
-		PackageDAO dao = new PackageDAO();
+		FlightDAO dao = new FlightDAO();
 		
 		MembersDTO dto = dao.getMember(memberSeq);
 		
@@ -37,11 +39,9 @@ public class IsMember extends HttpServlet {
 				"birth": "25",
 				"email": "aaa@naver.com",
 				"gender": "m"
-
 			}
 		
 		*/
-		
 		int year = Calendar.getInstance().get(Calendar.YEAR);
 		
 		
@@ -53,31 +53,28 @@ public class IsMember extends HttpServlet {
 						))+"";
 		
 		dto.setBirth(age);
+		try {
+			String temp = "";
+			
+			temp += "{";
+			temp += String.format("\"seq\": \"%s\",", dto.getSeq());
+			temp += String.format("\"name\": \"%s\",", dto.getName());
+			temp += String.format("\"birth\": \"%s\",", dto.getBirth());
+			temp += String.format("\"email\": \"%s\",", dto.getEmail());
+			temp += String.format("\"gender\": \"%s\"", dto.getGender());		
+			temp += "}";
+			
+			writer.print(temp);
+			writer.close();
+			
+			
+			System.out.println(temp);
+		} catch (Exception e) {
+			System.out.println("d");
+			e.printStackTrace();
 		
-		
-		if (dto.getGender().equals("m")) {
-			dto.setGender("남자");
-		}else {
-			 dto.setGender("여자");
 		}
 		
-		
-		
-		String temp = "";
-		
-		temp += "{";
-		temp += String.format("\"seq\": \"%s\",", dto.getSeq());
-		temp += String.format("\"name\": \"%s\",", dto.getName());
-		temp += String.format("\"birth\": \"%s\",", dto.getBirth());
-		temp += String.format("\"email\": \"%s\",", dto.getEmail());
-		temp += String.format("\"gender\": \"%s\"", dto.getGender());		
-		temp += "}";
-		
-		writer.print(temp);
-		writer.close();
-		
-		
-		System.out.println(temp);
 		
 		
 		

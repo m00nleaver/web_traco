@@ -10,13 +10,14 @@ import java.util.HashMap;
 
 import org.w3c.dom.bootstrap.DOMImplementationRegistry;
 
+import com.project.traco.packagetour.jeju.MembersDTO;
 import com.test.jdbc.DBUtil;
 
 public class FlightDAO {
 	private Connection conn;
 	private Statement stat; //매개변수X
 	private ResultSet rs;
-	
+	private PreparedStatement pstat; //매개변수O
 	
 	public FlightDAO() {
 		try {
@@ -169,6 +170,59 @@ public class FlightDAO {
 			  } 
 			  
 			  return null;
+	}
+
+	public int check(String id) {
+		try {
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return 0;
+	}
+
+	public MembersDTO getMember(String memberSeq) {
+		
+			try {
+				String sql = "select * from tblMember where member_seq=?";
+						
+				
+				pstat = conn.prepareStatement(sql);		
+				
+				pstat.setString(1, memberSeq);
+
+				
+				rs = pstat.executeQuery();
+
+				
+				MembersDTO dto = new MembersDTO();
+				
+				
+				if (rs.next()) {
+					
+					System.out.println("회원 찾음");
+					
+					dto.setSeq(rs.getString("MEMBER_SEQ"));
+					dto.setName(rs.getString("MEMBER_NAME"));
+					dto.setBirth(rs.getString("MEMBER_BIRTH"));
+					dto.setEmail(rs.getString("MEMBER_EMAIL"));
+					dto.setGender(rs.getString("MEMBER_GENDER"));
+					
+
+			}
+			
+			return dto;
+			
+			
+			
+		} catch (Exception e) {
+			System.out.println("회원정보 로딩 DB작업 오류");
+			e.printStackTrace();
+		}
+		
+		return null;
+		
+		
 	}
 	
 	

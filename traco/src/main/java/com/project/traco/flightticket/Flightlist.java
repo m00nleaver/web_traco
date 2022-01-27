@@ -19,15 +19,20 @@ public class Flightlist extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
+		
+		
+		
 		String inputAddress1 = req.getParameter("inputAddress1");
 		String inputAddress2 = req.getParameter("inputAddress2");
 		String inputdateOne = req.getParameter("inputdateOne");
 		String inputdateTwo = req.getParameter("inputdateTwo");
-		String adult = req.getParameter("adult");
-		String child = req.getParameter("child");
-		String toddler = req.getParameter("toddler");
+		/*
+		 * String adult = req.getParameter("adult"); String child =
+		 * req.getParameter("child"); String toddler = req.getParameter("toddler");
+		 */
+		String quantity = req.getParameter("quantity");
 		String searchmode="n";
-		
+		String memberSeq = "3";
 		
 		
 		if((inputAddress1==null
@@ -51,10 +56,12 @@ public class Flightlist extends HttpServlet {
 		map.put("inputAddress2", inputAddress2);
 		map.put("inputdateOne", inputdateOne);
 		map.put("inputdateTwo", inputdateTwo);
-		map.put("adult", adult);
-		map.put("child", child);
-		map.put("toddler", toddler);
+		/*
+		 * map.put("adult", adult); map.put("child", child); map.put("toddler",
+		 * toddler);
+		 */
 		map.put("searchmode", searchmode);
+		
 		
 		//1.
 		FlightDAO dao = new FlightDAO();
@@ -89,6 +96,7 @@ public class Flightlist extends HttpServlet {
 				}
 				
 				//2.
+				
 				req.setAttribute("list", list);
 				req.setAttribute("list2", list2);
 				req.setAttribute("map", map);
@@ -98,6 +106,8 @@ public class Flightlist extends HttpServlet {
 			e.printStackTrace();
 		}
 		
+		req.setAttribute("memberSeq", memberSeq);
+		req.setAttribute("quantity", quantity);
 		
 		RequestDispatcher dispatcher 
 		= req.getRequestDispatcher("/WEB-INF/views/flight/flightlist.jsp");

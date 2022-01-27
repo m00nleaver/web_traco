@@ -13,6 +13,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 @WebServlet("/flightrez.do")
 public class Flightrez extends HttpServlet {
@@ -21,7 +22,21 @@ public class Flightrez extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
 		String single_seq = req.getParameter("single_seq");
-		 String double_seq = req.getParameter("double_seq");
+		String double_seq = req.getParameter("double_seq");
+		String memberSeq = req.getParameter("memberSeq");
+		String quantity = req.getParameter("quantity");
+		
+		/*
+		 * String adultcnt =req.getParameter("adultcnt"); String childcnt
+		 * =req.getParameter("childcnt"); String toddlercnt
+		 * =req.getParameter("toddlercnt");
+		 */
+		
+		//HttpSession session = req.getSession();
+		
+		//String member_seq = (String) session.getAttribute("member_seq");
+		
+		
 		
 		 HashMap<String, String> map = new HashMap<String, String>(); 
 		 map.put("single_seq", single_seq);
@@ -37,6 +52,21 @@ public class Flightrez extends HttpServlet {
 			e.printStackTrace();
 			
 		}
+		 
+		 String quant = ""+(Integer.parseInt(quantity)-1);
+		 
+		 req.setAttribute("quantity", quant);
+			/*
+			 * req.setAttribute("single_seq", single_seq); req.setAttribute("double_seq",
+			 * double_seq);
+			 */
+		 req.setAttribute("memberSeq", memberSeq);
+		
+		 /*
+			 * req.setAttribute("adultcnt", adultcnt); req.setAttribute("childcnt",
+			 * childcnt); req.setAttribute("toddlercnt", toddlercnt);
+			 */
+		 
 		 
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/flight/flightrez.jsp");
 
