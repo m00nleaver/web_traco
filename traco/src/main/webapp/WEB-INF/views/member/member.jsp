@@ -47,11 +47,11 @@
 								
 				
 			
-					<form method="POST" action="/traco/member/loginok.do">
+					<!-- <form method="POST" action="/traco/member/loginok.do">
 						<input type="hidden" name="member_id" value="xtmy6gw9">
 						<input type="hidden" name="member_pw" value="3ezHJ">
 						<input type="submit" value="최민기" class="btn btn-default">
-					</form>
+					</form> -->
 					
 					</c:if>
 				</div>
