@@ -1,12 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <%@ include file="/WEB-INF/views/inc/asset.jsp"%>
-
 <style>
 label {
 	width: 120px;
@@ -37,7 +36,6 @@ height: 100px;}
 </style>
 </head>
 <body>
-
 	<main class="main">
 		<%@include file="/WEB-INF/views/inc/header.jsp"%>
 		<section class="content">
@@ -48,11 +46,10 @@ height: 100px;}
 			<h2>주문 / 예약</h2>
 			
 			<div class="rezpreview">
-			
 			<c:set var ="adulttotal" value ="0"/>
 			<c:set var ="childtotal" value ="0"/>
 			<c:set var ="toddlertotal" value ="0"/>
-			<c:forEach items="${list3}" var="dto"> 
+			<c:forEach items="${list4}" var="dto">
 			<table class="rez_table">
 			<tr>
 			<th>이륙일</th>
@@ -79,19 +76,16 @@ height: 100px;}
 			<td>${dto.airplanp_number}</td>
 			</tr>
 			</table>
-			 <c:set var ="adulttotal" value ="${total + dto.airplanp_adultprice}"/>
+			<c:set var ="adulttotal" value ="${total + dto.airplanp_adultprice}"/>
 			<c:set var ="childtotal" value ="${total + dto.airplanp_kidprice}"/>
 			<c:set var ="toddlertotal" value ="${total + dto.airplanp_toddlerprice}"/> 
 			
 			</c:forEach>
 			
-			
-			
 			</div>
 			</section>
 			
-			
-						<section class="content">
+			<section class="content">
 			
 			<p class="h2">
 					주문/예약자 
@@ -410,4 +404,6 @@ height: 100px;}
 	</script>
 </body>
 
+</html>
+</body>
 </html>

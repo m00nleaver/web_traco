@@ -75,7 +75,7 @@ form {
 					<!-- 인원 -->
 					<div class="col-sm-6 col-md-6 col-xl-5">
 						<div class="input-group">
-							<label class="form-label visually-hidden" for="adult">Adult</label>
+							<%-- <label class="form-label visually-hidden" for="adult">Adult</label>
 							<select name="adult">
 								<option selected="selected">1</option>
 								<% for(int i =2; i<=10; i++){ %>
@@ -83,17 +83,21 @@ form {
 								<%} %>
 							</select> <label class="form-label visually-hidden" for="child">Child</label>
 							<select name="child">
-								
 								<% for(int i =0; i<=10; i++){ %>
 								<option><%=i %></option>
 								<%} %>
 							</select> <label class="form-label visually-hidden" for="kid">Toddler</label>
 							<select name="toddler">
-								
 								<% for(int i =0; i<=10; i++){ %>
 								<option><%=i %></option>
 								<%} %>
-							</select>
+							</select> --%>
+								<label for="quantity">인원</label>
+					<select id="quantity" name="quantity">
+						<c:forEach var="i" begin="1" end="30">
+							<option value="${i}">${i}</option>
+						</c:forEach>
+						</select>
 						</div>
 
 					</div>
@@ -150,26 +154,29 @@ form {
 					<!-- 인원 -->
 					<div class="col-sm-6 col-md-6 col-xl-5">
 						<div class="input-group">
-							<label class="form-label visually-hidden" for="adult">Adult</label>
+							<%-- <label class="form-label visually-hidden" for="adult">Adult</label>
 							<select name="adult">
-								<option>0</option>
 								<option selected="selected">1</option>
 								<% for(int i =2; i<=10; i++){ %>
 								<option><%=i %></option>
 								<%} %>
 							</select> <label class="form-label visually-hidden" for="child">Child</label>
 							<select name="child">
-								
 								<% for(int i =0; i<=10; i++){ %>
 								<option><%=i %></option>
 								<%} %>
 							</select> <label class="form-label visually-hidden" for="kid">Toddler</label>
 							<select name="toddler">
-								
 								<% for(int i =0; i<=10; i++){ %>
 								<option><%=i %></option>
 								<%} %>
-							</select>
+							</select> --%>
+								<label for="quantity">인원</label>
+					<select id="quantity" name="quantity">
+						<c:forEach var="i" begin="1" end="30">
+							<option value="${i}">${i}</option>
+						</c:forEach>
+						</select>
 						</div>
 
 					</div>
@@ -188,7 +195,7 @@ form {
 
 			<!-- 조회박스 끝 -->
 
-			
+				<form method = "get" action ="/traco/flightsinglerez.do">
 				<table class="ftable table-bordered list">
 					<!-- 컬럼 -->
 					<tr>
@@ -209,7 +216,7 @@ form {
 					<!-- 결과 -->
 					<c:forEach items="${list}" var="dto">
 						<tr>
-							<td><input type="radio" name="sinlgesite"></td>
+							<td><input type="radio" name="single_seq" value="${dto.airplanp_seq}"></td>
 							<td>${dto.airplanp_seq}</td>
 							<td>${dto.airplanp_takeoffdate}</td>
 							<td>${dto.airplanp_takeofftime}</td>
@@ -231,6 +238,9 @@ form {
 					</c:if>
 				</table>
 				
+				<input type="hidden" name="quantity" value="${quantity}"/>
+				<input type ="submit" value="예약하기">
+				</form>
 				</section>
 				<%@include file="/WEB-INF/views/inc/footer.jsp"%>
 	</main>

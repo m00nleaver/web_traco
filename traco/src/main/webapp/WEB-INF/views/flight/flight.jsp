@@ -84,23 +84,19 @@ form {
 								<%} %>
 							</select> <label class="form-label visually-hidden" for="child">Child</label>
 							<select name="child">
-
-								<option selected="selected">1</option>
-								<% for(int i =2; i<=10; i++){ %>
+								<% for(int i =0; i<=10; i++){ %>
 								<option><%=i %></option>
 								<%} %>
 							</select> <label class="form-label visually-hidden" for="kid">Toddler</label>
-							<select name="adult">
-								<option selected="selected">1</option>
-								<% for(int i =2; i<=10; i++){ %>
-
+							<select name="toddler">
+								<% for(int i =0; i<=10; i++){ %>
 								<option><%=i %></option>
 								<%} %>
 							</select> --%>
 							<label for="quantity">인원</label>
 							<select id="quantity" name="quantity">
 						<c:forEach var="i" begin="1" end="30">
-							<option value="${i}">${i}명</option>
+							<option value="${i}">${i}</option>
 						</c:forEach>
 						</select>
 						</div>
@@ -121,9 +117,7 @@ form {
 			<div class="search">
 			<div id="tab-2" class="tab-content">
 			<form method="GET" class="row g-4 mt-5 form"
-
-					action="/traco/flightlist.do" onsubmit="check();">
-
+					action="/traco/flightsinglelist.do" onsubmit="check();">
 					<div class="col-sm-6 col-md-6 col-xl-5">
 						<div class="input-group">
 							<!-- 주소 -->
@@ -185,7 +179,7 @@ form {
 							<label for="quantity">인원</label>
 					<select id="quantity" name="quantity">
 						<c:forEach var="i" begin="1" end="30">
-							<option value="${i}">${i}명</option>
+							<option value="${i}">${i}</option>
 						</c:forEach>
 						</select>
 						</div>
