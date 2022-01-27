@@ -128,7 +128,7 @@ img{
 					<div class="col-sm-6 col-md-3">
 						<div class="thumbnail" onclick="location.href='/traco/packagetour/jeju/view.do?miSeq=${dto.minipm_seq}';">
 							<img
-								src="/traco/asset/images/minithumb/3${dto.minipm_seq}.jpg"
+								src="/traco/asset/images/minithumb/${dto.minipm_seq}.jpg"
 								alt="..." style="width:240px; height:200px;">
 							<div class="caption">
 								<p>${dto.minictg_name} | ${dto.area_name}</p>
