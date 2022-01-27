@@ -41,7 +41,10 @@
 		<div class ="submenu">
 		<span class="fa fa-user me-sm-1" aria-hidden="true" onclick="location.href='/traco/member/member.do';"></span>
 		<span class="fas fa-shopping-cart"></span>
+		
+		<c:if test="${member_id eq 'admin'}">
 		<span class="far fa-list-alt" onclick="location.href='/traco/admin/adminmain.do';"></span>
+		</c:if>
 		</div>
 		
 		
