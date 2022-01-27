@@ -94,7 +94,7 @@
 		</section> --%>
 
 		<section class="content admin">
-			<h1>해쉬태그등록</h1>
+			<h1>해시태그등록</h1>
 
 			<div id="box">
 

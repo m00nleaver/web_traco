@@ -69,7 +69,7 @@ public class AddpackageOk extends HttpServlet {
 
 		int tresult = idao.tadd(idto); //썸네일 등록		
 		int iresult = idao.iadd(idto); //상세 이미지등록
-		int ipresult = pdao.ipadd();
+		
 		
 		
 		//패키지등록
@@ -89,7 +89,7 @@ public class AddpackageOk extends HttpServlet {
 		
 	
 		
-		
+		int ipresult = pdao.ipadd();
 		
 		
 		

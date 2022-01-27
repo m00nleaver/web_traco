@@ -29,8 +29,8 @@
 			<th>렌트카 관리</th>
 			<th>항공권 관리</th>
 			<th>정보 관리</th>		
-			<th>커뮤니티 관리</th>
-			<th>회원 관리</th>
+			<th>회원관리 관리</th>
+			<th>예약승인관리</th>
 		</tr>
 		<tr class="contentname">
 			<td class="info"></td>
@@ -38,8 +38,8 @@
 			<td class="info"><a href="/traco/admin/addcar.do">렌트카등록</a></td>
 			<td class="info"><a href="/traco/admin/addflight.do">항공권등록</a></td>
 			<td class="info"><a href="/traco/admin/addbanner.do">배너등록</a></td>
-			<td class="info"><a href="/traco/admin/comulist.do">커뮤니티관리</a></td>
 			<td class="info"><a href="/traco/admin/memlist.do">회원관리</a></td>
+			<td class="info"><a href="/traco/admin/pconfirm.do">패키지예약승인</a></td>
 		</tr>
 		<tr class="contentname">
 			<td class="info"></td>
@@ -47,17 +47,17 @@
 			<td class="info"><a href="/traco/admin/rlist.do">렌트카조회/수정</a></td>
 			<td class="info"><a href="/traco/admin/flist.do">항공권조회/수정</a></td>
 			<td class="info"><a href="/traco/admin/blist.do">배너조회/수정</a></td>
-			<td class="info"></td>
-			<td class="info"></td>
+			<td class="info"><a href="/traco/admin/comulist.do">커뮤니티관리</a></td>
+			<td class="info"><a href="/traco/admin/mconfirm.do">미니투어예약승인</a></td>
 		</tr>
 		<tr class="contentname">
 			<td class="info"></td>
 			<td class="info"><a href="/traco/admin/addmini.do">미니투어등록</a></td>
 			<td class="info"></td>
-			<td class="info"><a href="/traco/admin/fconfirm.do">항공권예약승인</a></td>
+			<td class="info"></td>
 			<td class="info"><a href="/traco/admin/hlist.do">해시태그관리</a></td>
 			<td class="info"></td>
-			<td class="info"></td>
+			<td class="info"><a href="/traco/admin/fconfirm.do">항공권예약승인</a></td>
 		</tr>
 		<tr class="contentname">
 			<td class="info"></td>

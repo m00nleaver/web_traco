@@ -10,6 +10,7 @@ import java.util.HashMap;
 
 import org.w3c.dom.bootstrap.DOMImplementationRegistry;
 
+import com.project.jdbc.locarDB;
 import com.project.traco.packagetour.jeju.MembersDTO;
 import com.test.jdbc.DBUtil;
 
@@ -21,7 +22,8 @@ public class FlightDAO {
 	
 	public FlightDAO() {
 		try {
-			conn=DBUtil.open();
+			conn = locarDB.open();
+			//conn=DBUtil.open();
 			stat = conn.createStatement();
 		} catch (Exception e) {
 			System.out.println("FlightDAO.FlightDAO()");

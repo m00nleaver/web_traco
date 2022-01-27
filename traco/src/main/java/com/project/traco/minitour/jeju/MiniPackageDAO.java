@@ -10,6 +10,8 @@ import java.util.Objects;
 
 import org.w3c.dom.bootstrap.DOMImplementationRegistry;
 
+import com.project.jdbc.locarDB;
+
 import mylibrary.DBUtil;
 
 
@@ -40,7 +42,8 @@ public class MiniPackageDAO {
 	public MiniPackageDAO() { 
 		
 		try {
-			conn = DBUtil.open();
+			conn = locarDB.open();
+			//conn = DBUtil.open();
 			stat = conn.createStatement();
 			
 			

@@ -7,7 +7,8 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import com.test.jdbc.DBUtil;
+import com.project.jdbc.locarDB;
+//import com.test.jdbc.DBUtil;
 
 
 public class RentCarDAO {
@@ -20,8 +21,8 @@ public class RentCarDAO {
 	public RentCarDAO() {
 		
 		try {
-
-			conn = DBUtil.open();
+			conn = locarDB.open();
+			//conn = DBUtil.open();
 			stat = conn.createStatement();
 
 		} catch (Exception e) {
