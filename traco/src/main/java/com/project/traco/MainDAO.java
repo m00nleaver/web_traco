@@ -14,8 +14,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-//import com.my.jdbc.DBUtil;
-
+import com.project.jdbc.locarDB;
 import com.project.traco.community.CommunityDTO;
 import com.test.jdbc.DBUtil;
 
@@ -33,8 +32,8 @@ public class MainDAO extends HttpServlet {
 	public MainDAO() {
 
 		try {
-
-			conn = DBUtil.open();
+			conn = locarDB.open();
+			//conn = DBUtil.open();
 			stat = conn.createStatement();
 
 		} catch (Exception e) {

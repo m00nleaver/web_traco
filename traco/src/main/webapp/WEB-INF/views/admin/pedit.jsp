@@ -53,7 +53,7 @@
 							<td style="width:100px; background-color:#CCC;">상품개수</td>
 							<td style="width:150px;">
 								<select name="items">
-									<option value="">${pdto.pcount}</option>
+									<option value="${pdto.pcount}">${pdto.pcount}</option>
 									<option value="10">10</option>
 									<option value="20">20</option>
 									<option value="30">30</option>
@@ -100,7 +100,7 @@
 						<tr>
 							<td style="height:100px;">썸네일 이미지</td>
 							<td colspan="3">
-								<input type="file" name="thumbs" style="margin-left:200px;" value="${idto.thumbname}" required>기존파일:${idto.thumbname}
+								<input type="file" name="thumbs" style="margin-left:200px;" value="${idto.thumbname}" required>기존파일:${idtoname.thumbname}
 							</td>
 							
 						</tr>
@@ -117,7 +117,7 @@
 						<!--상세이미지  -->
 						<tr>
 							<td style="height:100px;">상세 이미지</td>
-							<td colspan="3"><input type="file" name="infoimage" style="margin-left:200px;" value="${idto.imgname}" required>기존파일:${idto.imgname}</td>
+							<td colspan="3"><input type="file" name="infoimage" style="margin-left:200px;" value="${idto.imgname}" required>기존파일:${idtoiname.imgname}</td>
 							
 						</tr>
 					

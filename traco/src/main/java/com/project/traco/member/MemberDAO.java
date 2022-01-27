@@ -6,6 +6,8 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 
+import com.project.jdbc.locarDB;
+
 //import com.my.jdbc.DBUtil;
 
 import com.test.jdbc.DBUtil;
@@ -21,8 +23,8 @@ public class MemberDAO {
 	public MemberDAO() {
 
 		try {
-
-			conn = DBUtil.open();
+			conn = locarDB.open();
+			//conn = DBUtil.open();
 			stat = conn.createStatement();
 
 		} catch (Exception e) {

@@ -7,8 +7,9 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import com.project.jdbc.locarDB;
 //import com.my.jdbc.DBUtil;
-import com.test.jdbc.DBUtil;
+//import com.test.jdbc.DBUtil;
 
 
 //오라클 테이블 1개당 > DTO 클래스 1개 생성
@@ -22,8 +23,8 @@ public class CommunityDAO {
 	public CommunityDAO() {
 
 		try {
-
-			conn = DBUtil.open();
+			conn = locarDB.open();
+			//conn = DBUtil.open();
 			stat = conn.createStatement();
 
 		} catch (Exception e) {
