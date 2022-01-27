@@ -14,7 +14,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.my.jdbc.DBUtil;
+//import com.my.jdbc.DBUtil;
+import com.test.jdbc.DBUtil;
 import com.project.traco.community.CommunityDTO;
 
 
@@ -81,7 +82,7 @@ public class MainDAO extends HttpServlet {
 	public ArrayList<MainDTO> toppackage(String package_status) {
 		try {
 
-			String sql = "select pkgpm_name, area_name, pstatus, pkgpm_adultprice,thumbnaili_name from vtblPackagePM where rec = ?";
+			String sql = "select pkgpm_seq,pkgpm_name, area_name, pstatus, pkgpm_adultprice,thumbnaili_name from vtblPackagePM where rec = ?";
 
 			pstat = conn.prepareStatement(sql);
 			
@@ -95,6 +96,7 @@ public class MainDAO extends HttpServlet {
 				
 				MainDTO dto = new MainDTO();
 
+				dto.setPkgpm_seq(rs.getString("pkgpm_seq"));
 				dto.setPkgpm_name(rs.getString("pkgpm_name"));
 				dto.setArea_name(rs.getString("area_name"));
 				dto.setPstatus(rs.getString("pstatus"));
@@ -117,7 +119,7 @@ public class MainDAO extends HttpServlet {
 	public ArrayList<MainDTO> topmini(String mini_status) {
 		try {
 
-			String sql = "select minipm_name,area_name,minipm_price1,minictg_name,thumbnaili_name,rec from vtblMiniPM where rec = ?";
+			String sql = "select minipm_seq,minipm_name,area_name,minipm_price1,minictg_name,thumbnaili_name,rec from vtblMiniPM where rec = ?";
 
 			pstat = conn.prepareStatement(sql);
 			
@@ -130,7 +132,8 @@ public class MainDAO extends HttpServlet {
 			while (rs.next()) {
 				
 				MainDTO dto = new MainDTO();
-
+				
+				dto.setMinipm_seq(rs.getString("minipm_seq"));
 				dto.setMinipm_name(rs.getString("minipm_name"));
 				dto.setMinipm_price1(rs.getString("minipm_price1"));
 				dto.setMinictg_name(rs.getString("minictg_name"));

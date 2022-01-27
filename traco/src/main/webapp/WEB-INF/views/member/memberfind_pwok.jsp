@@ -42,7 +42,7 @@
 		<section class="content">
 		
 			<div class="panel panel-default">
-				<div class="panel-heading">아이디찾기</div>
+				<div class="panel-heading">패스워드디찾기</div>
 				<div class="panel-body">
 						
 						<c:if test="${not empty memberfind_pw}">				

@@ -7,9 +7,9 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import com.my.jdbc.DBUtil;
+//import com.my.jdbc.DBUtil;
 
-//import com.test.jdbc.DBUtil;
+import com.test.jdbc.DBUtil;
 
 
 //오라클 테이블 1개당 > DTO 클래스 1개 생성
