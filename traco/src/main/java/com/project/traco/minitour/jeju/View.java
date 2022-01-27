@@ -19,7 +19,7 @@ public class View extends HttpServlet {
 		String miniSeq = req.getParameter("miniSeq");
 		
 		HttpSession session = req.getSession();
-
+          
 		try {
 			String memberSeq = session.getAttribute("member_seq").toString();
 			req.setAttribute("memberSeq", memberSeq);
