@@ -22,9 +22,11 @@ public class Flightsinglelist extends HttpServlet {
 		String inputAddress2 = req.getParameter("inputAddress2");
 		String inputdateOne = req.getParameter("inputdateOne");
 		String inputdateTwo = req.getParameter("inputdateTwo");
-		String adult = req.getParameter("adult");
-		String child = req.getParameter("child");
-		String toddler = req.getParameter("toddler");
+		/*
+		 * String adult = req.getParameter("adult"); String child =
+		 * req.getParameter("child"); String toddler = req.getParameter("toddler");
+		 */
+		String quantity = req.getParameter("quantity");
 		String searchmode="n";
 		
 		
@@ -49,9 +51,8 @@ public class Flightsinglelist extends HttpServlet {
 		map.put("inputAddress1", inputAddress1);
 		map.put("inputAddress2", inputAddress2);
 		map.put("inputdateOne", inputdateOne);
-		map.put("adult", adult);
-		map.put("child", child);
-		map.put("toddler", toddler);
+		/* map.put("adult", adult); map.put("child", child); map.put("toddler",
+		 * toddler);*/
 		map.put("searchmode", searchmode);
 		
 		//1.
@@ -83,7 +84,7 @@ public class Flightsinglelist extends HttpServlet {
 			e.printStackTrace();
 		}
 		
-		
+		req.setAttribute("quantity", quantity);
 		RequestDispatcher dispatcher 
 		= req.getRequestDispatcher("/WEB-INF/views/flight/flightsinglelist.jsp");
 

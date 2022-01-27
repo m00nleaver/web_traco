@@ -224,6 +224,49 @@ public class FlightDAO {
 		
 		
 	}
+
+	public ArrayList<FlightDTO> list4(HashMap<String, String> map) {
+		try {
+			  
+			  String sql= String.format("select * from vwairplanp");
+			  
+				  sql+=" WHERE airplanp_seq ="+map.get("single_seq"); 
+			  sql+=" order by airplanp_seq";
+		  
+		  rs = stat.executeQuery(sql);
+		  
+		  ArrayList<FlightDTO> list4 = new ArrayList<FlightDTO>();
+		  
+		  while(rs.next()) { 
+			  FlightDTO dto = new FlightDTO();
+		  
+		  dto.setAirplanp_seq(rs.getString("airplanp_seq"));
+		  dto.setAirplanl_name(rs.getString("airplanl_name"));
+		  dto.setAirplanl_seq(rs.getString("airplanl_seq"));
+		  dto.setAirplanp_takeoffdate(rs.getString("airplanp_takeoffdate"));
+		  dto.setAirplanp_takeofftime(rs.getString("airplanp_takeofftime"));
+		  dto.setAirplanp_number(rs.getString("airplanp_number"));
+		  dto.setAirplanp_adultprice(rs.getString("airplanp_adultprice"));
+		  dto.setAirplanp_kidprice(rs.getString("airplanp_kidprice"));
+		  dto.setAirplanp_toddlerprice(rs.getString("airplanp_toddlerprice"));
+		  dto.setSalek_seq(rs.getString("salek_seq"));
+		  dto.setSalek_kind(rs.getString("salek_kind"));
+		  dto.setStartl_seq(rs.getString("startl_seq"));
+		  dto.setSairport_name(rs.getString("sairport_name"));
+		  dto.setEndl_seq(rs.getString("endl_seq"));
+		  dto.setEairport_name(rs.getString("eairport_name"));
+		  
+		  list4.add(dto); 
+		  }
+		  
+		  return list4; 
+		  } catch (Exception e) { 
+			  System.out.println("FlightDAO.list4()");
+			  e.printStackTrace(); 
+			  } 
+			  
+			  return null;
+	}
 	
 	
 }

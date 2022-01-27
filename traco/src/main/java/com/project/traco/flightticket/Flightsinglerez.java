@@ -1,5 +1,6 @@
 package com.project.traco.flightticket;
 
+
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -15,8 +16,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-@WebServlet("/flightrez.do")
-public class Flightrez extends HttpServlet {
+@WebServlet("/flightsinglerez.do")
+public class Flightsinglerez extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -28,20 +29,21 @@ public class Flightrez extends HttpServlet {
 		}
 		
 		String single_seq = req.getParameter("single_seq");
-		String double_seq = req.getParameter("double_seq");
 		String memberSeq = (String) session.getAttribute("member_seq");
 		String quantity = req.getParameter("quantity");
 		
 		
 		 HashMap<String, String> map = new HashMap<String, String>(); 
 		 map.put("single_seq", single_seq);
-		 map.put("double_seq", double_seq);
+		 
 		 
 		 FlightDAO dao = new FlightDAO();
 		 
-		 ArrayList<FlightDTO> list3 = dao.list3(map);
+		 ArrayList<FlightDTO> list4 = dao.list4(map);
+		 
 		 try {
-			 req.setAttribute("list3", list3);
+			 req.setAttribute("list4", list4);
+			 
 		} catch (Exception e) {
 			System.out.println("Flightrez().오류");
 			e.printStackTrace();
@@ -55,8 +57,9 @@ public class Flightrez extends HttpServlet {
 		 req.setAttribute("memberSeq", memberSeq);
 		
 		 
-		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/flight/flightrez.jsp");
+		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/flight/flightsinglerez.jsp");
 
 		dispatcher.forward(req, resp);
 	}
 }
+
