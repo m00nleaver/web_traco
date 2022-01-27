@@ -7,31 +7,32 @@
 <%@ include file="/WEB-INF/views/inc/asset.jsp" %>
 <style>
 
-	.panel {
-		width: 700px;
-		margin: 0 auto; 
-		margin-top: 30px;
-		text-align: left;
-	}
-	
-	.panel-body div{
-		margin-top: 30px;
-	}
-	.panel input[type=submit] {
-		
-		margin-top: 30px;
-		width: 570px;
-	}
-	
-	.panel .panel-body {
-		width: 600px;
-		margin: 0 auto; 
-		text-align: left;
-	}
-	
+   .panel {
+      width: 700px;
+      margin: 0 auto; 
+      margin-top: 30px;
+      text-align: left;
+   }
+   
+   .panel-body div{
+      margin-top: 30px;
+   }
+   .panel input[type=submit] {
+      
+      margin-top: 30px;
+      width: 570px;
+   }
+   
+   .panel .panel-body {
+      width: 600px;
+      margin: 0 auto; 
+      text-align: left;
+   }
+   
 </style>
 </head>
 <body>
+
 	<!-- member/login.jsp -->
 	<main class="main">
 		<%@include file="/WEB-INF/views/inc/header.jsp" %>
@@ -44,7 +45,7 @@
 				
 						<div>아이디</div>
 						<input type="text" id="member_id" name="member_id" class="form-control" placeholder="아이디" required autofocus>
-						<input type="button" id="idaddbtn" class="btn btn-default" value="중복검사">					
+						<input type="button" id="idaddbtn" class="btn btn-default" value="중복검사" >					
 						<span id="result"></span>
 						
 						<div>비밀번호</div>
@@ -65,7 +66,7 @@
 						<div>이메일</div>
 						<input type="email" name="member_email" class="form-control" placeholder="이메일" required>
 						
-						<input type="submit" id="addsubmit" value="회원가입하기" class="btn btn-primary">
+						<input type="submit" id="addsubmit" value="회원가입하기" class="btn btn-primary" style="display:none;">
 					
 				</div>
 			</div>
@@ -75,6 +76,8 @@
 	</main>
 	
 	<script>
+
+
 		$('#idaddbtn').click(()=>{
 		
 		//1. 아이디 전송
@@ -88,16 +91,21 @@
 			data: 'member_id=' + $('#member_id').val(), //id=hong
 			dataType: 'text',
 			success: function(result) {
-				if (result == '1') {
+				if (result >= '1') {
 					$('#result').css('color', 'tomato');
 					$('#result').text('이미 사용중인 아이디입니다.');
-					
+
+					$("#addsubmit").hide();
+						
 				} else {
 					$('#result').css('color', 'cornflowerblue');
-					$('#result').text('사용가능한 아이디입니다.');
+					$('#result').text('사용가능한 아이디입니다.');			
+				
+					$("#addsubmit").show();
+
 				}
 				
-				if (result == '1'){
+				if (result >= '1'){
 					$(document).ready(function(){
 						  $("form").submit(function(){
 						    alert("이미 사용중인 아이디입니다.");
@@ -116,15 +124,13 @@
 			}
 			
 		});
-		
 	});
+
+		
+	
+
 	</script>
+
+
 </body>
 </html>
-
-
-
-
-
-
-

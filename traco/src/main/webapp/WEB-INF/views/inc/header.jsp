@@ -24,22 +24,30 @@
 	
 	<ul class="menu">
 	
-		<span class="glyphicon glyphicon-menu-hamburger" onclick="location.href='/traco/main.do';"></span>
+		<!-- <span class="glyphicon glyphicon-menu-hamburger" onclick="location.href='/traco/main.do';"></span> -->
 
 	
+
 		<li onclick="location.href='/traco/packagetour/jeju/jejumain.do';">패키지</li>
 		<li onclick="location.href='/traco/minitour/jeju/jejumini.do';">미니투어</li>
-		<li onclick="location.href='/traco/route.do';">경로찾기</li>
+
 		<li onclick="location.href='/traco/flight.do';">항공</li>
-		<li onclick="location.href='/traco/rentcar.do';">렌트카</li>
+		<li onclick="location.href='/traco/rentcar/rentcar.do';">렌트카</li>
 		<li onclick="location.href='/traco/community/communitylist.do';">커뮤니티</li>
 						
 		<!-- 아이콘 -->
 		<!-- https://fontawesome.com/v6.0 -->
-		<div class ="submenu">
-		<span class="fa fa-user me-sm-1" aria-hidden="true" onclick="location.href='/traco/member/member.do';"></span>
+		<div class ="submenu" style="margin-left:150px;">
+		<span class="fa fa-user me-sm-1" aria-hidden="true" onclick="location.href='/traco/member/member.do';" <c:if test="${not empty member_id}"> style="color:cornflowerblue;" </c:if>></span>
 		<span class="fas fa-shopping-cart"></span>
-		<span class="far fa-list-alt" onclick="location.href='/traco/admin/adminmain.do';"></span>
+		
+		<c:if test="${member_id eq 'admin'}">
+		<span class="far fa-list-alt" onclick="window.open('/traco/admin/adminmain.do');" ></span>
+		</c:if>
+		
+		<%-- <c:if test="${not empty member_id}">
+		<span>로그인되었습니다.</span>
+		</c:if> --%>
 		</div>
 		
 		
