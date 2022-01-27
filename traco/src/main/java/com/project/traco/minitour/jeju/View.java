@@ -1,4 +1,4 @@
-package com.project.traco.packagetour.jeju;
+package com.project.traco.minitour.jeju;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -11,52 +11,46 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-@WebServlet("/packagetour/jeju/view.do")
+@WebServlet("/minitour/jeju/miniview.do")
 public class View extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-		String pkSeq = req.getParameter("pkSeq");
+		String miniSeq = req.getParameter("miniSeq");
+		
 		HttpSession session = req.getSession();
 
-		
-		try {
-			String memberSeq = session.getAttribute("member_seq").toString();
-			req.setAttribute("memberSeq", memberSeq);
-			
-		}catch(Exception e){ System.out.println("로그인 안되었지만, 일단 보세요."); }
-		
+		String memberSeq = session.getAttribute("member_seq").toString();
 		
 		String daterange = req.getParameter("daterange");
 		
-		System.out.println("패키지 상품번호: " + pkSeq);
+		System.out.println("미니 상품번호: " + miniSeq);
 		System.out.println("날짜: " + daterange);
 		
 		
 		
 		//개별상품의 데이터 가져오기
 		//DB조회를 수행할 DAO 생성
-		//DAO에게 상품번호만 있는 DTO 넘겨주고, 다른 정보들 꽉채워서 받기
 		
-		PackageDAO itemDao = new PackageDAO();
+		MiniPackageDAO itemDao = new MiniPackageDAO();
 
 		
-		PackageDTO itemDto = itemDao.item(pkSeq);
-		
-		
-
-		
-		
-		
+		MiniPackageDTO itemDto = itemDao.item(miniSeq);
 		
 		
 
+		
+		
+		
+		
+		
+		req.setAttribute("memberSeq", memberSeq);
 		
 		req.setAttribute("itemdto", itemDto);
 		
-		req.setAttribute("pkSeq", pkSeq);
+		req.setAttribute("miniSeq", miniSeq);
 		
-		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/packagetour/jeju/view.jsp");
+		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/minitour/jeju/view.jsp");
 
 		dispatcher.forward(req, resp);
 	}
