@@ -1,12 +1,6 @@
-
-package com.project.traco.flightticket;
+package com.project.traco.admin;
 
 import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.HashMap;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -15,14 +9,20 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/flight.do")
-public class Flight extends HttpServlet {
-
+@WebServlet("/admin/bedit.do")
+public class Bedit extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
 		
-		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/flight/flight.jsp");
+		String seq = req.getParameter("seq");
+		
+		AdminPDAO pdao = new AdminPDAO();
+		
+		AdminPDTO pdto = pdao.bget(seq);
+		
+		req.setAttribute("pdto", pdto);
+		
+		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/admin/bedit.jsp");
 
 		dispatcher.forward(req, resp);
 	}

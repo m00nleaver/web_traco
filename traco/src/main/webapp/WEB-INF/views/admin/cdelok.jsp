@@ -17,15 +17,15 @@
 		<h1 class="page-header"><small></small></h1>
 	</div>
 	<script>
-	<c:if test="${result==1}">
+	<c:if test="${result==3}">
 	//성공
-	alert('등록성공');
-	location.href = '/traco/admin/flist.do';
+	alert('삭제완료');
+	location.href = '/traco/admin/comulist.do';
 	</c:if>
-	
-	<c:if test="${result!=1}">
+
+	<c:if test="${result!=3}">
 	//실패
-	alert('failed');
+	alert('삭제실패');
 	history.back();
 	</c:if>
 	</script>
