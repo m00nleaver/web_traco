@@ -17,6 +17,10 @@
 .col-md-3 {
     width: 24%;
 }
+
+img{
+	cursor:pointer;
+}
 </style>
 </head>
 <body>
@@ -56,13 +60,13 @@
 					<c:if test="${dto.banneri_seq == 1}">
 						<div class="item active">
 							<img src="/traco/asset/images/banner/${dto.banneri_imageurl}" alt=""
-								style="width: 100%; height: 200px;">
+								style="width: 100%; height: 200px;" onclick="location.href='/traco/packagetour/jeju/view.do?pkSeq=${dto.banneri_linkurl}';">
 						</div>
 					</c:if>
 					<c:if test="${dto.banneri_seq > 1}">
 						<div class="item">
 							<img src="/traco/asset/images/banner/${dto.banneri_imageurl}" alt=""
-								style="width: 100%; height: 200px;">
+								style="width: 100%; height: 200px;" onclick="location.href='/traco/packagetour/jeju/view.do?pkSeq=${dto.banneri_linkurl}';">
 						</div>
 					</c:if>
 					</c:forEach>
@@ -100,9 +104,10 @@
 					<div class="col-sm-6 col-md-3">
 						<div class="thumbnail" onclick="location.href='/traco/packagetour/jeju/view.do?pkSeq=${dto.pkgpm_seq}';">
 							<img
-								src="https://cdn.pixabay.com/photo/2016/01/19/17/57/car-1149997_960_720.jpg"
-								alt="...">
-							<div class="caption">
+								src="/traco/asset/images/pkthumb/2${dto.pkgpm_seq}.jpg"
+								alt="..." style="width:240px; height:200px;">
+							<%-- <img src="/traco/asset/images/pkthumb/${dto. }}">	
+ --%>							<div class="caption">
 								<p>${dto.area_name }</p>
 								<h4>${dto.pkgpm_name}</h4>
 								<p>${dto.pkgpm_adultprice}원 / 성인</p><p>${dto.pstatus}</p>
@@ -123,8 +128,8 @@
 					<div class="col-sm-6 col-md-3">
 						<div class="thumbnail" onclick="location.href='/traco/packagetour/jeju/view.do?miSeq=${dto.minipm_seq}';">
 							<img
-								src="https://cdn.pixabay.com/photo/2016/01/19/17/57/car-1149997_960_720.jpg"
-								alt="...">
+								src="/traco/asset/images/minithumb/3${dto.minipm_seq}.jpg"
+								alt="..." style="width:240px; height:200px;">
 							<div class="caption">
 								<p>${dto.minictg_name} | ${dto.area_name}</p>
 								<h4>${dto.minipm_name}</h4>
