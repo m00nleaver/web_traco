@@ -15,8 +15,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 //import com.my.jdbc.DBUtil;
-import com.test.jdbc.DBUtil;
+
 import com.project.traco.community.CommunityDTO;
+import com.test.jdbc.DBUtil;
+
+
 
 
 public class MainDAO extends HttpServlet {

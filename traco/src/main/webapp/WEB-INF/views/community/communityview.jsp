@@ -62,6 +62,56 @@
          </div>
 
 
+
+			<form method="POST" action="/traco/community/commentaddok.do">
+				<c:if test="${not empty member_id}">
+					<table class="commentadd">
+						<tr>
+							<td><textarea name="commentm_content" class="form-control"
+									required></textarea></td>
+							<td><input type="submit" value="댓글쓰기"
+								class="btn btn-primary"></td>
+						</tr>
+					</table>
+				</c:if>
+				<input type="hidden" name="boardm_seq" value="${dto.boardm_seq}">
+			</form>
+			
+			<c:forEach items="${clist}" var="cdto">
+			<div style="width:700px; margin: 0px auto">
+						
+						<form method="POST" action="/traco/community/commenteditok.do">
+							<div id="${cdto.commentm_seq}_texthide2" style="display:none;">
+								<div><textarea name="commentm_content" class="form-control"	required></textarea></div>
+								<div>
+									<input type="submit" value="수정완료" class="btn btn-primary">
+									<input id="${cdto.commentm_seq}_ceditbtn2" type="button" value="취소하기"	class="btn btn-primary">
+								</div>
+							</div>
+							<input type="hidden" name="commentm_seq" value="${cdto.commentm_seq}">
+							<input type="hidden" name="boardm_seq" value="${dto.boardm_seq}">
+						</form>
+						
+						<div id="${cdto.commentm_seq}_texthide">
+							<div class="form-control" style="height:auto;">
+								<div>${cdto.commentm_content}</div>
+								<div style="text-align: right; height:20px;">
+									<small>${cdto.member_id}</small>&nbsp;&nbsp;ㆍ&nbsp;&nbsp;<small>${cdto.commentm_date}</small>
+								</div>
+							</div>
+							<c:if test="${cdto.commentm_name == member_id}">
+								<div>
+									<input id="${cdto.commentm_seq}_ceditbtn" type="button" value="수정하기"	class="btn btn-default">
+									
+									<input type="button" value="삭제하기"	class="btn btn-default"
+										onclick="location.href='/traco/community/commentdelok.do?commentm_seq=${cdto.commentm_seq}&boardm_seq=${dto.boardm_seq}';">
+								</div>
+							</c:if>
+						</div>		
+			</div>
+			<br><br>
+			</c:forEach>
+
          <form method="POST" action="/traco/community/commentaddok.do">
             <c:if test="${not empty member_id}">
                <table class="commentadd">
@@ -110,6 +160,7 @@
          </div>
          <br><br>
          </c:forEach>
+
 
       </section>
       <%@include file="/WEB-INF/views/inc/footer.jsp"%>
