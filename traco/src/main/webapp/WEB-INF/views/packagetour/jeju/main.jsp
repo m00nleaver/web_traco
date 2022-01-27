@@ -107,10 +107,8 @@
  }
  
  .center {
-  display: flex;
   justify-content: center;
   align-items: center;
-  float:left;
   margin-right:12px;
 
 }
