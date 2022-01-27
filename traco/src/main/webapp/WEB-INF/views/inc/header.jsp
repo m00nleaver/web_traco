@@ -27,9 +27,10 @@
 		<!-- <span class="glyphicon glyphicon-menu-hamburger" onclick="location.href='/traco/main.do';"></span> -->
 
 	
-		<li onclick="location.href='/traco/packagetour/jeju/pkmain.do';">패키지</li>
-		<li onclick="location.href='/traco/minitour/jeju/main.do';">미니투어</li>
-		
+
+		<li onclick="location.href='/traco/packagetour/jeju/jejumain.do';">패키지</li>
+		<li onclick="location.href='/traco/minitour/jeju/jejumini.do';">미니투어</li>
+
 		<li onclick="location.href='/traco/flight.do';">항공</li>
 		<li onclick="location.href='/traco/rentcar/rentcar.do';">렌트카</li>
 		<li onclick="location.href='/traco/community/communitylist.do';">커뮤니티</li>

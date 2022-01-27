@@ -133,7 +133,6 @@
 	<div id="all-box" class="products">
 		<div style="width:1000px; margin:0px auto;">
 			<span class="h1">검색결과</span> 						
-			<span class="h1 btn btn-primary" onclick="location.href='/traco/packagetour/jeju/totalview.do';" class="h2" style="float:right;">전체상품 보기</span>
 			
 						
 		</div>

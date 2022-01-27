@@ -156,7 +156,7 @@ img {
 	<section class="content">
 		<div class="img-content">
 		
-			<img src="/traco/asset/images/pkimage/${itemdto.pkImageSeq}.png"  alt="...">
+			<img src="/traco/asset/images/miniimage/${itemdto.pkImageSeq}.png"  alt="...">
 		
 		
 		
