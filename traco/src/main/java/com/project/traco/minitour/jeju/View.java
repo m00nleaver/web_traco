@@ -25,7 +25,7 @@ public class View extends HttpServlet {
 			req.setAttribute("memberSeq", memberSeq);
 			
 		}catch(Exception e){ System.out.println("로그인 안되었지만, 일단 보세요."); }
-		
+		  
 		String daterange = req.getParameter("daterange");
 		    
 		System.out.println("미니 상품번호: " + miniSeq);
