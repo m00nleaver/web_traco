@@ -23,7 +23,7 @@
 	<script>
 	
 		<c:if test="${not empty member_id}">
-			location.href = '/traco/member/member.do';
+			location.href = '/traco/main.do';
 		</c:if>
 		
 		<c:if test="${empty member_id}">

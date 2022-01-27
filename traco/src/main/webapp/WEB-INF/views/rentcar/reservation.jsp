@@ -213,11 +213,11 @@ label {
 				<br>
 				
 				<p align="center">
-				 <button id="reserveBtn" class = "btn btn-primary" onclick="location.href='/traco/reservationok.do';">예약하기</button>
+				 <button id="reserveBtn" class = "btn btn-primary" onclick="location.href='/traco/rentcar/reservationok.do';">예약하기</button>
 				</p> 
 				
 				<p align="center">
-				 <button id="returnBtn" class = "btn btn-primary" onclick="location.href='/traco/rentcar.do';">돌아가기</button>
+				 <button id="returnBtn" class = "btn btn-primary" onclick="location.href='/traco/rentcar/rentcar.do';">돌아가기</button>
 				</p> 
 				 
 				 <br>

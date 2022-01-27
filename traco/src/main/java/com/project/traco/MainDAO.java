@@ -65,7 +65,7 @@ public class MainDAO extends HttpServlet {
 				dto.setBanneri_seq(rs.getString("banneri_seq"));
 				dto.setBanneri_name(rs.getString("banneri_name"));
 				dto.setBanneri_imageurl(rs.getString("banneri_imageurl"));
-				dto.setBanneri_linkurl(rs.getString("banneri_linkurl"));
+				dto.setBanneri_linkurl(rs.getString("banneri_linkurl").substring(3));
 				dto.setStatus(rs.getString("status"));
 				dto.setBannerctg_seq(rs.getString("bannerctg_seq"));
 				

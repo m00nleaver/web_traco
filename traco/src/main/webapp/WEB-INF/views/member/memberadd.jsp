@@ -7,31 +7,32 @@
 <%@ include file="/WEB-INF/views/inc/asset.jsp" %>
 <style>
 
-	.panel {
-		width: 700px;
-		margin: 0 auto; 
-		margin-top: 30px;
-		text-align: left;
-	}
-	
-	.panel-body div{
-		margin-top: 30px;
-	}
-	.panel input[type=submit] {
-		
-		margin-top: 30px;
-		width: 570px;
-	}
-	
-	.panel .panel-body {
-		width: 600px;
-		margin: 0 auto; 
-		text-align: left;
-	}
-	
+   .panel {
+      width: 700px;
+      margin: 0 auto; 
+      margin-top: 30px;
+      text-align: left;
+   }
+   
+   .panel-body div{
+      margin-top: 30px;
+   }
+   .panel input[type=submit] {
+      
+      margin-top: 30px;
+      width: 570px;
+   }
+   
+   .panel .panel-body {
+      width: 600px;
+      margin: 0 auto; 
+      text-align: left;
+   }
+   
 </style>
 </head>
 <body>
+
 	<!-- member/login.jsp -->
 	<main class="main">
 		<%@include file="/WEB-INF/views/inc/header.jsp" %>
@@ -129,12 +130,7 @@
 	
 
 	</script>
+
+
 </body>
 </html>
-
-
-
-
-
-
-

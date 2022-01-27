@@ -12,26 +12,28 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/admin/blistok.do")
 public class BlistOk extends HttpServlet {
 	@Override
-	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		
-		
+
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
 		req.setCharacterEncoding("UTF-8");
-		
+
 		String status = req.getParameter("status");
 		String seq = req.getParameter("seq");
-		
+		System.out.println(status);
+		System.out.println(seq);
 		AdminPDAO pdao = new AdminPDAO();
 		AdminPDTO pdto = new AdminPDTO();
-		
+
 		pdto.setBseq(seq);
 		pdto.setStatus(status);
-		
+
 		int result = pdao.editStatus(pdto);
-		
+
 		req.setAttribute("result", result);
-		
+
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/admin/blistok.jsp");
 
 		dispatcher.forward(req, resp);
 	}
+
 }

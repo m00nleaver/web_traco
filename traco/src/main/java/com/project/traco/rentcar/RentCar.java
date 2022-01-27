@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/rentcar.do")
+@WebServlet("/rentcar/rentcar.do")
 public class RentCar extends HttpServlet {
 
 	@Override
