@@ -140,6 +140,7 @@ html {
 	margin: 0 10px;
 	cursor: pointer;
 	font-size:14px;
+	margin-left:50px;
 }
 
 .header .menu div {
@@ -185,6 +186,7 @@ html {
 	color: #EE6C4D;
 
 }
+
 
 
 /*search*/

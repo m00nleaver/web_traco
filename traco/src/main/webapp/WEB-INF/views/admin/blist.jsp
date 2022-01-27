@@ -44,7 +44,14 @@
 					<td>${pdto.bseq }</td>
 					<td><img src="/traco/asset/images/banner/${pdto.bfile}"  alt="배너이미지" class="banner"></td>
 					<td>${pdto.bname}</td>
-					<td><c:if test="${pdto.status=='사용중'}">${pdto.status}<input type="submit" class="btn btn-danger" value="사용중지"><input type="hidden" value="사용중지" name="status"><input type="hidden" value="${pdto.bseq}" name="seq"></c:if><c:if test="${pdto.status=='사용중지'}">${pdto.status}<input type="submit" class="btn btn-danger" value="사용중"><input type="hidden" value="사용중" name="status"><input type="hidden" value="${pdto.bseq}" name="seq"></c:if></td>
+					<td>
+					<c:if test="${pdto.status=='사용중'}">${pdto.status}<input type="button" class="btn btn-danger" value="사용중지" onclick="location.href='/traco/admin/blistok.do?seq=${pdto.bseq}&status=사용중지';">
+					
+					</c:if>
+					<c:if test="${pdto.status=='사용중지'}">${pdto.status}<input type="button" class="btn btn-danger" value="사용중" onclick="location.href='/traco/admin/blistok.do?seq=${pdto.bseq}&status=사용중';">
+					
+					</c:if>
+					</td>
 					<td> <!--seq 넘기기  -->
 						<span class="glyphicon glyphicon-edit" onclick="location.href='/traco/admin/bedit.do?seq=${pdto.bseq}';"></span> / 
 						<span class="glyphicon glyphicon-trash" onclick="location.href='/traco/admin/bdel.do?seq=${pdto.bseq}';"></span>
