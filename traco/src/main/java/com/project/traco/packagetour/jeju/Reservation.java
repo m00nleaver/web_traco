@@ -18,6 +18,12 @@ public class Reservation extends HttpServlet {
 		String memberSeq = req.getParameter("memberSeq");
 		String daterange = req.getParameter("daterange");
 		String quantity = req.getParameter("quantity");
+		String start = req.getParameter("start");
+		String end = req.getParameter("end");
+		
+		
+		System.out.println(start);
+		System.out.println(end);
 		
 		System.out.println(pkSeq);
 		System.out.println(memberSeq);
@@ -42,6 +48,8 @@ public class Reservation extends HttpServlet {
 		req.setAttribute("itemdto", itemDto);
 		req.setAttribute("quantity", quant);
 		req.setAttribute("date", date);
+		req.setAttribute("start", start);
+		req.setAttribute("end", end);
 		
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/packagetour/jeju/reservation.jsp");
 

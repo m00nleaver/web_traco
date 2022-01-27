@@ -10,7 +10,7 @@ import java.util.Objects;
 
 import org.w3c.dom.bootstrap.DOMImplementationRegistry;
 
-import com.test.jdbc.DBUtil;
+import mylibrary.DBUtil;
 
 
 
@@ -348,6 +348,8 @@ public class PackageDAO {
 
 	public PackageDTO item(String pkSeq) {
 		try {
+			
+			
 			String sql = "select * from vwpkitem where pkgpm_seq = ?";
 					
 			
@@ -434,6 +436,211 @@ public class PackageDAO {
 		
 	} catch (Exception e) {
 		System.out.println("회원정보 로딩 DB작업 오류");
+		e.printStackTrace();
+	}
+	
+	return null;
+	}
+
+
+	public int insertPackageR(ReserveDTO dto) {
+
+		try {
+			
+			String sql = "insert into tblpackager (REZ_SEQ, PKGPM_SEQ) values ( (select max(rez_seq)+1 from tblpackageR), ?)";
+			pstat = conn.prepareStatement(sql);
+			pstat.setString(1, dto.getPkgpm_seq());
+
+			
+			return pstat.executeUpdate();
+			
+		} catch (Exception e) {
+			System.out.println("패키지-예약 테이블 insert 오류");
+		}
+		
+		return 0;
+	}
+
+
+	public int insertRez(ReserveDTO dto) {
+		try {
+			
+			String sql = "insert into tblrez values( (select max(rez_seq)+1 from tblrez),?, ?, ?, ?, (select bankm_seq from tblbankm where bankm_name = ?), 1, ?, 0)";
+			
+					
+			pstat = conn.prepareStatement(sql);
+			pstat.setString(1, dto.getRez_date());
+			pstat.setString(2, dto.getRez_adultcnt());
+			pstat.setString(3, dto.getRez_toddlercnt());
+			pstat.setString(4, dto.getRez_kidcnt());
+			pstat.setString(5, dto.getBankm_name());
+			pstat.setString(6, dto.getMember_seq());
+
+			
+			return pstat.executeUpdate();
+			
+		} catch (Exception e) {
+			System.out.println("주문예약관리 테이블 insert 오류");
+		}
+		
+		return 0;
+	}
+
+
+	public ArrayList<AreaDTO> arealist(String big) {
+		
+		try {
+			
+			String where = String.format("where area_name like '%%%s %%'", big);
+			
+			String sql = "select * from tblArea "+where;
+			
+			
+
+			rs = stat.executeQuery(sql);
+
+			
+			
+			ArrayList<AreaDTO> list = new ArrayList<AreaDTO>();
+			
+			
+			while (rs.next()) {
+				
+				System.out.println("DTO있어?");
+				
+				AreaDTO dto = new AreaDTO();
+				
+
+				dto.setAREA_SEQ(rs.getString("AREA_SEQ"));
+				dto.setAREA_SMALL(rs.getString("AREA_NAME"));
+				
+				
+				list.add(dto);
+				
+
+		}
+		
+		return list;
+		
+		
+		
+	} catch (Exception e) {
+		System.out.println("지역 중분류 가져오기 DB작업 오류");
+		e.printStackTrace();
+	}
+	
+	return null;
+		
+	}
+
+
+	public ArrayList<PackageDTO> arlist(String area) {
+		try {
+			
+			String where = String.format("where area_name like '%%%s%%'", area);
+			
+			String sql = "select * from vwpktagitem "+where;
+			
+			
+
+			rs = stat.executeQuery(sql);
+
+			
+			
+			ArrayList<PackageDTO> list = new ArrayList<PackageDTO>();
+			
+			
+			while (rs.next()) {
+				
+				System.out.println("DTO있어?");
+				
+				PackageDTO dto = new PackageDTO();
+
+				
+				dto.setPkSeq(rs.getString("PKGPM_SEQ")); //상품번호
+				dto.setPkName(rs.getString("PKGPM_NAME")); //상품명
+				dto.setPkQuantity(rs.getString("PKGPM_COUNT")); //판매개수
+				dto.setPkStartDate(rs.getString("PKGPM_START")); 
+				dto.setPkEndDate(rs.getString("PKGPM_END"));
+				dto.setAdultPrice(rs.getString("PKGPM_ADULTPRICE"));
+				dto.setKidPrice(rs.getString("PKGPM_KIDPRICE"));
+				dto.setToddlerPrice(rs.getString("PKGPM_TODDLERPRICE"));
+				dto.setPkThumbSeq(rs.getString("THUMBNAILI_SEQ"));
+				dto.setPkImageSeq(rs.getString("IMGM_SEQ"));
+				dto.setPkPeriod(rs.getString("PKGPM_PERIOD"));
+				dto.setPkStatus(rs.getString("PSTATUS"));
+				dto.setPkTagName(rs.getString("HASHTAG_NAME"));
+
+				
+				
+				list.add(dto);
+				
+
+		}
+		
+		return list;
+		
+		
+		
+	} catch (Exception e) {
+		System.out.println("특정지역 해당상품 조회 DB작업 오류");
+		e.printStackTrace();
+	}
+	
+	return null;
+		
+	}
+
+
+	public ArrayList<PackageDTO> alist() {
+		try {
+			
+			
+			String sql = "select * from vwpktagitem";
+			
+			
+
+			rs = stat.executeQuery(sql);
+
+			
+			
+			ArrayList<PackageDTO> list = new ArrayList<PackageDTO>();
+			
+			
+			while (rs.next()) {
+				
+				System.out.println("DTO있어?");
+				
+				PackageDTO dto = new PackageDTO();
+
+				
+				dto.setPkSeq(rs.getString("PKGPM_SEQ")); //상품번호
+				dto.setPkName(rs.getString("PKGPM_NAME")); //상품명
+				dto.setPkQuantity(rs.getString("PKGPM_COUNT")); //판매개수
+				dto.setPkStartDate(rs.getString("PKGPM_START")); 
+				dto.setPkEndDate(rs.getString("PKGPM_END"));
+				dto.setAdultPrice(rs.getString("PKGPM_ADULTPRICE"));
+				dto.setKidPrice(rs.getString("PKGPM_KIDPRICE"));
+				dto.setToddlerPrice(rs.getString("PKGPM_TODDLERPRICE"));
+				dto.setPkThumbSeq(rs.getString("THUMBNAILI_SEQ"));
+				dto.setPkImageSeq(rs.getString("IMGM_SEQ"));
+				dto.setPkPeriod(rs.getString("PKGPM_PERIOD"));
+				dto.setPkStatus(rs.getString("PSTATUS"));
+				dto.setPkTagName(rs.getString("HASHTAG_NAME"));
+
+				
+				
+				list.add(dto);
+				
+
+		}
+		
+		return list;
+		
+		
+		
+	} catch (Exception e) {
+		System.out.println("전체상품 조회 DB작업 오류");
 		e.printStackTrace();
 	}
 	

@@ -14,25 +14,46 @@
 
 <style>
 
-	table, th, td {
+/* 	table, th, td {
 	  border: 1px solid black;
 	/*   border-collapse: collapse;
-	 */}
+	 */} */
 	 #datediv {
-	 	width: 600px;
+	 	width: 400px;
 	 	height: 400px;
 		vertical-align: text-top;
 		text-align: center;
 	 }
-	 div.sticky {
-	  position: -webkit-sticky;
-	  position: sticky;
-	  top: 0;
-	  background-color: yellow;
-	  padding: 50px;
-	  font-size: 20px;
-	}
+
 		 
+	.form {
+	
+	float : right;
+	
+	}
+	
+	section {
+		margin-left : 80px; 
+		margin-right : 80px; 
+	}
+
+img {
+
+  max-width: 100%;
+  max-height: 100%;
+  margin: auto;
+  display: block;
+
+
+.img-content {
+
+	background-color : 
+
+}
+
+
+}
+
 
 </style>
 </head>
@@ -40,16 +61,65 @@
 
 	<main class="main">
 		<%@include file="/WEB-INF/views/inc/header.jsp" %>
+	
+		<br>
+		<br>
+
+
 		<section class="content">
 						
+		<div style="float :left; width:50%;">
+			<table class="table">
+				
+				<tr>
+					<th>상품번호</th>
+					<td>${itemdto.pkName}</td>
+				</tr>
+				<tr>
+					<th>출발일</th>
+					<td id="start">${itemdto.pkStartDate}</td>
+				</tr>
+				<tr>
+					<th>복귀일</th>
+					<td id="end">${itemdto.pkEndDate}</td>
+				</tr>
+				<tr>
+					<th>성인가격</th>
+					<td>${itemdto.adultPrice}</td>
+				</tr>
+				<tr>
+					<th>아동가격</th>
+					<td>${itemdto.kidPrice}</td>
+				</tr>
+				<tr>
+					<th>유아가격</th>
+					<td>${itemdto.toddlerPrice}</td>
+				</tr>
+				<tr>
+					<th>일자</th>
+					<td>${itemdto.pkPeriod}</td>
+				</tr>
+				<tr>
+					<th>상품상태</th>
+					<td>${itemdto.pkStatus}</td>
+				</tr>
+	
+				
+				</table>				
+		</div>			
+						
+						
+		<div class="form">
+
 
 		<form id="ticket-form" method="GET" action="/traco/packagetour/jeju/reservation.do">
-			<table class="content">
+			<table class="table">
 				<input type="hidden" name="pkSeq" value="${itemdto.pkSeq}"/>
 				<input type="hidden" name="memberSeq" value="${memberSeq}"/>
+				<input type="hidden" id="set-start" name="start" value=""/>
+				<input type="hidden" id="set-end" name="end" value=""/>
 				
 				
-				<tr><th>제목</th></tr>
 				
 				<tr><td id="datediv">
 				
@@ -61,94 +131,68 @@
 
 				
 				<tr><td>
-					<label for="quantity">인원</label>
+					<div  style="float:right;">
+					<label class="h3" for="quantity">인원</label>
 					<select id="quantity" name="quantity">
 						<c:forEach var="i" begin="1" end="30">
 							<option value="${i}">${i}명</option>
 						</c:forEach>
 					</select>
+					</div>
 				</td></tr>
 				
 				<tr><td>
 
-					<button type="submit" class="btn btn-primary">티켓 구입</button> 
+					<button style="float:right;" type="submit" class="btn btn-primary btn-lg ">티켓 구입</button> 
 				
 				</td></tr>
 			</table>
 			
-			
-			
-				
-			<table class="content">
-				
-				<tr>
-					<th>상품번호</th> 
-					<th>상품명</th>
-					<th>판매개수</th>
-					<th>출발일</th>
-					<th>복귀일</th>
-					<th>성인가격</th>
-					<th>아동가격</th>
-					<th>유아가격</th>
-					<th>썸네일번호</th>
-					<th>썸네일이름</th>
-					<th>이미지번호</th>
-					<th>지역이름</th>
-					<th>일자</th>
-					<th>상품상태</th>
-				</tr>
-				
-		
-				<tr>
-					<td>${itemdto.pkSeq}</td>
-					<td>${itemdto.pkName}</td>
-					<td>${itemdto.pkQuantity}</td>
-					<td>${itemdto.pkStartDate}</td>
-					<td>${itemdto.pkEndDate}</td>
-					<td>${itemdto.adultPrice}</td>
-					<td>${itemdto.kidPrice}</td>
-					<td>${itemdto.toddlerPrice}</td>
-					<td>${itemdto.pkThumbSeq}</td>
-					<td>${itemdto.pkThumbName}</td>
-					<td>${itemdto.pkImageSeq}</td>
-					<td>${itemdto.pkAreaName}</td>
-					<td>${itemdto.pkPeriod}</td>
-					<td>${itemdto.pkStatus}</td>
-				</tr>
-				
-				</table>
 			</form>
+		</div>
+		
+				</section>
 				
-			<table class="content qna">
+	<section class="content">
+		<div class="img-content">
+		
+			<img src="/traco/asset/images/pkimage/${itemdto.pkImageSeq}.png"  alt="...">
+		
+		
+		
+		
+		
+		
+		</div>		
 				
-				<tr><td>이용문의</td></tr>
+	</section>
+				
+				
+				
+				
+				
+				
+				
+				
 
-				<tr><td style="width:700px; text-align:center;">
-				
-				<form id="addQna">
-				<textarea style="width:700px;" rows="5"  id="addContent" placeholder="댓글을 작성하세요"></textarea>
-	         		<br>
-		         <button type="button" id="btnAdd">문의사항 추가</button>
-		        </form> 
-				</td></tr>
-				
-				<tr></tr>				
-				
-					
-			</table>
 
 			
 			
-		</section>
+			
+			
+
 		<%@include file="/WEB-INF/views/inc/footer.jsp" %>
 	</main>
 	
 	
 	<script>
-			//hoisted
- 			$(qlistLoad());
+/* 			//hoisted
+ 			$(qlistLoad()); */
  	
 			
+			
+			$('#daterange').click();
+
 			
 			
 /* 			//문의사항 추가
@@ -174,7 +218,7 @@
 			
 			
 
-  			//목록 가져오기
+/*   			//목록 가져오기
 			function qlistLoad(){
 	 			$.ajax({
 					type: 'GET',
@@ -191,7 +235,7 @@
 					}
 				}); 
 		
-			}  
+			}   */
 	
  
 	
@@ -220,7 +264,6 @@
 			
 			
 			
-			$('#daterange').click();
 			
 			
 			$(function(){
@@ -229,46 +272,34 @@
 		
 			$(function() {			
 				$("#ticket-form").submit(function(e){
-					if (`${memberSeq}`== "0") {
-						e.preventDefault();
-						alert("로그인안됨");
+					if (`${memberSeq}`) {
+						alert("회원입니다.")
+		
 					}else {
+						e.preventDefault();
+						alert("로그인이 필요합니다.");
 						
-						alert("회원임")
 					}
 				});
 			});
 			
+			let start;
+			let end;
 			
-			
-			
-			
-			/* 문의하기 */
-			
-			
-			
-			//댓글 쓰기 (버튼을 눌러서 id값이 넘어와 실행되는 자바스크립트 구문)
-		    $("#btnReply").click(function(){
-		        var replytext=$("#replytext").val(); //댓글 내용
-		        var bno="1"; //게시물 번호
-		        var param={ "replytext": replytext, "bno": bno};
-		        //var param="replytext="+replytext+"&bno="+bno;
-		        $.ajax({
-		            type: "get", //데이터를 보낼 방식
-		            url: "${path}/reply/insert.do", //데이터를 보낼 url
-		            data: param, //보낼 데이터
-
-		            success: function(){ //데이터를 보내는것이 성공했을시 출력되는 메시지
-		                alert("댓글이 등록되었습니다.");
-		                listReply2(); //댓글 목록 출력
-		            }
-		        });
-		    });
-
-			
-
-			
-			
+			$('#daterange').on('apply.daterangepicker', function(ev, picker) {
+				
+				  start = picker.startDate.format('YYYY-MM-DD');
+				  
+				  end = picker.endDate.format('YYYY-MM-DD');
+				  
+				  $("#start").text(start);
+				  $("#end").text(end);
+				  $("#set-start").val(start);
+				  $("#set-end").val(end);
+				  
+				  
+				  
+				});
 			
 			
 			

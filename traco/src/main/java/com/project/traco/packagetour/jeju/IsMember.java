@@ -46,11 +46,7 @@ public class IsMember extends HttpServlet {
 		
 		
 		
-		String age =
-		(year+ 1 
-				- Integer.parseInt(
-						("19"+dto.getBirth().substring(0, 2))
-						))+"";
+		String age = ""+(year + 1 - Integer.parseInt("19"+dto.getBirth().substring(0, 2)));
 		
 		dto.setBirth(age);
 		
