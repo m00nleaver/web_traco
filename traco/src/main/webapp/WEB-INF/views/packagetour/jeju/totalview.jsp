@@ -19,27 +19,82 @@
 	 */}
 	 
 	 #taglist {
-	  width: 214px;
+	  width: 60px;
 	  height: 50px;
 	 }
-	 
+	
+	
+	 .center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+	
+	
+	
+.search {
+	float: left;
+	margin-top :60px; 
+
+	}
+
+
+
+.content .below {
+	min-height: 200px;
+}
+
+.products {
+	float : right;
+	
+	width: 800px;
+
+}
+
+.search > form > table > tbody > tr > td {
+	padding : 10px;
+}
+
+
+.card {
+	margin: auto;
+	width:22rem;
+	border:3px solid #ddd;
+	padding: 8px;
+}
+
+
+.card img
+{
+  max-width: 100%;
+  max-height: 100%;
+  width: 198px;
+  height:199px;
+  object-fit: fill;
+  margin: auto;
+  display: block;
+}
+
 </style>
 </head>
 <body>
 
 	<main class="main">
 		<%@include file="/WEB-INF/views/inc/header.jsp" %>
+		<br>
+		<br>
+		<br>
 		<section class="content">
 		
 			<div class="search">
 				<form method="GET" action="/traco/packagetour/jeju/totalview.do">
-					<table>
+					<table class="center filter">
 						<tr>
-							<th>필터</th>
+							<th colspan="4" class="h3" style="padding : 10px;">필터</th>
 						</tr>
-						<tr><td id="taglist">
-								<label for="hashtag">해시태그</label>
-								<select id="hashtag" name="hashtag">
+						<tr><td id="taglist" colspan="4">
+								<label for="hashtag" class="h4">해시태그</label>
+								<select id="hashtag" name="hashtag" style="width:180px; height:40px;">
 										<option value="전체">전체</option>
 									<c:forEach items="${tagList}" var="dto">
 										<option value="${dto.tagName}">${dto.tagName}</option>
@@ -49,21 +104,58 @@
 						
 						
 						
-						<tr><td>
-						    <label for="startdate">출발일자</label>
+						<tr><td colspan="4">
+						    <label for="startdate" class="h4">출발일자</label>
 							<input type="date" id="startdate" name="startdate">
 						</td></tr>
 						
 						
-						<tr><td>
-						    <label for="price">출발일자</label>
+						<tr><td colspan="4">
+						    <label for="price" class="h4">가격</label>
 							<input type="text" class="js-range-slider" id="price" name="price" value="" />
 							
 						</td></tr>
 						
 						
+
+						
 						<tr>
-						<th>정렬</th>
+							<td colspan="4">
+						  		<input id="searchBtn" type="button" value="검색" style="float:right;">
+						  	</td>
+						</tr>						
+					</table>
+				</form>
+			</div>
+			
+
+			
+	<div id="all-box" class="products">
+		<div style="width:1000px; margin:0px auto;">
+			<span class="h1">검색결과</span> 						
+			<span class="h1 btn btn-primary" onclick="location.href='/traco/packagetour/jeju/totalview.do';" class="h2" style="float:right;">전체상품 보기</span>
+			
+						
+		</div>
+		<hr style="height:2px;border-width:0;color:#ddd;background-color:#ddd">
+		
+		<div id="all-row" class="row">
+
+
+		</div>
+	
+		
+		</div>
+			
+			
+			
+			
+</section>			
+			
+			
+			
+<!-- 						<tr>
+						<th colspan="4">정렬</th>
 						</tr>
 						
 						<tr>
@@ -72,67 +164,78 @@
 							<td><input type="submit" value="높은가격순" name="phighorder" class="btn btn-default tagbtn"></td>
 							<td><input type="submit" value="날짜순" name="dateorder" class="btn btn-default tagbtn"></td>
 						</tr>
-						
-						
-						<tr>
-							<td>
-						  		<input type="submit" value="검색">
-						  	</td>
-						</tr>						
-					</table>
-				</form>
-			</div>
+						 -->
+		
+		
+		
+		
+		<section class="content"></section>
+		<section class="content"></section>
+		<section class="content"></section>
+		<section class="content"></section>
 			
-			
-			<button type="button">click me</button>
 
 		
+		<input type=hidden id="load"/>
 		
-		
-			<table class="content">
-				<tr>
-					<th>제주도 패키지 추천 상품 화면</th>
-					<th></th>
-					<th>
-						<a href="/traco/packagetour/jeju/totalview.do">전체상품 보기</a>
-					</th>
-				</tr>	
-				<tr>
-					<th>썸네일</th>
-					<th>제목</th>
-					<th>가격</th>
-					<th>자세히</th>				
-				</tr>
-			
-			<c:forEach items="${searchList}" var="dto">
-					<tr>
-						<td>${dto.pkThumbSeq}</td>
-						<td>${dto.pkName}</td>
-						<td>${dto.adultPrice}</td>
-						<td>
-							<input type="button" value="자세히"
-									class="btn btn-primary"
-									onclick="location.href='/traco/packagetour/jeju/view.do?pkSeq=${dto.pkSeq}';">
-						</td>
-					</tr>
-				</c:forEach> 
-			
-			</table>
-					</section>
 		<%@include file="/WEB-INF/views/inc/footer.jsp" %>
 	</main>
 	
 	
 	<script>
 	
-/* 	From list.jsp
-  
+	let plow;
+	let phigh;
+/* 	$("#hashtag").val();
+ */	
  
- 	<c:if test="${map.searchmode == 'y'}">
-	//검색 상태를 유지
-	$('select[name=column]').val('${map.column}');
-	$('input[name=word]').val('${map.word}');
-	</c:if> */
+ 
+	
+	$(function() {
+		$("#load").click();
+	});
+	
+	$(document).on('click', '#searchBtn', function(e){
+	    e.preventDefault();  
+	  
+	    $(".items").show();
+	    
+	  $(".items").each(function() {
+		 
+		  let p = parseInt($(this).attr('class').split(' ')[2]);
+	  	
+		  let tag = $(this).attr('class').split(' ')[1];
+		  
+		  
+		  
+		  if (!(p >= plow && p <= phigh)) {
+			  $(this).hide();
+		  }
+		  
+		  if ($("#hashtag").val() != "전체" && $("#hashtag").val() != tag){
+			  
+			  $(this).hide();
+			  
+		  }
+		  
+		  
+		  
+	  });
+	    
+	  
+/* 	  if (selectedHash == "전체") {
+		  
+		  $(".tagitems").show();
+
+	  }else {
+	  
+	  $(".tagitems").hide();
+	  $("."+selectedHash).show();
+
+	  } */
+	  
+	});
+
 	
 	
 	$(".js-range-slider").ionRangeSlider({
@@ -146,6 +249,10 @@
             // Called then action is done and mouse is released
     		console.log(data.from);
             console.log(data.to);
+            
+            plow=data.from;
+            phigh=data.to;
+            
         }
     });
 	
@@ -153,6 +260,79 @@
 		$("button[type=button]").text(`${hello}`);
 		} );
 
+	
+	
+	
+	
+	$("#load").click(() => {
+/* 		
+		$('#tag-row').empty();
+
+		$('#hash-row').empty();
+		$("#hash-box").show();
+		$('#recom-row').empty();
+		$("#recom-box").show();
+		$('#tag-row').append(`<button name="hashtag" class="center btn btn-secondary btn-lg tagbtn">전체</button>`);
+		console.log("button clicked"); */
+		
+		$.ajax({
+			type: 'GET',
+			url: '/traco/tour/all.do',
+			dataType: 'json',
+			success: function(list) {
+				
+
+
+				
+				 list.forEach((item) => {
+	
+					 $('#all-row').append(`<div class="col-md-4 \${item.tag} \${item.adultprice} items "><div class="card"><img src="/traco/asset/images/pkthumb/\${item.thumbseq}.jpg" class="card-img-top" alt="..."><div class="card-body"><h5 class="h4 card-title" name="title" style="height: 50px;">\${item.name}</h5><span class="h4 card-text">\${item.adultprice}원</span><button style="margin-left : 20px;" type="submit" class="btn btn-primary detail" onclick="location.href='/traco/packagetour/jeju/view.do?pkSeq=\${item.seq}';">상세보기</button></div></div></div>`);
+					 
+					 
+				 });
+			}
+			
+		}).done(
+		 		
+				function() {
+				
+
+				
+				});
+	});
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
     

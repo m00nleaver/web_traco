@@ -16,7 +16,7 @@ public class View extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
 		String pkSeq = req.getParameter("pkSeq");
-		
+//		
 		//임시 회원번호
 		String memberSeq = "3";
 		
@@ -37,19 +37,7 @@ public class View extends HttpServlet {
 		PackageDTO itemDto = itemDao.item(pkSeq);
 		
 		
-		
-		
-		
-		//문의사항 리스트 출력
 
-		qnaDAO qnaDao = new qnaDAO();
-		
-		ArrayList<qnaDTO> qnaList = qnaDao.list(pkSeq);
-		
-		
-		//문의사항 추가
-		
-		
 		
 		
 		

@@ -10,13 +10,29 @@
 <style>
 
 label {
-	width: 80px;
+	width: 120px;
+}
+th, td {
+  text-align: center;
 }
 
-	table, th, td {
-	  border: 1px solid black;
-	/*   border-collapse: collapse;
-	 */}
+.content{
+	padding-left : 100px;
+	padding-right : 100px;
+	
+
+}
+
+
+
+
+#bankdiv { 
+	position :relative;
+	top : -220px;
+	right: -500px;
+}
+
+
 
 </style>
 </head>
@@ -24,49 +40,84 @@ label {
 
 	<main class="main">
 		<%@include file="/WEB-INF/views/inc/header.jsp" %>
+		
+		
+		<br>
+		<br>
+		
+		
+		
+		
+		<section class="content">
+			<div>
+			<h1 class="h1">상품정보</h1>
+			<hr style="height:2px;border-width:0;color:#ddd;background-color:#ddd">
+			<table class="table">
+				<tr>
+						<th>상품명</th>
+						<th>출발일</th>
+						<th>복귀일</th>
+						<th>성인가격</th>
+						<th>아동가격</th>
+						<th>유아가격</th>
+
+
+					</tr>
+					
+			
+					<tr>
+						<td>${itemdto.pkName}</td>
+						<td>${start}</td>
+						<td>${end}</td>
+						<td>${itemdto.adultPrice}</td>
+						<td>${itemdto.kidPrice}</td>
+						<td>${itemdto.toddlerPrice}</td>
+						
+					</tr>
+		
+		
+			</table>
+		<br>
+		<br>
+		
+			
+			</div>
+			
+			<div>
+			<h1 class="h1">주문내역</h1>
+			<hr style="height:2px;border-width:0;color:#ddd;background-color:#ddd">
+			<table class="table">
+				<tr>
+						<th>성인</th>
+						<th>아동</th>
+						<th>유아</th>
+						<th colspan="3">총 결제금액</th>
+
+					</tr>
+					
+			
+					<tr>
+						<td id="adulttd"></td>
+						<td id="kidtd"></td>
+						<td id="childtd"></td>
+						<td colspan="3" id="pricetd"></td>
+
+						
+					</tr>
+		
+		
+			</table>
+			
+			
+			</div>
+			
+			
+		</section>
+		
+		
+		
 		<section class="content">
 			
-			
-			<table class="content">
-				
-				<tr>
-					<th>상품번호</th> 
-					<th>상품명</th>
-					<th>판매개수</th>
-					<th>출발일</th>
-					<th>복귀일</th>
-					<th>성인가격</th>
-					<th>아동가격</th>
-					<th>유아가격</th>
-					<th>썸네일번호</th>
-					<th>썸네일이름</th>
-					<th>이미지번호</th>
-					<th>지역이름</th>
-					<th>일자</th>
-					<th>상품상태</th>
-				</tr>
-				
-		
-				<tr>
-					<td>${itemdto.pkSeq}</td>
-					<td>${itemdto.pkName}</td>
-					<td>${itemdto.pkQuantity}</td>
-					<td>${itemdto.pkStartDate}</td>
-					<td>${itemdto.pkEndDate}</td>
-					<td>${itemdto.adultPrice}</td>
-					<td>${itemdto.kidPrice}</td>
-					<td>${itemdto.toddlerPrice}</td>
-					<td>${itemdto.pkThumbSeq}</td>
-					<td>${itemdto.pkThumbName}</td>
-					<td>${itemdto.pkImageSeq}</td>
-					<td>${itemdto.pkAreaName}</td>
-					<td>${itemdto.pkPeriod}</td>
-					<td>${itemdto.pkStatus}</td>
-				</tr>
-				
-			
-				
-			</table>
 			
 				<p class="h2">
 					주문/예약자 
@@ -150,12 +201,12 @@ label {
 			</c:if>
 			
 			
-				<p class="h3">
-					입금은행
-				</p> 
+			<div id="bankdiv">
+			
+				<div style="padding-left:110px;"class="h2">입금은행</div>
 				<div>
 			   		<label for="bank"></label>  					
- 		  			<select id="bank" name="bank">
+ 		  			<select class="h3" id="bank" name="bank">
 						<option value="신한은행">신한은행</option>
 						<option value="국민은행">국민은행</option>
 						<option value="농협">농협</option>
@@ -163,32 +214,31 @@ label {
 						<option value="하나은행">하나은행</option>
 					</select>
 					<input type="text" id="ac-name" name="ac-name" placeholder="입금자명" /><br>
-
-
+				</div>
+				
+				<div style="position : relative; right : -110px; top : 50px;">
+				 <button id="reserveBtn" class = "btn btn-primary btn-lg">예약하기</button>
+				</div>
+				 
+				
+			</div>
 					
 					
 
-				 </div>
 				<br>
 				
-				<p align="center">
-				 <button id="reserveBtn" class = "btn btn-primary">예약하기</button>
-				</p> 
-				 
-				 <br>
 
-				<label for="price">총 가격</label>  					
-				<input type="text" id="price" name = "price"/> 
+				 <br>
 				
 				<!-- hidden -->
 				<form id="reserve">
-					<input type="text" name="pkgpm_seq"/>
-					<input type="text" name="rez_date"/>
-					<input type="text" name="rez_adultcnt"/>
-					<input type="text" name="rez_kidcnt"/>
-					<input type="text" name="rez_toddlercnt"/>
-					<input type="text" name="member_seq"/>				
-					<input type="text" name="bankm_name"/>				
+					<input type="hidden" name="pkgpm_seq"/>
+					<input type="hidden" name="rez_date"/>
+					<input type="hidden" name="rez_adultcnt"/>
+					<input type="hidden" name="rez_kidcnt"/>
+					<input type="hidden" name="rez_toddlercnt"/>
+					<input type="hidden" name="member_seq"/>				
+					<input type="hidden" name="bankm_name"/>				
 				</form>
 				
 							
@@ -269,9 +319,16 @@ label {
 				 	});
 				
 				$("#price").val(price);
+				$("#pricetd").text(price);
+				$("#adulttd").text(adult);
+				$("#kidtd").text(kid);
+				$("#childtd").text(toddler);
 				$("#reserve input[name='rez_adultcnt']").val(adult);
 				$("#reserve input[name='rez_kidcnt']").val(kid);
+				$("#reserve input[name='rez_kidcnt']").val(kid);
 				$("#reserve input[name='rez_toddlercnt']").val(toddler);
+				$("#reserve input[name='rez_toddlercnt']").val(toddler);
+				
 				
 				
 			});
@@ -287,33 +344,138 @@ label {
 				
 			});
 			
-		$("#reserveBtn").click(()=>{
+		let count = 0;
 			
-				$.ajax({
+
+		$("#reserveBtn").click(  ()=>{
+			
+			$("#reserveBtn").attr('disabled', true);
+			$("#reserveBtn").text("예약 진행중 ");
+			$("#reserveBtn").append("<i class='fa fa-circle-o-notch fa-spin'></i>");
+			
+			
+			
+			
+			
+			$.ajax({
 				type: 'POST',
-				url: '/traco/packagetour/jeju/insert/reserve/d.do',
+				url: '/traco/packagetour/jeju/insert/reserve/rez.do',
 				data: $('#reserve').serialize(),
 				success: function(result) { 
-
-				
+						
+					
+					console.log(result);
+					
+					let res = Object.values(result)[0];
+					
+					count+= res;				
 					}
 				
-				}).then(			
-					$.ajax({
-					type: 'POST',
-					url: '/traco/packagetour/jeju/insert/reserve/d.do',
-					data: $('#reserve').serialize(),
-					success: function(result) { 
-
+				}).done( function (){
+						
+						$.ajax({
+							type: 'POST',
+							url: '/traco/packagetour/jeju/insert/reserve/packager.do',
+							data: $('#reserve').serialize(),
+							success: function(result) { 
+									
+								
+								console.log(result);
+								
+								
+								let res = Object.values(result)[0];
+								
+								count += res;
+								
+								}
+								
+							});
+					}
+				
+				).done(
+						
+				function() { 
 					
+				function wait() {
+						if (count == 2) {
+							
+							alert("예약완료");
+							location.href = "/traco/main.do";
+					
+						} else {
+							
+							alert("예약실패");
 						}
+						
+					}
 					
-					}));
-				 	
+					
+					const waiting = setTimeout(wait, 5000);
+					
+				}
+				);
+				
+
 		});
 		
+		
 
-	
+		
+
+		function memberInfo(){
+			$.ajax({
+			type: 'GET',
+			url: '/traco/packagetour/jeju/member.do',
+			data: 'memberSeq=' + `${memberSeq}`,
+			dataType: 'json',
+			success: function(dto) { 
+
+				$(".member #name").val(`\${dto.name}`);
+				$(".member #age").val(`\${dto.birth}`);
+				$(".member #email").val(`\${dto.email}`);
+				$(".member #gender").val(`\${dto.gender}`);
+			
+			}
+			
+		});
+
+	}  
+		
+/* 		
+		function insertPackageR() {
+			
+			
+			$.ajax({
+				type: 'POST',
+				url: '/traco/packagetour/jeju/insert/reserve/packager.do',
+				data: $('#reserve').serialize(),
+				success: function(result) { 
+						
+					
+					console.log(result);
+					}
+				
+				});
+			
+		}
+		function insertRez() {
+			
+			
+			$.ajax({
+				type: 'POST',
+				url: '/traco/packagetour/jeju/insert/reserve/rez.do',
+				data: $('#reserve').serialize(),
+				success: function(result) { 
+						
+					
+					console.log(result);
+					}
+				
+				});
+			
+		} */
+		
+		
 	
 	</script>
 </body>
