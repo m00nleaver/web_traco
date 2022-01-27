@@ -7,9 +7,9 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import com.my.jdbc.DBUtil;
+//import com.my.jdbc.DBUtil;
 
-//import com.test.jdbc.DBUtil;
+import com.test.jdbc.DBUtil;
 
 
 //오라클 테이블 1개당 > DTO 클래스 1개 생성
@@ -68,11 +68,7 @@ public class CommunityDAO {
 							, map.get("column")
 							, map.get("word").replace("'", "''"));
 			}
-
 			String sql = String.format("select * from (select rownum as rnum, a.* from (select * from vtblBoardM %s order by boardm_seq desc) a) where rnum between %s and %s order by boardm_seq desc",where, map.get("begin"), map.get("end"));
-
-			String sql = String.format("select * from (select rownum as rnum, a.* from (select * from vtblBoardM %s order by boardm_seq desc) a) where rnum between %s and %s order by boardm_seq desc", where, map.get("begin"), map.get("end"));
-
 
 			rs = stat.executeQuery(sql);
 
@@ -386,21 +382,8 @@ public class CommunityDAO {
 
 	public int getTotalCount(HashMap<String, String> map) {
 		try {
-
 	
 			String sql = "select count(*) as cnt from vtblBoardM";
-
-
-			String where = "";
-			
-			if (map.get("searchmode").equals("y")) {
-				where = String.format("where %s like '%%%s%%'"
-								, map.get("column")
-								, map.get("word").replace("'", "''"));
-			}
-			
-			String sql = "select count(*) as cnt from vtblBoardM" +" "+ where;
-
 			
 			rs = stat.executeQuery(sql);
 			

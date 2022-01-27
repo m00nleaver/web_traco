@@ -6,9 +6,9 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-import com.my.jdbc.DBUtil;
+//import com.my.jdbc.DBUtil;
 
-//import com.test.jdbc.DBUtil;
+import com.test.jdbc.DBUtil;
 
 
 public class MemberDAO {

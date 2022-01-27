@@ -10,7 +10,7 @@
 	.panel {
 		width: 700px;
 		margin: 0 auto; 
-		margin-top: 100px;
+		margin-top: 30px;
 		text-align: left;
 	}
 	

@@ -39,7 +39,7 @@
 		
 			<form method="POST" action="/traco/member/memberfind_pwok.do">
 			<div class="panel panel-default">
-				<div class="panel-heading">아이디찾기</div>
+				<div class="panel-heading">패스워드디찾기</div>
 				<div class="panel-body">
 										
 						<div>아이디</div>

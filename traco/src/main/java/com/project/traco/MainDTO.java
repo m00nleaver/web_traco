@@ -33,8 +33,10 @@ public class MainDTO{
 	String area_seq;			//지역번호
 	String area_name;			//지역이름
 	
+	String minipm_seq;			//미니투어번호
 	String minipm_name;			//미니투어이름
 	String minipm_price1;		//성인가격
+
 	String minictg_name;		//미니투어카테고리
 	String thumbnaili_name;		//미니투어썸네일
 	String rec;					//메인등록여부
@@ -184,4 +186,10 @@ public class MainDTO{
 		this.rec = rec;
 	}
 	
+	public String getMinipm_seq() {
+		return minipm_seq;
+	}
+	public void setMinipm_seq(String minipm_seq) {
+		this.minipm_seq = minipm_seq;
+	}
 }
