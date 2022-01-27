@@ -157,7 +157,7 @@ img {
 		<div class="img-content">
 		
 			<img src="/traco/asset/images/miniimage/${itemdto.IMAGEM_SEQ}.png"  alt="...">
-		
+			<div>${itemdto.IMAGEM_SEQ}</div>
 		
 		
 		
