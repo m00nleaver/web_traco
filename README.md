@@ -61,10 +61,24 @@
 
 
 ## 실제화면
-<img src="https://user-images.githubusercontent.com/95206325/152370170-522b8028-86ee-4343-9833-3de9681a6aa3.png" width="500" height="600">
-<img src="https://user-images.githubusercontent.com/95206325/152370176-b639bf7f-a153-4fa8-beba-471f0ccccfb1.jpg" width="500">
-<img src="https://user-images.githubusercontent.com/95206325/152370180-4e1570e8-1e23-49c4-b703-a1f1ebe7bf19.png" width="500">
+* 배너 리스트 수정
+
+<img src="https://user-images.githubusercontent.com/95206325/152370170-522b8028-86ee-4343-9833-3de9681a6aa3.png" width="600">
+
+* 항공권 조회
+
+<img src="https://user-images.githubusercontent.com/95206325/152370176-b639bf7f-a153-4fa8-beba-471f0ccccfb1.jpg" width="600">
+
+* 배너 리스트 수정
+
+<img src="https://user-images.githubusercontent.com/95206325/152370180-4e1570e8-1e23-49c4-b703-a1f1ebe7bf19.png" width="600">
+
+* 배너 리스트 수정
+
 <img src="https://user-images.githubusercontent.com/95206325/152370195-df973c83-b85c-44aa-865c-469795658bb5.png" width="500" height="600">
+
+* 배너 리스트 수정
+
 <img src="https://user-images.githubusercontent.com/95206325/152370218-2c5c4c6c-f2f6-46df-a7a4-651c9d741ae1.png" width="500" height="600">
 
 ## 느낀 점
