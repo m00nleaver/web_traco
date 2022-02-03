@@ -60,4 +60,14 @@
 <img src="https://user-images.githubusercontent.com/95206325/150713632-4e08121c-89e5-4751-9de6-126aa137dec9.png" width="600" height="400">
 
 
+## 실제화면
+<img src="https://user-images.githubusercontent.com/95206325/152370170-522b8028-86ee-4343-9833-3de9681a6aa3.png" width="500" height="600">
+<img src="https://user-images.githubusercontent.com/95206325/152370176-b639bf7f-a153-4fa8-beba-471f0ccccfb1.jpg" width="500">
+<img src="https://user-images.githubusercontent.com/95206325/152370180-4e1570e8-1e23-49c4-b703-a1f1ebe7bf19.png" width="500">
+<img src="https://user-images.githubusercontent.com/95206325/152370195-df973c83-b85c-44aa-865c-469795658bb5.png" width="500" height="600">
+<img src="https://user-images.githubusercontent.com/95206325/152370218-2c5c4c6c-f2f6-46df-a7a4-651c9d741ae1.png" width="500" height="600">
 
+## 느낀 점
+기획 단계에서 사용자 위주로 기획하다보니 이후 화면 설계 단계에서 관리자 영역에 대한 이해도가 각자 달라 어려움이 있었으며, 구현 단계에서 데이터를 추가적으로 조작하는 일이 있었다. 또한 사용보다는 기능 구현에 초점을 맞추다보니 많은 기능을 기획했고, 오히려 기능이 많아 집중도가 떨어지는 결과를 낳게 되었다.
+
+이후에 있을 프로젝트에서는 사용자 관점의 기획이 아닌 서비스 기획자의 관점에서 기획이 필요하다는 걸 깨달았고, 서버 관리와 데이터 관리를 보다 안정적으로 할 예정이다.
