@@ -65,14 +65,16 @@
 
 <img src="https://user-images.githubusercontent.com/95206325/152370180-4e1570e8-1e23-49c4-b703-a1f1ebe7bf19.png" width="600">
 
-* 항공권 조회
-
-<img src="https://user-images.githubusercontent.com/95206325/152370176-b639bf7f-a153-4fa8-beba-471f0ccccfb1.jpg" width="600">
-
 
 * 상품 조회 : 카테고리 구분
 
 <img src="https://user-images.githubusercontent.com/95206325/152370195-df973c83-b85c-44aa-865c-469795658bb5.png" width="500" height="600">
+
+
+* 항공권 조회
+
+<img src="https://user-images.githubusercontent.com/95206325/152370176-b639bf7f-a153-4fa8-beba-471f0ccccfb1.jpg" width="600">
+
 
 * 관리자 : 상품 등록
 
